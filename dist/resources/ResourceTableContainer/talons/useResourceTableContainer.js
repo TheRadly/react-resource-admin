@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
+var _react = require("react");
 var _lodash = _interopRequireDefault(require("lodash"));
 var _staticTexts = require("../../../staticTexts");
-var _react = require("react");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const useResourceTableContainer = _ref => {
   let {

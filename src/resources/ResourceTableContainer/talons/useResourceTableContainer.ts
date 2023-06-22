@@ -1,7 +1,7 @@
+import { useCallback, useEffect, useState } from "react";
 import _ from "lodash";
 import { ASC_SORT, DESC_SORT } from "../../../staticTexts";
 import { DataTableSortEvent } from "primereact/datatable";
-import { useCallback, useEffect, useState } from "react";
 import { TableSearchArgument } from "../../ResourceTableSearch/models/TableSearchArgument";
 
 interface UseResourceTableContainer {

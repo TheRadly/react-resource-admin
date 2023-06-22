@@ -1,7 +1,7 @@
 import { EXCLAMATION_TRIANGLE_ICON } from "../../../staticTexts";
 import { confirmPopup } from "primereact/confirmpopup";
 import { useCallback } from "react";
-import classes from "../../ResourceTableActions/styles/pageActions.module.scss";
+import classes from "../../ResourceTableActions/styles/pageActions.scss";
 
 interface UseEditDeleteColumnTemplateProps {
   onClickDelete?: () => void;
