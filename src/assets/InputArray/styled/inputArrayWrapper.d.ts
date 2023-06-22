@@ -1,4 +1,7 @@
-declare const InputArrayWrapper: import("styled-components").IStyledComponent<"web", "div", {
+/// <reference types="react" />
+declare const InputArrayWrapper: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
+    ref?: import("react").RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void) | null | undefined;
+}, {
     fullWidth?: boolean | undefined;
-}, never>;
+}>>;
 export default InputArrayWrapper;
