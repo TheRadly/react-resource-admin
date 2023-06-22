@@ -1,0 +1,1 @@
+{"version":3,"file":"useResourceTableToolbar.d.js","names":[],"sources":["../../../../src/resources/ResourceTableToolbar/talons/useResourceTableToolbar.d.ts"],"sourcesContent":["declare const useResourceTableToolbar: () => {\n    isDisplaySearch: boolean;\n    handleChangeSearchMode: () => void;\n};\nexport default useResourceTableToolbar;\n"],"mappings":""}

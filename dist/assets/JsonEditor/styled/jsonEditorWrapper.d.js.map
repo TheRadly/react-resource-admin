@@ -1,0 +1,1 @@
+{"version":3,"file":"jsonEditorWrapper.d.js","names":[],"sources":["../../../../src/assets/JsonEditor/styled/jsonEditorWrapper.d.ts"],"sourcesContent":["declare const JsonEditorWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {\n    fullWidth?: boolean | undefined;\n}, never>;\nexport default JsonEditorWrapper;\n"],"mappings":""}

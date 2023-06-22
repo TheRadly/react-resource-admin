@@ -1,0 +1,1 @@
+{"version":3,"file":"inputFieldsWrapper.d.js","names":[],"sources":["../../../../src/assets/InputFieldsWithQuery/styled/inputFieldsWrapper.d.ts"],"sourcesContent":["declare const InputFieldsWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {\n    fullWidth?: boolean | undefined;\n}, never>;\nexport default InputFieldsWrapper;\n"],"mappings":""}

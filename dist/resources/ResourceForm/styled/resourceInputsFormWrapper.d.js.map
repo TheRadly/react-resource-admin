@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceInputsFormWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceForm/styled/resourceInputsFormWrapper.d.ts"],"sourcesContent":["declare const ResourceInputsFormWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"form\", {}, never>;\nexport default ResourceInputsFormWrapper;\n"],"mappings":""}

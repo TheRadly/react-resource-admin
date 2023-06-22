@@ -1,0 +1,1 @@
+{"version":3,"file":"switchInputWrapper.d.js","names":[],"sources":["../../../../src/assets/SwitchInput/styled/switchInputWrapper.d.ts"],"sourcesContent":["declare const SwitchInputWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"span\", {}, never>;\nexport default SwitchInputWrapper;\n"],"mappings":""}

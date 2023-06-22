@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceTableSearchWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceTableSearch/styled/resourceTableSearchWrapper.d.ts"],"sourcesContent":["declare const ResourceTableSearchWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ResourceTableSearchWrapper;\n"],"mappings":""}

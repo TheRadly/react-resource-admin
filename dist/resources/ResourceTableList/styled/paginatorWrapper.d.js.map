@@ -1,0 +1,1 @@
+{"version":3,"file":"paginatorWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceTableList/styled/paginatorWrapper.d.ts"],"sourcesContent":["declare const PaginatorWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default PaginatorWrapper;\n"],"mappings":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceTableToolbarWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceTableToolbar/styled/resourceTableToolbarWrapper.d.ts"],"sourcesContent":["declare const ResourceTableToolbarWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ResourceTableToolbarWrapper;\n"],"mappings":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"statusTagWrapper.d.js","names":[],"sources":["../../../../src/assets/StatusTag/styled/statusTagWrapper.d.ts"],"sourcesContent":["declare const StatusTagWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default StatusTagWrapper;\n"],"mappings":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceShowToolbarWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceShowToolbar/styled/resourceShowToolbarWrapper.d.ts"],"sourcesContent":["declare const ResourceShowToolbarWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ResourceShowToolbarWrapper;\n"],"mappings":""}

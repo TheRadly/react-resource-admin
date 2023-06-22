@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceTableContainerWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceTableContainer/styled/resourceTableContainerWrapper.d.ts"],"sourcesContent":["declare const ResourceTableContainerWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ResourceTableContainerWrapper;\n"],"mappings":""}

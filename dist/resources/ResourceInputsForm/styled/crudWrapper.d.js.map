@@ -1,0 +1,1 @@
+{"version":3,"file":"crudWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceInputsForm/styled/crudWrapper.d.ts"],"sourcesContent":["declare const CrudWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default CrudWrapper;\n"],"mappings":""}

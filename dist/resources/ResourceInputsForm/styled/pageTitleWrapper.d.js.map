@@ -1,0 +1,1 @@
+{"version":3,"file":"pageTitleWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceInputsForm/styled/pageTitleWrapper.d.ts"],"sourcesContent":["declare const PageTitleWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default PageTitleWrapper;\n"],"mappings":""}

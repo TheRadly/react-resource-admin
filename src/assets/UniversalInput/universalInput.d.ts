@@ -1,0 +1,30 @@
+import React from "react";
+import { SelectType } from "../../types/InputEventTypes";
+import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
+interface UniversalInputProps {
+    value: any;
+    onChange: (arg: any) => void;
+    disabled?: boolean;
+    dropdownValues?: any;
+    currentOption?: SelectType;
+    isMultiInput?: boolean;
+    isJson?: boolean;
+    withChildQuery?: boolean;
+    isShowQueryContainer?: boolean;
+    handleShowQueryContainer?: (arg?: any) => void;
+    isArray?: boolean;
+    isDisabled?: boolean;
+    fieldsToExcludeInQueryInput?: string[];
+    extraFormCruds?: CrudType;
+    isFloat?: boolean;
+    fullWidth?: boolean;
+    label: string;
+    placeholder?: string;
+    emptyLabel?: string;
+    closeTooltipLabel?: string;
+    addTooltipLabel?: string;
+    deleteTooltipLabel?: string;
+    editTooltipLabel?: string;
+}
+declare const _default: React.MemoExoticComponent<({ label, placeholder, value, onChange, disabled, currentOption, isMultiInput, isJson, withChildQuery, isShowQueryContainer, handleShowQueryContainer, isArray, isDisabled, fieldsToExcludeInQueryInput, extraFormCruds, isFloat, fullWidth, emptyLabel, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, }: UniversalInputProps) => import("react/jsx-runtime").JSX.Element>;
+export default _default;

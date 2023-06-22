@@ -1,0 +1,1 @@
+{"version":3,"file":"App.js","names":["App","React","createElement","_default","exports","default"],"sources":["../src/App.tsx"],"sourcesContent":["const App = () => <div>Hello world!</div>;\n\nexport default App;\n"],"mappings":";;;;;;AAAA,MAAMA,GAAG,GAAGA,CAAA,KAAMC,KAAA,CAAAC,aAAA,cAAK,cAAiB,CAAC;AAAC,IAAAC,QAAA,GAE3BH,GAAG;AAAAI,OAAA,CAAAC,OAAA,GAAAF,QAAA"}

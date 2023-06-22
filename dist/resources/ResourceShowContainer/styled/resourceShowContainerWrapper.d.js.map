@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceShowContainerWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceShowContainer/styled/resourceShowContainerWrapper.d.ts"],"sourcesContent":["declare const ResourceShowContainerWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ResourceShowContainerWrapper;\n"],"mappings":""}

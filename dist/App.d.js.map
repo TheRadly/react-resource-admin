@@ -1,0 +1,1 @@
+{"version":3,"file":"App.d.js","names":[],"sources":["../src/App.d.ts"],"sourcesContent":["declare const App: () => import(\"react/jsx-runtime\").JSX.Element;\nexport default App;\n"],"mappings":""}

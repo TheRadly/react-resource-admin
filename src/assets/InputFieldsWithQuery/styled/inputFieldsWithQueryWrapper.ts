@@ -1,0 +1,16 @@
+import styled from "styled-components";
+
+const InputFieldsWithQueryWrapper = styled.div<{ fullWidth?: boolean }>`
+  width: ${(props) => (props.fullWidth ? "100%" : "50%")};
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    font-size: 14px;
+    color: var(--clr-blackFontColor);
+    margin-bottom: 10px;
+  }
+`;
+
+export default InputFieldsWithQueryWrapper;

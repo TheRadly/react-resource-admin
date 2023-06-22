@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceTableTitleWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceTableTitle/styled/resourceTableTitleWrapper.d.ts"],"sourcesContent":["declare const ResourceTableTitleWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"h2\", {}, never>;\nexport default ResourceTableTitleWrapper;\n"],"mappings":""}

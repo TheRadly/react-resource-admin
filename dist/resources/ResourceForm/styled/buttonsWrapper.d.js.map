@@ -1,0 +1,1 @@
+{"version":3,"file":"buttonsWrapper.d.js","names":[],"sources":["../../../../src/resources/ResourceForm/styled/buttonsWrapper.d.ts"],"sourcesContent":["declare const ButtonsWrapper: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ButtonsWrapper;\n"],"mappings":""}

@@ -1,0 +1,34 @@
+.customAccept {
+  color: var(--clr-white);
+  background: var(--clr-hoverBackgroundColor);
+  border-color: transparent;
+
+  &:hover {
+    background: var(--clr-backgroundColor-2) !important;
+    border-color: transparent !important;
+  }
+
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.customReject {
+  color: var(--clr-whiteGrey-2);
+  border-color: transparent !important;
+  background: none !important;
+
+  &:hover {
+    color: var(--clr-black) !important;
+  }
+
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.outlined {
+  background: none !important;
+  border-color: var(--clr-hoverBackgroundColor) !important;
+  color: var(--clr-hoverBackgroundColor);
+}

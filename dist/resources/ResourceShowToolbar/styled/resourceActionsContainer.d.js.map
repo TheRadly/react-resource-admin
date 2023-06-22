@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceActionsContainer.d.js","names":[],"sources":["../../../../src/resources/ResourceShowToolbar/styled/resourceActionsContainer.d.ts"],"sourcesContent":["declare const ResourceActionsContainer: import(\"styled-components\").IStyledComponent<\"web\", \"div\", {}, never>;\nexport default ResourceActionsContainer;\n"],"mappings":""}

@@ -1,1 +1,1 @@
-# react-resource-admin
+# React resource admin
