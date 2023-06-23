@@ -1,0 +1,1 @@
+{"version":3,"file":"TableSearchArgument.js","names":[],"sources":["../../../../src/resources/ResourceTableSearch/models/TableSearchArgument.ts"],"sourcesContent":["export type TableSearchArgument = {\n  search: string | number | boolean;\n  byField: string | null | any;\n};\n"],"mappings":""}

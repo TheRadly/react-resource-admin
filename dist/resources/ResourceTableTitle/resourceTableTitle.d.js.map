@@ -1,0 +1,1 @@
+{"version":3,"file":"resourceTableTitle.d.js","names":[],"sources":["../../../src/resources/ResourceTableTitle/resourceTableTitle.d.ts"],"sourcesContent":["declare const ResourceTableTitle: ({ children }: {\n    children?: string | undefined;\n}) => import(\"react/jsx-runtime\").JSX.Element;\nexport default ResourceTableTitle;\n"],"mappings":""}

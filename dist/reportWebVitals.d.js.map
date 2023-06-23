@@ -1,0 +1,1 @@
+{"version":3,"file":"reportWebVitals.d.js","names":[],"sources":["../src/reportWebVitals.d.ts"],"sourcesContent":["export default reportWebVitals;\ndeclare function reportWebVitals(onPerfEntry: any): void;\n"],"mappings":""}
