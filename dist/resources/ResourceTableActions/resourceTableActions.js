@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _confirmpopup = require("primereact/confirmpopup");
 var _button = require("primereact/button");
 var _pageActionsWrapper = _interopRequireDefault(require("./styled/pageActionsWrapper"));
@@ -49,13 +48,13 @@ const ResourceTableActions = _ref => {
         icon: _staticTexts.PLUS_ICON,
         label: createLabel
       }), !hideSearch && (0, _jsxRuntime.jsx)(_button.Button, {
-        className: _pageActions.default.outlined,
+        outlined: true,
         onClick: handleChangeSearchMode,
         size: _staticTexts.SMALL_SIZE,
         icon: searchIcon
       })]
     }) : null, (0, _jsxRuntime.jsx)(_button.Button, {
-      className: _pageActions.default.outlined,
+      outlined: true,
       size: _staticTexts.SMALL_SIZE,
       onClick: handleChangeSelectMode,
       icon: selectIcon

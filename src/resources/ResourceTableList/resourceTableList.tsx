@@ -72,7 +72,7 @@ const ResourceTableList = ({
   const paginatorTemplate = {
     layout: "PrevPageLink PageLinks NextPageLink CurrentPageReport",
     CurrentPageReport: (options: PaginatorCurrentPageReportOptions) =>
-      `${options.first} / ${options.last} of ${options.totalRecords}`,
+      `${options.first} - ${options.last} of ${options.totalRecords}`,
   };
 
   return (

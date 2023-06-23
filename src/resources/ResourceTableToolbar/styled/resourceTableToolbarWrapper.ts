@@ -13,7 +13,7 @@ const ResourceTableToolbarWrapper = styled.div`
     padding: 0;
     padding-bottom: 20px;
     border-radius: 0;
-    border-bottom: 1px solid var(--clr-borderColor);
+    border-bottom: 1px solid var(--gray-300);
 
     @media (min-width: 961px) {
       justify-content: space-between;

@@ -51,7 +51,7 @@ const ResourceTableList = _ref => {
   });
   const paginatorTemplate = {
     layout: "PrevPageLink PageLinks NextPageLink CurrentPageReport",
-    CurrentPageReport: options => "".concat(options.first, " / ").concat(options.last, " of ").concat(options.totalRecords)
+    CurrentPageReport: options => "".concat(options.first, " - ").concat(options.last, " of ").concat(options.totalRecords)
   };
   return (0, _jsxRuntime.jsxs)(_resourceTableListWrapper.default, {
     children: [(0, _jsxRuntime.jsxs)(_datatable.DataTable, {

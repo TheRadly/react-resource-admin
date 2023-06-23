@@ -1,4 +1,3 @@
-import React from "react";
 import { ConfirmPopup } from "primereact/confirmpopup";
 import { Button } from "primereact/button";
 import PageActionsWrapper from "./styled/pageActionsWrapper";
@@ -45,7 +44,7 @@ const ResourceTableActions = ({
           />
           {!hideSearch && (
             <Button
-              className={classes.outlined}
+              outlined
               onClick={handleChangeSearchMode}
               size={SMALL_SIZE}
               icon={searchIcon}
@@ -54,7 +53,7 @@ const ResourceTableActions = ({
         </>
       ) : null}
       <Button
-        className={classes.outlined}
+        outlined
         size={SMALL_SIZE}
         onClick={handleChangeSelectMode}
         icon={selectIcon}

@@ -37,7 +37,7 @@ const useResourceTableActions = _ref => {
     icon: _staticTexts.TRASH_ICON,
     onClick: onConfirmClick,
     size: _staticTexts.SMALL_SIZE,
-    className: classes.outlined
+    outlined: true
   };
   const tooltipExtraButtonProps = isValuesSelected ? {
     ...deleteButtonProps
