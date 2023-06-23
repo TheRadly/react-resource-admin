@@ -1,1 +1,0 @@
-{"version":3,"file":"arrayField.d.js","names":[],"sources":["../../../src/assets/ShowField/arrayField.d.ts"],"sourcesContent":["interface ArrayFieldProps {\n    title?: string;\n    values: string[];\n}\ndeclare const ArrayField: ({ title, values }: ArrayFieldProps) => import(\"react/jsx-runtime\").JSX.Element;\nexport default ArrayField;\n"],"mappings":""}

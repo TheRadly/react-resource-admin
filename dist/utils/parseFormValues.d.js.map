@@ -1,1 +1,0 @@
-{"version":3,"file":"parseFormValues.d.js","names":[],"sources":["../../src/utils/parseFormValues.d.ts"],"sourcesContent":["import { DataFieldType } from \"../types/InputEventTypes\";\ndeclare const parseFormValues: (values: any) => DataFieldType[];\nexport default parseFormValues;\n"],"mappings":""}

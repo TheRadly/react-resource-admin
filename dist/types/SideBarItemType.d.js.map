@@ -1,1 +1,0 @@
-{"version":3,"file":"SideBarItemType.d.js","names":[],"sources":["../../src/types/SideBarItemType.d.ts"],"sourcesContent":["export type SideBarType = {\n    icon: string;\n    label: string;\n    isSubMenu?: boolean;\n    openIcon?: string;\n    items?: SideBarType[];\n};\n"],"mappings":""}

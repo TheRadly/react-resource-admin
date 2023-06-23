@@ -1,6 +1,6 @@
 {
   "name": "react-resource-admin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Alexey Vodyanitsky <alex5011999@gmail.com>",
   "description": "React resource admin for using in L2P, Jinn applications and etc",
   "license": "Apache-2.0",
@@ -43,8 +43,8 @@
     "primeflex": "3.3.0",
     "primeicons": "6.0.1",
     "primereact": "9.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-scripts": "5.0.1",
     "sass": "^1.63.5",
     "styled-components": "^6.0.0-rc.1",
