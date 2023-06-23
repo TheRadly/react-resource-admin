@@ -1,6 +1,4 @@
-import React from "react";
 import JsonEditorWrapper from "./styled/jsonEditorWrapper";
-import Editor from "@monaco-editor/react";
 
 interface JsonEditorProps {
   value: any;
@@ -19,11 +17,7 @@ const JsonEditor = ({
 }: JsonEditorProps) => (
   <JsonEditorWrapper fullWidth={fullWidth}>
     <span>{label}</span>
-    <Editor
-      defaultLanguage="json"
-      value={value}
-      onChange={(val) => !disabled && onChange(val)}
-    />
+    <div>Test!</div>
   </JsonEditorWrapper>
 );
 
