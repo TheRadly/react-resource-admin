@@ -1,3 +1,4 @@
+import React from "react";
 import { ConfirmPopup } from "primereact/confirmpopup";
 import { Button } from "primereact/button";
 import PageActionsWrapper from "./styled/pageActionsWrapper";
