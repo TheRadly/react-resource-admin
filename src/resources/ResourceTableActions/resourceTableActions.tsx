@@ -18,6 +18,7 @@ const ResourceTableActions = ({
   createLabel,
   deleteConfirmMessage,
   disabledTooltipDeleteLabel,
+  hideCreate,
 }: ResourceTableActionsProps) => {
   const { tooltipExtraButtonProps, selectIcon, searchIcon } =
     useResourceTableActions({
@@ -36,12 +37,14 @@ const ResourceTableActions = ({
       <ConfirmPopup />
       {!isSelectable ? (
         <>
-          <Button
-            onClick={handleCreateButton}
-            size={SMALL_SIZE}
-            icon={PLUS_ICON}
-            label={createLabel}
-          />
+          {!hideCreate && (
+            <Button
+              onClick={handleCreateButton}
+              size={SMALL_SIZE}
+              icon={PLUS_ICON}
+              label={createLabel}
+            />
+          )}
           {!hideSearch && (
             <Button
               outlined

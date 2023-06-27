@@ -25,9 +25,10 @@ interface ResourceTableContainerProps {
   createLabel: string;
   deleteConfirmMessage: string;
   disabledTooltipDeleteLabel: string;
-  onCreate: () => void;
+  onCreate?: () => void;
   confirmDeleteMessage: string;
   onRowClick: (arg: string) => void;
+  hideCreate?: boolean;
 }
 
 const ResourceTableContainer = ({
@@ -53,6 +54,7 @@ const ResourceTableContainer = ({
   onCreate,
   confirmDeleteMessage,
   onRowClick,
+  hideCreate,
 }: ResourceTableContainerProps) => {
   const {
     handleDeleteClick,
@@ -70,6 +72,7 @@ const ResourceTableContainer = ({
   return (
     <ResourceTableContainerWrapper>
       <ResourceTableToolbar
+        hideCreate={hideCreate}
         searchPlaceholder={searchPlaceholder}
         dropdownPlaceholder={dropdownPlaceholder}
         createLabel={createLabel}

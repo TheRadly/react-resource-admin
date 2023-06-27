@@ -1,4 +1,3 @@
-import React from "react";
 import { Toolbar } from "primereact/toolbar";
 import ResourceTableTitle from "../ResourceTableTitle";
 import ResourceTableActions from "../ResourceTableActions/resourceTableActions";
@@ -22,9 +21,10 @@ interface ResourceTableActionsProps {
   createLabel: string;
   deleteConfirmMessage: string;
   disabledTooltipDeleteLabel: string;
-  onCreate: () => void;
+  onCreate?: () => void;
   searchPlaceholder: string;
   dropdownPlaceholder: string;
+  hideCreate?: boolean;
 }
 
 const ResourceTableToolbar = ({
@@ -46,6 +46,7 @@ const ResourceTableToolbar = ({
   onCreate,
   searchPlaceholder,
   dropdownPlaceholder,
+  hideCreate,
 }: ResourceTableActionsProps) => {
   const { handleChangeSearchMode, isDisplaySearch } = useResourceTableActions();
 
@@ -54,6 +55,7 @@ const ResourceTableToolbar = ({
   ) : null;
   const end = !hideActions ? (
     <ResourceTableActions
+      hideCreate={hideCreate}
       createLabel={createLabel}
       deleteConfirmMessage={deleteConfirmMessage}
       disabledTooltipDeleteLabel={disabledTooltipDeleteLabel}
