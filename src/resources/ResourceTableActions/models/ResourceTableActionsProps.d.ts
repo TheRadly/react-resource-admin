@@ -5,10 +5,11 @@ export interface ResourceTableActionsProps {
     isDisplaySearch: boolean;
     handleChangeSelectMode: () => void;
     handleChangeSearchMode: () => void;
-    handleCreateButton: () => void;
+    handleCreateButton?: () => void;
     classes?: any;
     hideSearch?: boolean;
     createLabel: string;
     deleteConfirmMessage: string;
     disabledTooltipDeleteLabel: string;
+    hideCreate?: boolean;
 }

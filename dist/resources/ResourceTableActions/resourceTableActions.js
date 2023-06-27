@@ -24,7 +24,8 @@ const ResourceTableActions = _ref => {
     hideSearch,
     createLabel,
     deleteConfirmMessage,
-    disabledTooltipDeleteLabel
+    disabledTooltipDeleteLabel,
+    hideCreate
   } = _ref;
   const {
     tooltipExtraButtonProps,
@@ -42,7 +43,7 @@ const ResourceTableActions = _ref => {
   });
   return (0, _jsxRuntime.jsxs)(_pageActionsWrapper.default, {
     children: [(0, _jsxRuntime.jsx)(_confirmpopup.ConfirmPopup, {}), !isSelectable ? (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-      children: [(0, _jsxRuntime.jsx)(_button.Button, {
+      children: [!hideCreate && (0, _jsxRuntime.jsx)(_button.Button, {
         onClick: handleCreateButton,
         size: _staticTexts.SMALL_SIZE,
         icon: _staticTexts.PLUS_ICON,

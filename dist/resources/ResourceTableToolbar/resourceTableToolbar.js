@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _toolbar = require("primereact/toolbar");
 var _ResourceTableTitle = _interopRequireDefault(require("../ResourceTableTitle"));
 var _resourceTableActions = _interopRequireDefault(require("../ResourceTableActions/resourceTableActions"));
@@ -32,7 +31,8 @@ const ResourceTableToolbar = _ref => {
     disabledTooltipDeleteLabel,
     onCreate,
     searchPlaceholder,
-    dropdownPlaceholder
+    dropdownPlaceholder,
+    hideCreate
   } = _ref;
   const {
     handleChangeSearchMode,
@@ -42,6 +42,7 @@ const ResourceTableToolbar = _ref => {
     children: pageTitle
   }) : null;
   const end = !hideActions ? (0, _jsxRuntime.jsx)(_resourceTableActions.default, {
+    hideCreate: hideCreate,
     createLabel: createLabel,
     deleteConfirmMessage: deleteConfirmMessage,
     disabledTooltipDeleteLabel: disabledTooltipDeleteLabel,

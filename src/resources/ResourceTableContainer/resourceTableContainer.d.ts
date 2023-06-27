@@ -20,9 +20,10 @@ interface ResourceTableContainerProps {
     createLabel: string;
     deleteConfirmMessage: string;
     disabledTooltipDeleteLabel: string;
-    onCreate: () => void;
+    onCreate?: () => void;
     confirmDeleteMessage: string;
     onRowClick: (arg: string) => void;
+    hideCreate?: boolean;
 }
-declare const ResourceTableContainer: ({ pageTitle, values, loading, tableFields, paginatorCount, showMode, isCustomFields, children, deleteQueryMethod, getQueryMethod, hideSearch, excludedSearchFields, onEdit, emptyMessage, searchPlaceholder, dropdownPlaceholder, createLabel, deleteConfirmMessage, disabledTooltipDeleteLabel, onCreate, confirmDeleteMessage, onRowClick, }: ResourceTableContainerProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceTableContainer: ({ pageTitle, values, loading, tableFields, paginatorCount, showMode, isCustomFields, children, deleteQueryMethod, getQueryMethod, hideSearch, excludedSearchFields, onEdit, emptyMessage, searchPlaceholder, dropdownPlaceholder, createLabel, deleteConfirmMessage, disabledTooltipDeleteLabel, onCreate, confirmDeleteMessage, onRowClick, hideCreate, }: ResourceTableContainerProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceTableContainer;

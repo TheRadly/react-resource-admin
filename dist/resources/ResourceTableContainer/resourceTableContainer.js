@@ -35,7 +35,8 @@ const ResourceTableContainer = _ref => {
     disabledTooltipDeleteLabel,
     onCreate,
     confirmDeleteMessage,
-    onRowClick
+    onRowClick,
+    hideCreate
   } = _ref;
   const {
     handleDeleteClick,
@@ -51,6 +52,7 @@ const ResourceTableContainer = _ref => {
   });
   return (0, _jsxRuntime.jsxs)(_resourceTableContainerWrapper.default, {
     children: [(0, _jsxRuntime.jsx)(_ResourceTableToolbar.default, {
+      hideCreate: hideCreate,
       searchPlaceholder: searchPlaceholder,
       dropdownPlaceholder: dropdownPlaceholder,
       createLabel: createLabel,

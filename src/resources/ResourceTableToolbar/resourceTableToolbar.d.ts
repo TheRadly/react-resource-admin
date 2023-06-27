@@ -14,9 +14,10 @@ interface ResourceTableActionsProps {
     createLabel: string;
     deleteConfirmMessage: string;
     disabledTooltipDeleteLabel: string;
-    onCreate: () => void;
+    onCreate?: () => void;
     searchPlaceholder: string;
     dropdownPlaceholder: string;
+    hideCreate?: boolean;
 }
-declare const ResourceTableToolbar: ({ handleDeleteClick, handleChangeSelectMode, handleChangeTableSearch, selectedValues, pageTitle, isSelectable, hideTitle, hideActions, hideSearch, tableFields, getQueryMethod, excludedSearchFields, createLabel, deleteConfirmMessage, disabledTooltipDeleteLabel, onCreate, searchPlaceholder, dropdownPlaceholder, }: ResourceTableActionsProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceTableToolbar: ({ handleDeleteClick, handleChangeSelectMode, handleChangeTableSearch, selectedValues, pageTitle, isSelectable, hideTitle, hideActions, hideSearch, tableFields, getQueryMethod, excludedSearchFields, createLabel, deleteConfirmMessage, disabledTooltipDeleteLabel, onCreate, searchPlaceholder, dropdownPlaceholder, hideCreate, }: ResourceTableActionsProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceTableToolbar;
