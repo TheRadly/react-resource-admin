@@ -11,7 +11,6 @@ import {
   Paginator,
   PaginatorCurrentPageReportOptions,
 } from "primereact/paginator";
-import PaginatorWrapper from "./styled/paginatorWrapper";
 import ResourceTableListWrapper from "./styled/resourceTableListWrapper";
 import useResourceTableList from "./talons/useResourceTableList";
 import { capitalize } from "lodash";
@@ -84,7 +83,7 @@ const ResourceTableList = ({
           isSelectable ? "checkbox" : showMode ? "single" : undefined
         }
         value={values}
-        rows={10}
+        rows={DEFAULT_LIMIT}
         dataKey="id"
         loading={loading}
         onSort={handleSortField}
@@ -114,15 +113,13 @@ const ResourceTableList = ({
         )}
       </DataTable>
       {isPaginator && !loading && (
-        <PaginatorWrapper>
-          <Paginator
-            template={paginatorTemplate}
-            first={paginatorFirst}
-            rows={DEFAULT_LIMIT}
-            totalRecords={paginatorCount || 0}
-            onPageChange={handleChangePagination}
-          />
-        </PaginatorWrapper>
+        <Paginator
+          template={paginatorTemplate}
+          first={paginatorFirst}
+          rows={DEFAULT_LIMIT}
+          totalRecords={paginatorCount || 0}
+          onPageChange={handleChangePagination}
+        />
       )}
     </ResourceTableListWrapper>
   );

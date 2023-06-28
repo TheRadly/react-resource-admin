@@ -11,7 +11,6 @@ var _datatable = require("primereact/datatable");
 var _editDeleteColumnTemplate = _interopRequireDefault(require("./editDeleteColumnTemplate"));
 var _staticTexts = require("../../staticTexts");
 var _paginator = require("primereact/paginator");
-var _paginatorWrapper = _interopRequireDefault(require("./styled/paginatorWrapper"));
 var _resourceTableListWrapper = _interopRequireDefault(require("./styled/resourceTableListWrapper"));
 var _useResourceTableList = _interopRequireDefault(require("./talons/useResourceTableList"));
 var _lodash = require("lodash");
@@ -59,7 +58,7 @@ const ResourceTableList = _ref => {
       onSelectionChange: onSelectionChange,
       selectionMode: isSelectable ? "checkbox" : showMode ? "single" : undefined,
       value: values,
-      rows: 10,
+      rows: _staticTexts.DEFAULT_LIMIT,
       dataKey: "id",
       loading: loading,
       onSort: handleSortField,
@@ -80,14 +79,12 @@ const ResourceTableList = _ref => {
           onClickDelete: () => handleDeleteField(row.id)
         })
       })]
-    }), isPaginator && !loading && (0, _jsxRuntime.jsx)(_paginatorWrapper.default, {
-      children: (0, _jsxRuntime.jsx)(_paginator.Paginator, {
-        template: paginatorTemplate,
-        first: paginatorFirst,
-        rows: _staticTexts.DEFAULT_LIMIT,
-        totalRecords: paginatorCount || 0,
-        onPageChange: handleChangePagination
-      })
+    }), isPaginator && !loading && (0, _jsxRuntime.jsx)(_paginator.Paginator, {
+      template: paginatorTemplate,
+      first: paginatorFirst,
+      rows: _staticTexts.DEFAULT_LIMIT,
+      totalRecords: paginatorCount || 0,
+      onPageChange: handleChangePagination
     })]
   });
 };
