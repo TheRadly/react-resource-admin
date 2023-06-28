@@ -10,19 +10,24 @@ const useResourceForm = _ref => {
     isEdit,
     formHandler,
     saveLabel,
-    createLabel
+    createLabel,
+    handleChangeField
   } = _ref;
   const {
     setFieldValue,
     handleSubmit
   } = formHandler;
-  const handleChangeField = (0, _react.useCallback)((value, field) => {
-    setFieldValue(field, value);
-  }, [setFieldValue]);
+  const handleSetFieldValue = (0, _react.useCallback)((value, field) => {
+    if (handleChangeField) {
+      handleChangeField(field, value);
+    } else {
+      setFieldValue(field, value);
+    }
+  }, [handleChangeField, setFieldValue]);
   const submitButtonLabel = (0, _react.useMemo)(() => isEdit ? saveLabel : createLabel, [isEdit, saveLabel, createLabel]);
   return {
     handleSubmit,
-    handleChangeField,
+    handleSetFieldValue,
     submitButtonLabel
   };
 };

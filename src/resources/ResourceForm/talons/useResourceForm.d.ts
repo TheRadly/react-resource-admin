@@ -6,10 +6,11 @@ interface UseResourceForm {
     };
     saveLabel?: string;
     createLabel?: string;
+    handleChangeField?: (data: string, field: string | number | boolean) => void;
 }
-declare const useResourceForm: ({ isEdit, formHandler, saveLabel, createLabel, }: UseResourceForm) => {
+declare const useResourceForm: ({ isEdit, formHandler, saveLabel, createLabel, handleChangeField, }: UseResourceForm) => {
     handleSubmit: any;
-    handleChangeField: (value: string | number | boolean, field: string) => void;
+    handleSetFieldValue: (value: string | number | boolean, field: string) => void;
     submitButtonLabel: string | undefined;
 };
 export default useResourceForm;

@@ -12,7 +12,7 @@ interface ResourceInputsFormProps {
     extraFormCruds?: CrudType;
     valuesToEdit?: any;
     omitValuesToEdit?: string[];
-    handleChangeField: (data: string, field: string) => void;
+    handleChangeField?: (data: string, field: string | number | boolean) => void;
     formHandler: any;
     cancelLabel: string;
     saveLabel?: string;
