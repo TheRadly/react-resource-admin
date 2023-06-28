@@ -5,6 +5,7 @@ interface UseResourceForm {
   formHandler: { setFieldValue: any; handleSubmit: any };
   saveLabel?: string;
   createLabel?: string;
+  handleChangeField?: (data: string, field: string | number | boolean) => void;
 }
 
 const useResourceForm = ({
@@ -12,14 +13,19 @@ const useResourceForm = ({
   formHandler,
   saveLabel,
   createLabel,
+  handleChangeField,
 }: UseResourceForm) => {
   const { setFieldValue, handleSubmit } = formHandler;
 
-  const handleChangeField = useCallback(
+  const handleSetFieldValue = useCallback(
     (value: string | number | boolean, field: string) => {
-      setFieldValue(field, value);
+      if (handleChangeField) {
+        handleChangeField(field, value);
+      } else {
+        setFieldValue(field, value);
+      }
     },
-    [setFieldValue]
+    [handleChangeField, setFieldValue]
   );
 
   const submitButtonLabel = useMemo(
@@ -29,7 +35,7 @@ const useResourceForm = ({
 
   return {
     handleSubmit,
-    handleChangeField,
+    handleSetFieldValue,
     submitButtonLabel,
   };
 };

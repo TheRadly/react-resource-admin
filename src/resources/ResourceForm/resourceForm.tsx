@@ -18,7 +18,7 @@ interface ResourceFormProps {
   isShowQueryContainer?: boolean;
   handleShowQueryContainer?: (item: any) => void;
   formHandler: any;
-  handleChangeField: (data: string, field: string) => void;
+  handleChangeField?: (data: string, field: string | number | boolean) => void;
   saveLabel?: string;
   createLabel?: string;
   cancelLabel: string;
@@ -39,12 +39,14 @@ const ResourceForm = ({
   createLabel,
   cancelLabel,
 }: ResourceFormProps) => {
-  const { handleSubmit, submitButtonLabel } = useResourceForm({
-    isEdit,
-    formHandler,
-    saveLabel,
-    createLabel,
-  });
+  const { handleSubmit, submitButtonLabel, handleSetFieldValue } =
+    useResourceForm({
+      isEdit,
+      formHandler,
+      saveLabel,
+      createLabel,
+      handleChangeField,
+    });
 
   return (
     <ResourceInputsFormWrapper onSubmit={handleSubmit}>
@@ -73,7 +75,7 @@ const ResourceForm = ({
               disabled={loading}
               value={value}
               isFloat={isFloat}
-              onChange={(data) => handleChangeField(data, field)}
+              onChange={(data) => handleSetFieldValue(data, field)}
             />
           )
         )}
