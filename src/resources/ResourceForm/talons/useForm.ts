@@ -5,16 +5,9 @@ import typenameIdFilter from "../../../utils/typenameIdFilter";
 interface UseFormProps {
   initialValues?: any;
   onSubmitMethod: any;
-  // valuesToEdit?: any;
-  // omitValuesToEdit?: string[];
 }
 
-const useForm = ({
-  initialValues = null,
-  onSubmitMethod,
-}: // valuesToEdit,
-// omitValuesToEdit,
-UseFormProps) => {
+const useForm = ({ initialValues = null, onSubmitMethod }: UseFormProps) => {
   const form = useFormik({
     initialValues: typenameIdFilter(initialValues || {}) as any,
     onSubmit: onSubmitMethod,
@@ -37,16 +30,6 @@ UseFormProps) => {
     },
     [setFieldValue]
   );
-
-  // useEffect(() => {
-  //   if (valuesToEdit) {
-  //     const filteredValues = typenameIdFilter(
-  //       { ...valuesToEdit },
-  //       omitValuesToEdit && [...omitValuesToEdit]
-  //     );
-  //     form.setValues(filteredValues);
-  //   }
-  // }, [form, valuesToEdit, omitValuesToEdit]);
 
   return {
     formHandler: form,

@@ -33,10 +33,17 @@ Object.defineProperty(exports, "UniversalInput", {
     return _UniversalInput.default;
   }
 });
+Object.defineProperty(exports, "useForm", {
+  enumerable: true,
+  get: function () {
+    return _useForm.default;
+  }
+});
 var _LoaderSpinner = _interopRequireDefault(require("../assets/LoaderSpinner"));
 var _UniversalInput = _interopRequireDefault(require("../assets/UniversalInput"));
 var _ResourceForm = _interopRequireDefault(require("./ResourceForm"));
 var _ResourceShowContainer = _interopRequireDefault(require("./ResourceShowContainer"));
 var _resourceTableContainer = _interopRequireDefault(require("./ResourceTableContainer/resourceTableContainer"));
+var _useForm = _interopRequireDefault(require("./ResourceForm/talons/useForm"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.d.js.map

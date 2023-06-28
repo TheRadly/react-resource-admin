@@ -3,6 +3,7 @@ import UniversalInput from "../assets/UniversalInput";
 import ResourceForm from "./ResourceForm";
 import ResourceShowContainer from "./ResourceShowContainer";
 import ResourceTableContainer from "./ResourceTableContainer/resourceTableContainer";
+import useForm from "./ResourceForm/talons/useForm";
 
 export {
   ResourceShowContainer,
@@ -10,4 +11,5 @@ export {
   ResourceForm,
   UniversalInput,
   LoaderSpinner,
+  useForm,
 };

@@ -3,7 +3,7 @@ interface UseFormProps {
     initialValues?: any;
     onSubmitMethod: any;
 }
-declare const useForm: ({ initialValues, onSubmitMethod, }: UseFormProps) => {
+declare const useForm: ({ initialValues, onSubmitMethod }: UseFormProps) => {
     formHandler: {
         initialValues: any;
         initialErrors: import("formik").FormikErrors<unknown>;
