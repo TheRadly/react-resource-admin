@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _inputtext = require("primereact/inputtext");
 var _inputnumber = require("primereact/inputnumber");
 var _inputFloatLabelWrapper = _interopRequireDefault(require("./styled/inputFloatLabelWrapper"));

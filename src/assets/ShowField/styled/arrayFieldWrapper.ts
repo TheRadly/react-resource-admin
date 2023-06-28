@@ -10,6 +10,8 @@ export const ArrayFieldWrapper = styled.div`
     font-size: 12px;
     color: var(--clr-blackFontColor);
     margin: 5px 0;
+    font-family: var(--font-family);
+    text-transform: capitalize;
   }
 `;
 

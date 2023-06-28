@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _button = require("primereact/button");
 var _inputFieldWrapper = _interopRequireDefault(require("./styled/inputFieldWrapper"));
 var _useInputField = _interopRequireDefault(require("./talons/useInputField"));

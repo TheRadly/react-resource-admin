@@ -7,6 +7,11 @@ const SwitchInputWrapper = styled.span`
   color: var(--clr-blackFontColor);
   margin-bottom: 10px;
 
+  & > span {
+    font-family: var(--font-family);
+    text-transform: capitalize;
+  }
+
   div[class*="p-inputswitch-checked"] {
     span {
       background: var(--clr-hoverBackgroundColor) !important;

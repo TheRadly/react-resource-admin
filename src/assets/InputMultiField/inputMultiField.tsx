@@ -1,4 +1,3 @@
-import React from "react";
 import { InputNumber } from "primereact/inputnumber";
 import { InputText } from "primereact/inputtext";
 import useInputMultiField from "./talons/useInputMultiField";

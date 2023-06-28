@@ -1,4 +1,3 @@
-import React from "react";
 import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
 import SwitchInputWrapper from "./styled/switchInputWrapper";
 

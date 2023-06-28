@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-var _react = _interopRequireDefault(require("react"));
 var _chips = require("primereact/chips");
 var _useInputArray = _interopRequireDefault(require("./talons/useInputArray"));
 var _inputArrayWrapper = _interopRequireDefault(require("./styled/inputArrayWrapper"));

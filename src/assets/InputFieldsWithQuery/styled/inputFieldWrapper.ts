@@ -13,6 +13,8 @@ const InputFieldWrapper = styled.div`
   border-radius: 5px;
 
   label {
+    font-family: var(--font-family);
+    text-transform: capitalize;
     margin-bottom: 0;
   }
 

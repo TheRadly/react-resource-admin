@@ -1,4 +1,3 @@
-import React from "react";
 import { Dropdown } from "primereact/dropdown";
 import DropdownInputWrapper from "./styled/dropdownInputWrapper";
 import useDropdownInput from "./talons/useDropdownInput";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Chips } from "primereact/chips";
 import useInputArray from "./talons/useInputArray";
 import InputArrayWrapper from "./styled/inputArrayWrapper";

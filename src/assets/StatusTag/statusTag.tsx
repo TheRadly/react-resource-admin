@@ -1,4 +1,3 @@
-import React from "react";
 import { Tag, TagProps } from "primereact/tag";
 import StatusTagWrapper from "./styled/statusTagWrapper";
 import useStatusTag from "./talons/useStatusTag";

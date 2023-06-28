@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _inputswitch = require("primereact/inputswitch");
 var _switchInputWrapper = _interopRequireDefault(require("./styled/switchInputWrapper"));
 var _jsxRuntime = require("react/jsx-runtime");

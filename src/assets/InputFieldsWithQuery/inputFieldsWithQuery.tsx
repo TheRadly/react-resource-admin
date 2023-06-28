@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "primereact/button";
 import InputFieldsWithQueryWrapper from "./styled/inputFieldsWithQueryWrapper";
 import InputFieldsWrapper from "./styled/inputFieldsWrapper";

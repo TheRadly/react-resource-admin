@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-var _react = _interopRequireDefault(require("react"));
 var _button = require("primereact/button");
 var _inputFieldsWithQueryWrapper = _interopRequireDefault(require("./styled/inputFieldsWithQueryWrapper"));
 var _inputFieldsWrapper = _interopRequireDefault(require("./styled/inputFieldsWrapper"));

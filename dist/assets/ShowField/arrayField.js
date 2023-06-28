@@ -5,10 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-var _react = _interopRequireDefault(require("react"));
 var _arrayFieldWrapper = require("./styled/arrayFieldWrapper");
 var _jsxRuntime = require("react/jsx-runtime");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ArrayField = _ref => {
   let {
     title,

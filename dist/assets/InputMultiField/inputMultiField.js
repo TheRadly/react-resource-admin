@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-var _react = _interopRequireDefault(require("react"));
 var _inputnumber = require("primereact/inputnumber");
 var _inputtext = require("primereact/inputtext");
 var _useInputMultiField = _interopRequireDefault(require("./talons/useInputMultiField"));

@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "primereact/button";
 import InputFieldWrapper from "./styled/inputFieldWrapper";
 import useInputField from "./talons/useInputField";

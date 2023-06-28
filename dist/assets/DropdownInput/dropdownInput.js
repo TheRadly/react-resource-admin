@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _dropdown = require("primereact/dropdown");
 var _dropdownInputWrapper = _interopRequireDefault(require("./styled/dropdownInputWrapper"));
 var _useDropdownInput = _interopRequireDefault(require("./talons/useDropdownInput"));

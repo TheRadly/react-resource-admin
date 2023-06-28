@@ -1,4 +1,3 @@
-import React from "react";
 import { InputText } from "primereact/inputtext";
 import { InputNumber, InputNumberChangeEvent } from "primereact/inputnumber";
 import InputFloatLabelWrapper from "./styled/inputFloatLabelWrapper";

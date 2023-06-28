@@ -1,4 +1,3 @@
-import React from "react";
 import ShowFieldWrapper from "./styled/showFieldWrapper";
 import { Image } from "primereact/image";
 import ImageWrapper from "./styled/imageWrapper";

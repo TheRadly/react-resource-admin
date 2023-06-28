@@ -18,6 +18,8 @@ const ShowFieldWrapper = styled.div`
   & > span:first-child {
     font-size: 12px;
     color: var(--clr-blackFontColor);
+    font-family: var(--font-family);
+    text-transform: capitalize;
   }
 `;
 
