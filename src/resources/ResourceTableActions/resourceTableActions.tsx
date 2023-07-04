@@ -5,6 +5,7 @@ import useResourceTableActions from "./talons/useResourceTableActions";
 import { ResourceTableActionsProps } from "./models/ResourceTableActionsProps";
 import { PLUS_ICON, SMALL_SIZE } from "../../staticTexts";
 import classes from "./styles/pageActions.scss";
+import { Fragment } from "react";
 
 const ResourceTableActions = ({
   handleDeleteClick,
@@ -61,7 +62,11 @@ const ResourceTableActions = ({
         onClick={handleChangeSelectMode}
         icon={selectIcon}
       />
-      {isSelectable && <Button {...tooltipExtraButtonProps} />}
+      {isSelectable && (
+        <Fragment>
+          <Button {...tooltipExtraButtonProps} />
+        </Fragment>
+      )}
     </PageActionsWrapper>
   );
 };

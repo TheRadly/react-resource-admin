@@ -10,6 +10,7 @@ var _pageActionsWrapper = _interopRequireDefault(require("./styled/pageActionsWr
 var _useResourceTableActions = _interopRequireDefault(require("./talons/useResourceTableActions"));
 var _staticTexts = require("../../staticTexts");
 var _pageActions = _interopRequireDefault(require("./styles/pageActions.scss"));
+var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ResourceTableActions = _ref => {
@@ -59,8 +60,10 @@ const ResourceTableActions = _ref => {
       size: _staticTexts.SMALL_SIZE,
       onClick: handleChangeSelectMode,
       icon: selectIcon
-    }), isSelectable && (0, _jsxRuntime.jsx)(_button.Button, {
-      ...tooltipExtraButtonProps
+    }), isSelectable && (0, _jsxRuntime.jsx)(_react.Fragment, {
+      children: (0, _jsxRuntime.jsx)(_button.Button, {
+        ...tooltipExtraButtonProps
+      })
     })]
   });
 };
