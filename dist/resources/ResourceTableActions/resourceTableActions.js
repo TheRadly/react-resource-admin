@@ -60,11 +60,11 @@ const ResourceTableActions = _ref => {
       size: _staticTexts.SMALL_SIZE,
       onClick: handleChangeSelectMode,
       icon: selectIcon
-    }), isSelectable && (0, _jsxRuntime.jsx)(_react.Fragment, {
+    }), isSelectable ? (0, _jsxRuntime.jsx)(_react.Fragment, {
       children: (0, _jsxRuntime.jsx)(_button.Button, {
         ...tooltipExtraButtonProps
       })
-    })]
+    }) : null]
   });
 };
 var _default = ResourceTableActions;
