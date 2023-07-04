@@ -35,7 +35,8 @@ const ResourceTableList = _ref => {
     showMode = false,
     deleteQueryMethod,
     confirmDeleteMessage,
-    onRowClick
+    onRowClick,
+    rows
   } = _ref;
   const {
     handleChangePagination,
@@ -58,7 +59,7 @@ const ResourceTableList = _ref => {
       onSelectionChange: onSelectionChange,
       selectionMode: isSelectable ? "checkbox" : showMode ? "single" : undefined,
       value: values,
-      rows: _staticTexts.DEFAULT_LIMIT,
+      rows: rows || _staticTexts.DEFAULT_LIMIT,
       dataKey: "id",
       loading: loading,
       onSort: handleSortField,

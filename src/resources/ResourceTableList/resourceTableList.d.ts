@@ -1,6 +1,6 @@
 import React from "react";
 import { DataTableSelectionChangeEvent, DataTableSortEvent } from "primereact/datatable";
-interface PageTableProps {
+interface ResourceTableListProps {
     values: any[] | undefined;
     loading: boolean;
     emptyMessage: string;
@@ -19,6 +19,7 @@ interface PageTableProps {
     getQueryMethod: any;
     confirmDeleteMessage: string;
     onRowClick: (arg: string) => void;
+    rows?: number;
 }
-declare const ResourceTableList: ({ values, loading, emptyMessage, children, isSelectable, onSelectionChange, onClickEditField, selection, isPaginator, fields, isCustomFields, getQueryMethod, paginatorCount, handleSortField, showMode, deleteQueryMethod, confirmDeleteMessage, onRowClick, }: PageTableProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceTableList: ({ values, loading, emptyMessage, children, isSelectable, onSelectionChange, onClickEditField, selection, isPaginator, fields, isCustomFields, getQueryMethod, paginatorCount, handleSortField, showMode, deleteQueryMethod, confirmDeleteMessage, onRowClick, rows, }: ResourceTableListProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceTableList;

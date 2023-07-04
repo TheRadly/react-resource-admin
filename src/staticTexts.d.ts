@@ -14,6 +14,7 @@ export declare const TRASH_ICON: string;
 export declare const EXCLAMATION_TRIANGLE_ICON: string;
 export declare const SEARCH_ICON: string;
 export declare const CHECK_ICON: string;
+export declare const LIST_ICON: string;
 export declare const PLUS_ICON: string;
 export declare const CANCEL_ICON: string;
 export declare const EDIT_ICON: string;

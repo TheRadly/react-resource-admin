@@ -36,7 +36,8 @@ const ResourceTableContainer = _ref => {
     onCreate,
     confirmDeleteMessage,
     onRowClick,
-    hideCreate
+    hideCreate,
+    tableListRows
   } = _ref;
   const {
     handleDeleteClick,
@@ -70,6 +71,7 @@ const ResourceTableContainer = _ref => {
       pageTitle: pageTitle,
       excludedSearchFields: excludedSearchFields
     }), (0, _jsxRuntime.jsx)(_ResourceTableList.default, {
+      rows: tableListRows,
       confirmDeleteMessage: confirmDeleteMessage,
       onRowClick: onRowClick,
       deleteQueryMethod: deleteQueryMethod,

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.WARNING_SEVERITY = exports.USER_ICON = exports.USERS_ICON = exports.USERNAME_INPUT = exports.TYPENAME = exports.TRASH_ICON = exports.TABLE_SIZE = exports.TABLE_ICON = exports.SYNC_ICON = exports.SUCCESS_SEVERITY = exports.SUBMIT_INPUT = exports.STATIC_AVATAR = exports.STAR_ICON = exports.SMALL_SIZE = exports.SLIDERS_ICON = exports.SITEMAP_ICON = exports.SIGN_OUT_ICON = exports.SHIELD_ICON = exports.SEARCH_INPUT = exports.SEARCH_ICON = exports.RU = exports.POSITIONS = exports.PLUS_ICON = exports.PLAY_ICON = exports.PASSWORD_INPUT = exports.MONEY_ICON = exports.MOBILE_SIZE = exports.LOGIN_INPUT = exports.LANGUAGE_ICON = exports.INFO_SEVERITY = exports.IMAGE_SIZE_XLARGE = exports.IMAGE_SIZE_NORMAL = exports.IMAGE_SIZE_LARGE = exports.IMAGE_SHAPE = exports.ID = exports.FOLDER_ICON = exports.FLAG_ICON = exports.FILLED_FLAG_ICON = exports.EXCLAMATION_TRIANGLE_ICON = exports.ERROR_SEVERITY = exports.EN = exports.EDIT_ICON = exports.DESKTOP_SIZE = exports.DESC_SORT = exports.DEFAULT_PAGE = exports.DEFAULT_LIMIT = exports.DATABASE_ICON = exports.DANGER_SEVERITY = exports.CHECK_ICON = exports.CANCEL_ICON = exports.BUTTON_INPUT = exports.BOX_ICON = exports.BOLT_ICON = exports.ASC_SORT = exports.ANGLE_UP_ICON = exports.ANGLE_DOWN_ICON = void 0;
+exports.WARNING_SEVERITY = exports.USER_ICON = exports.USERS_ICON = exports.USERNAME_INPUT = exports.TYPENAME = exports.TRASH_ICON = exports.TABLE_SIZE = exports.TABLE_ICON = exports.SYNC_ICON = exports.SUCCESS_SEVERITY = exports.SUBMIT_INPUT = exports.STATIC_AVATAR = exports.STAR_ICON = exports.SMALL_SIZE = exports.SLIDERS_ICON = exports.SITEMAP_ICON = exports.SIGN_OUT_ICON = exports.SHIELD_ICON = exports.SEARCH_INPUT = exports.SEARCH_ICON = exports.RU = exports.POSITIONS = exports.PLUS_ICON = exports.PLAY_ICON = exports.PASSWORD_INPUT = exports.MONEY_ICON = exports.MOBILE_SIZE = exports.LOGIN_INPUT = exports.LIST_ICON = exports.LANGUAGE_ICON = exports.INFO_SEVERITY = exports.IMAGE_SIZE_XLARGE = exports.IMAGE_SIZE_NORMAL = exports.IMAGE_SIZE_LARGE = exports.IMAGE_SHAPE = exports.ID = exports.FOLDER_ICON = exports.FLAG_ICON = exports.FILLED_FLAG_ICON = exports.EXCLAMATION_TRIANGLE_ICON = exports.ERROR_SEVERITY = exports.EN = exports.EDIT_ICON = exports.DESKTOP_SIZE = exports.DESC_SORT = exports.DEFAULT_PAGE = exports.DEFAULT_LIMIT = exports.DATABASE_ICON = exports.DANGER_SEVERITY = exports.CHECK_ICON = exports.CANCEL_ICON = exports.BUTTON_INPUT = exports.BOX_ICON = exports.BOLT_ICON = exports.ASC_SORT = exports.ANGLE_UP_ICON = exports.ANGLE_DOWN_ICON = void 0;
 const EN = "en";
 exports.EN = EN;
 const RU = "ru";
@@ -36,6 +36,8 @@ const SEARCH_ICON = "pi pi-search";
 exports.SEARCH_ICON = SEARCH_ICON;
 const CHECK_ICON = "pi pi-check";
 exports.CHECK_ICON = CHECK_ICON;
+const LIST_ICON = "pi pi-list";
+exports.LIST_ICON = LIST_ICON;
 const PLUS_ICON = "pi pi-plus";
 exports.PLUS_ICON = PLUS_ICON;
 const CANCEL_ICON = "pi pi-ban";

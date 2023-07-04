@@ -29,6 +29,7 @@ interface ResourceTableContainerProps {
   confirmDeleteMessage: string;
   onRowClick: (arg: string) => void;
   hideCreate?: boolean;
+  tableListRows?: number;
 }
 
 const ResourceTableContainer = ({
@@ -55,6 +56,7 @@ const ResourceTableContainer = ({
   confirmDeleteMessage,
   onRowClick,
   hideCreate,
+  tableListRows,
 }: ResourceTableContainerProps) => {
   const {
     handleDeleteClick,
@@ -91,6 +93,7 @@ const ResourceTableContainer = ({
         excludedSearchFields={excludedSearchFields}
       />
       <ResourceTableList
+        rows={tableListRows}
         confirmDeleteMessage={confirmDeleteMessage}
         onRowClick={onRowClick}
         deleteQueryMethod={deleteQueryMethod}

@@ -6,6 +6,7 @@ import {
   CANCEL_ICON,
   CHECK_ICON,
   EXCLAMATION_TRIANGLE_ICON,
+  LIST_ICON,
   POSITIONS,
   SEARCH_ICON,
   SMALL_SIZE,
@@ -61,7 +62,7 @@ const useResourceTableActions = ({
         tooltip: disabledTooltipDeleteLabel,
       };
 
-  const selectIcon = isSelectable ? CANCEL_ICON : CHECK_ICON;
+  const selectIcon = isSelectable ? CANCEL_ICON : LIST_ICON;
   const searchIcon = isDisplaySearch ? CANCEL_ICON : SEARCH_ICON;
 
   return {

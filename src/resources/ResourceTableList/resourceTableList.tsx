@@ -15,7 +15,7 @@ import ResourceTableListWrapper from "./styled/resourceTableListWrapper";
 import useResourceTableList from "./talons/useResourceTableList";
 import { capitalize } from "lodash";
 
-interface PageTableProps {
+interface ResourceTableListProps {
   values: any[] | undefined;
   loading: boolean;
   emptyMessage: string;
@@ -34,6 +34,7 @@ interface PageTableProps {
   getQueryMethod: any;
   confirmDeleteMessage: string;
   onRowClick: (arg: string) => void;
+  rows?: number;
 }
 
 const ResourceTableList = ({
@@ -55,7 +56,8 @@ const ResourceTableList = ({
   deleteQueryMethod,
   confirmDeleteMessage,
   onRowClick,
-}: PageTableProps) => {
+  rows,
+}: ResourceTableListProps) => {
   const {
     handleChangePagination,
     paginatorFirst,
@@ -83,7 +85,7 @@ const ResourceTableList = ({
           isSelectable ? "checkbox" : showMode ? "single" : undefined
         }
         value={values}
-        rows={DEFAULT_LIMIT}
+        rows={rows || DEFAULT_LIMIT}
         dataKey="id"
         loading={loading}
         onSort={handleSortField}

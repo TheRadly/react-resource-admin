@@ -17,6 +17,7 @@ export const TRASH_ICON: string = "pi pi-trash";
 export const EXCLAMATION_TRIANGLE_ICON: string = "pi pi-exclamation-triangle";
 export const SEARCH_ICON: string = "pi pi-search";
 export const CHECK_ICON: string = "pi pi-check";
+export const LIST_ICON: string = "pi pi-list";
 export const PLUS_ICON: string = "pi pi-plus";
 export const CANCEL_ICON: string = "pi pi-ban";
 export const EDIT_ICON: string = "pi pi-pencil";

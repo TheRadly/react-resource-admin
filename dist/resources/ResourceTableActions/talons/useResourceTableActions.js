@@ -45,7 +45,7 @@ const useResourceTableActions = _ref => {
     ...deleteButtonProps,
     tooltip: disabledTooltipDeleteLabel
   };
-  const selectIcon = isSelectable ? _staticTexts.CANCEL_ICON : _staticTexts.CHECK_ICON;
+  const selectIcon = isSelectable ? _staticTexts.CANCEL_ICON : _staticTexts.LIST_ICON;
   const searchIcon = isDisplaySearch ? _staticTexts.CANCEL_ICON : _staticTexts.SEARCH_ICON;
   return {
     searchIcon,
