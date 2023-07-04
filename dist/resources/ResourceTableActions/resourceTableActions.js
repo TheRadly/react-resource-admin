@@ -59,7 +59,7 @@ const ResourceTableActions = _ref => {
       size: _staticTexts.SMALL_SIZE,
       onClick: handleChangeSelectMode,
       icon: selectIcon
-    }), (0, _jsxRuntime.jsx)(_button.Button, {
+    }), isSelectable && (0, _jsxRuntime.jsx)(_button.Button, {
       ...tooltipExtraButtonProps
     })]
   });
