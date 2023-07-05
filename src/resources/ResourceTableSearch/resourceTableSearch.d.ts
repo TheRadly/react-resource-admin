@@ -1,7 +1,10 @@
 import { TableSearchArgument } from "./models/TableSearchArgument";
 interface TableSearchProps {
     handleChangeTableSearch?: (arg: TableSearchArgument) => void;
-    fields: string[];
+    fields: {
+        field: string;
+        sortable?: boolean;
+    }[];
     getQueryMethod?: any;
     excludedSearchFields?: string[];
     searchPlaceholder: string;

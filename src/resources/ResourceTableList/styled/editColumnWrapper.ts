@@ -17,7 +17,7 @@ const EditColumnWrapper = styled.div`
     }
 
     & > span {
-      font-size: 10px !important;
+      font-size: 8px !important;
     }
   }
 `;

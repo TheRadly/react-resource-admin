@@ -68,11 +68,17 @@ const ResourceTableList = _ref => {
       onRowClick: e => !isSelectable && handleRowClick(e),
       children: [isSelectable && (0, _jsxRuntime.jsx)(_column.Column, {
         selectionMode: "multiple"
-      }), isCustomFields ? children : fields && fields.length && fields.map(field => (0, _jsxRuntime.jsx)(_column.Column, {
-        field: field,
-        header: (0, _lodash.capitalize)(field),
-        sortable: true
-      })), !isSelectable && (0, _jsxRuntime.jsx)(_column.Column, {
+      }), isCustomFields ? children : fields && fields.length && fields.map(_ref2 => {
+        let {
+          field,
+          sortable = true
+        } = _ref2;
+        return (0, _jsxRuntime.jsx)(_column.Column, {
+          field: field,
+          header: (0, _lodash.capitalize)(field),
+          sortable: sortable
+        });
+      }), !isSelectable && (0, _jsxRuntime.jsx)(_column.Column, {
         field: _staticTexts.ID,
         body: row => (0, _jsxRuntime.jsx)(_editDeleteColumnTemplate.default, {
           confirmDeleteMessage: confirmDeleteMessage,

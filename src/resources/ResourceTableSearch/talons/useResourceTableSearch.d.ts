@@ -4,7 +4,10 @@ import type { InputEventType } from "../../../types/InputEventTypes";
 import { DropdownField } from "../models/DropdownField";
 interface UseResourceTableSearchProps {
     handleChangeTableSearch?: (arg: TableSearchArgument) => void;
-    fields: string[];
+    fields: {
+        field: string;
+        sortable?: boolean;
+    }[];
     getQueryMethod?: any;
     excludedSearchFields?: string[];
 }

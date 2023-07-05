@@ -10,7 +10,7 @@ const NONE = "none";
 
 interface UseResourceTableSearchProps {
   handleChangeTableSearch?: (arg: TableSearchArgument) => void;
-  fields: string[];
+  fields: { field: string; sortable?: boolean }[];
   getQueryMethod?: any;
   excludedSearchFields?: string[];
 }
@@ -31,7 +31,9 @@ const useResourceTableSearch = ({
   const fields = useMemo(
     () =>
       excludedSearchFields
-        ? propFields.filter((item) => !excludedSearchFields.includes(item))
+        ? propFields.filter(
+            ({ field }) => !excludedSearchFields.includes(field)
+          )
         : propFields,
     [excludedSearchFields, propFields]
   );
@@ -86,7 +88,7 @@ const useResourceTableSearch = ({
   const dropdownFields = useMemo(
     () => [
       { name: "None", code: NONE },
-      ...fields.map((field) => ({
+      ...fields.map(({ field }) => ({
         name: capitalize(field),
         code: field,
       })),

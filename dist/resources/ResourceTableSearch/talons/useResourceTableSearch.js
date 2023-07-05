@@ -19,13 +19,18 @@ const useResourceTableSearch = _ref => {
   const [isChecked, setChecked] = (0, _react.useState)(false);
   const [selectedField, setSelectedField] = (0, _react.useState)(null);
   const [savedFields, setSavedFields] = (0, _react.useState)(null);
-  const fields = (0, _react.useMemo)(() => excludedSearchFields ? propFields.filter(item => !excludedSearchFields.includes(item)) : propFields, [excludedSearchFields, propFields]);
-  const onChangeSearch = (0, _react.useCallback)(_ref2 => {
+  const fields = (0, _react.useMemo)(() => excludedSearchFields ? propFields.filter(_ref2 => {
+    let {
+      field
+    } = _ref2;
+    return !excludedSearchFields.includes(field);
+  }) : propFields, [excludedSearchFields, propFields]);
+  const onChangeSearch = (0, _react.useCallback)(_ref3 => {
     let {
       target: {
         value
       }
-    } = _ref2;
+    } = _ref3;
     if (handleChangeTableSearch && selectedField && selectedField.code !== NONE) {
       handleChangeTableSearch({
         search: value,
@@ -42,10 +47,10 @@ const useResourceTableSearch = _ref => {
       });
     }
   }, [selectedField, setChecked, handleChangeTableSearch]);
-  const onSelectDropdownField = (0, _react.useCallback)(_ref3 => {
+  const onSelectDropdownField = (0, _react.useCallback)(_ref4 => {
     let {
       value
-    } = _ref3;
+    } = _ref4;
     setSelectedField(value);
     if (value.code === NONE && getQueryMethod) {
       getQueryMethod();
@@ -60,10 +65,15 @@ const useResourceTableSearch = _ref => {
   const dropdownFields = (0, _react.useMemo)(() => [{
     name: "None",
     code: NONE
-  }, ...fields.map(field => ({
-    name: (0, _lodash.capitalize)(field),
-    code: field
-  }))], [fields]);
+  }, ...fields.map(_ref5 => {
+    let {
+      field
+    } = _ref5;
+    return {
+      name: (0, _lodash.capitalize)(field),
+      code: field
+    };
+  })], [fields]);
   (0, _react.useEffect)(() => {
     if (dropdownFields && dropdownFields.length > 1) {
       setSavedFields(dropdownFields);

@@ -62,11 +62,9 @@ const ResourceTableActions = ({
         onClick={handleChangeSelectMode}
         icon={selectIcon}
       />
-      {isSelectable ? (
-        <Fragment>
-          <Button {...tooltipExtraButtonProps} />
-        </Fragment>
-      ) : null}
+      <Fragment>
+        {isSelectable ? <Button {...tooltipExtraButtonProps} /> : null}
+      </Fragment>
     </PageActionsWrapper>
   );
 };

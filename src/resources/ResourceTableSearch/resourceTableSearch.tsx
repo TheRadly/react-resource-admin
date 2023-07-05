@@ -1,4 +1,3 @@
-import React from "react";
 import SearchInput from "../../assets/SearchInput";
 import ResourceTableSearchWrapper from "./styled/resourceTableSearchWrapper";
 import { Dropdown } from "primereact/dropdown";
@@ -9,7 +8,7 @@ import SwitchInput from "../../assets/SwitchInput/switchInput";
 
 interface TableSearchProps {
   handleChangeTableSearch?: (arg: TableSearchArgument) => void;
-  fields: string[];
+  fields: { field: string; sortable?: boolean }[];
   getQueryMethod?: any;
   excludedSearchFields?: string[];
   searchPlaceholder: string;

@@ -26,7 +26,7 @@ interface ResourceTableListProps {
   selection?: any;
   isPaginator?: boolean;
   isCustomFields?: boolean;
-  fields: string[];
+  fields: { field: string; sortable?: boolean }[];
   paginatorCount?: number;
   handleSortField: (event: DataTableSortEvent) => void;
   showMode?: boolean;
@@ -98,8 +98,12 @@ const ResourceTableList = ({
           ? children
           : fields &&
             fields.length &&
-            fields.map((field: string) => (
-              <Column field={field} header={capitalize(field)} sortable />
+            fields.map(({ field, sortable = true }) => (
+              <Column
+                field={field}
+                header={capitalize(field)}
+                sortable={sortable}
+              />
             ))}
         {!isSelectable && (
           <Column

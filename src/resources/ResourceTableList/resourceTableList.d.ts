@@ -11,7 +11,10 @@ interface ResourceTableListProps {
     selection?: any;
     isPaginator?: boolean;
     isCustomFields?: boolean;
-    fields: string[];
+    fields: {
+        field: string;
+        sortable?: boolean;
+    }[];
     paginatorCount?: number;
     handleSortField: (event: DataTableSortEvent) => void;
     showMode?: boolean;

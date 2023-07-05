@@ -4,7 +4,10 @@ interface ResourceTableContainerProps {
     pageTitle?: string;
     values?: any[];
     loading: boolean;
-    tableFields: string[];
+    tableFields: {
+        field: string;
+        sortable?: boolean;
+    }[];
     paginatorCount?: number;
     showMode?: boolean;
     isCustomFields?: boolean;

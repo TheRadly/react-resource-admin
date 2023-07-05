@@ -8,7 +8,10 @@ interface ResourceTableActionsProps {
     handleChangeTableSearch?: (arg: any) => void;
     handleDeleteClick: () => void;
     handleChangeSelectMode: () => void;
-    tableFields: string[];
+    tableFields: {
+        field: string;
+        sortable?: boolean;
+    }[];
     getQueryMethod?: any;
     excludedSearchFields?: string[];
     createLabel: string;
