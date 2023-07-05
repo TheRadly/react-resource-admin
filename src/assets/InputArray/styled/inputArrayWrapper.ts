@@ -7,10 +7,12 @@ const InputArrayWrapper = styled.div<{ fullWidth?: boolean }>`
   gap: 10px;
 
   label {
-    text-transform: capitalize;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--surface-600);
+    font-weight: 400;
     font-family: var(--font-family);
-    font-size: 14px;
-    color: var(--clr-blackFontColor);
+    text-transform: capitalize;
   }
 
   ul {

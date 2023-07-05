@@ -8,10 +8,12 @@ const InputFloatLabelWrapper = styled.div<{ fullWidth?: boolean }>`
   width: ${(props) => (props.fullWidth ? "100%" : "50%")};
 
   & > label {
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--surface-600);
+    font-weight: 400;
     font-family: var(--font-family);
     text-transform: capitalize;
-    font-size: 14px;
-    color: var(--clr-blackFontColor);
   }
 
   & > span {

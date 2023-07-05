@@ -25,7 +25,6 @@ interface ResourceTableListProps {
   onClickEditField?: (arg: string) => void;
   selection?: any;
   isPaginator?: boolean;
-  isCustomFields?: boolean;
   fields: { field: string; sortable?: boolean }[];
   paginatorCount?: number;
   handleSortField: (event: DataTableSortEvent) => void;
@@ -48,7 +47,6 @@ const ResourceTableList = ({
   selection,
   isPaginator = true,
   fields,
-  isCustomFields = false,
   getQueryMethod,
   paginatorCount,
   handleSortField,
@@ -94,9 +92,8 @@ const ResourceTableList = ({
         onRowClick={(e) => !isSelectable && handleRowClick(e)}
       >
         {isSelectable && <Column selectionMode="multiple" />}
-        {isCustomFields
-          ? children
-          : fields &&
+        {children ||
+          (fields &&
             fields.length &&
             fields.map(({ field, sortable = true }) => (
               <Column
@@ -104,7 +101,7 @@ const ResourceTableList = ({
                 header={capitalize(field)}
                 sortable={sortable}
               />
-            ))}
+            )))}
         {!isSelectable && (
           <Column
             field={ID}

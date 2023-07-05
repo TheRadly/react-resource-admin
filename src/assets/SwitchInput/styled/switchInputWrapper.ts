@@ -7,7 +7,11 @@ const SwitchInputWrapper = styled.span`
   color: var(--clr-blackFontColor);
   margin-bottom: 10px;
 
-  & > span {
+  & > label {
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--surface-600);
+    font-weight: 400;
     font-family: var(--font-family);
     text-transform: capitalize;
   }

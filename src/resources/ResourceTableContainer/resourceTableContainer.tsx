@@ -12,7 +12,6 @@ interface ResourceTableContainerProps {
   tableFields: { field: string; sortable?: boolean }[];
   paginatorCount?: number;
   showMode?: boolean;
-  isCustomFields?: boolean;
   children?: React.ReactNode;
   deleteQueryMethod?: any;
   getQueryMethod?: any;
@@ -39,7 +38,6 @@ const ResourceTableContainer = ({
   tableFields,
   paginatorCount,
   showMode,
-  isCustomFields,
   children,
   deleteQueryMethod,
   getQueryMethod,
@@ -109,7 +107,6 @@ const ResourceTableContainer = ({
         fields={tableFields}
         paginatorCount={paginatorCount}
         showMode={showMode}
-        isCustomFields={isCustomFields}
       >
         {children}
       </ResourceTableList>
