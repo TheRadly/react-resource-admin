@@ -10,7 +10,6 @@ interface ResourceTableListProps {
     onClickEditField?: (arg: string) => void;
     selection?: any;
     isPaginator?: boolean;
-    isCustomFields?: boolean;
     fields: {
         field: string;
         sortable?: boolean;
@@ -24,5 +23,5 @@ interface ResourceTableListProps {
     onRowClick: (arg: string) => void;
     rows?: number;
 }
-declare const ResourceTableList: ({ values, loading, emptyMessage, children, isSelectable, onSelectionChange, onClickEditField, selection, isPaginator, fields, isCustomFields, getQueryMethod, paginatorCount, handleSortField, showMode, deleteQueryMethod, confirmDeleteMessage, onRowClick, rows, }: ResourceTableListProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceTableList: ({ values, loading, emptyMessage, children, isSelectable, onSelectionChange, onClickEditField, selection, isPaginator, fields, getQueryMethod, paginatorCount, handleSortField, showMode, deleteQueryMethod, confirmDeleteMessage, onRowClick, rows, }: ResourceTableListProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceTableList;

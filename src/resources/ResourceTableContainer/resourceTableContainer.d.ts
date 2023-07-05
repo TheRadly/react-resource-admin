@@ -10,7 +10,6 @@ interface ResourceTableContainerProps {
     }[];
     paginatorCount?: number;
     showMode?: boolean;
-    isCustomFields?: boolean;
     children?: React.ReactNode;
     deleteQueryMethod?: any;
     getQueryMethod?: any;
@@ -29,5 +28,5 @@ interface ResourceTableContainerProps {
     hideCreate?: boolean;
     tableListRows?: number;
 }
-declare const ResourceTableContainer: ({ pageTitle, values, loading, tableFields, paginatorCount, showMode, isCustomFields, children, deleteQueryMethod, getQueryMethod, hideSearch, excludedSearchFields, onEdit, emptyMessage, searchPlaceholder, dropdownPlaceholder, createLabel, deleteConfirmMessage, disabledTooltipDeleteLabel, onCreate, confirmDeleteMessage, onRowClick, hideCreate, tableListRows, }: ResourceTableContainerProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceTableContainer: ({ pageTitle, values, loading, tableFields, paginatorCount, showMode, children, deleteQueryMethod, getQueryMethod, hideSearch, excludedSearchFields, onEdit, emptyMessage, searchPlaceholder, dropdownPlaceholder, createLabel, deleteConfirmMessage, disabledTooltipDeleteLabel, onCreate, confirmDeleteMessage, onRowClick, hideCreate, tableListRows, }: ResourceTableContainerProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceTableContainer;

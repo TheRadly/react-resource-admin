@@ -20,7 +20,6 @@ const ResourceTableContainer = _ref => {
     tableFields,
     paginatorCount,
     showMode,
-    isCustomFields,
     children,
     deleteQueryMethod,
     getQueryMethod,
@@ -87,7 +86,6 @@ const ResourceTableContainer = _ref => {
       fields: tableFields,
       paginatorCount: paginatorCount,
       showMode: showMode,
-      isCustomFields: isCustomFields,
       children: children
     })]
   });

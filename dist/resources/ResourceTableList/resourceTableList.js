@@ -28,7 +28,6 @@ const ResourceTableList = _ref => {
     selection,
     isPaginator = true,
     fields,
-    isCustomFields = false,
     getQueryMethod,
     paginatorCount,
     handleSortField,
@@ -68,7 +67,7 @@ const ResourceTableList = _ref => {
       onRowClick: e => !isSelectable && handleRowClick(e),
       children: [isSelectable && (0, _jsxRuntime.jsx)(_column.Column, {
         selectionMode: "multiple"
-      }), isCustomFields ? children : fields && fields.length && fields.map(_ref2 => {
+      }), children || fields && fields.length && fields.map(_ref2 => {
         let {
           field,
           sortable = true
