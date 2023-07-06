@@ -61,8 +61,10 @@ const ResourceTableActions = _ref => {
       onClick: handleChangeSelectMode,
       icon: selectIcon
     }), (0, _jsxRuntime.jsx)(_react.Fragment, {
-      children: isSelectable ? (0, _jsxRuntime.jsx)(_button.Button, {
-        ...tooltipExtraButtonProps
+      children: isSelectable ? (0, _jsxRuntime.jsx)("div", {
+        children: (0, _jsxRuntime.jsx)(_button.Button, {
+          ...tooltipExtraButtonProps
+        })
       }) : null
     })]
   });

@@ -8,7 +8,7 @@ const LoaderSpinnerWrapper = styled.div`
   align-items: center;
 
   circle {
-    stroke: var(--clr-hoverBackgroundColor) !important;
+    stroke: var(--primary-color) !important;
   }
 `;
 
