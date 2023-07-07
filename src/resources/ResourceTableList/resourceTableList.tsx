@@ -34,6 +34,7 @@ interface ResourceTableListProps {
   confirmDeleteMessage: string;
   onRowClick: (arg: string) => void;
   rows?: number;
+  hideRowActions?: boolean;
 }
 
 const ResourceTableList = ({
@@ -55,6 +56,7 @@ const ResourceTableList = ({
   confirmDeleteMessage,
   onRowClick,
   rows,
+  hideRowActions = false,
 }: ResourceTableListProps) => {
   const {
     handleChangePagination,
@@ -102,7 +104,7 @@ const ResourceTableList = ({
                 sortable={sortable}
               />
             )))}
-        {!isSelectable && (
+        {!hideRowActions && !isSelectable && (
           <Column
             field={ID}
             body={(row) => (

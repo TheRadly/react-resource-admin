@@ -35,7 +35,8 @@ const ResourceTableList = _ref => {
     deleteQueryMethod,
     confirmDeleteMessage,
     onRowClick,
-    rows
+    rows,
+    hideRowActions = false
   } = _ref;
   const {
     handleChangePagination,
@@ -77,7 +78,7 @@ const ResourceTableList = _ref => {
           header: (0, _lodash.capitalize)(field),
           sortable: sortable
         });
-      }), !isSelectable && (0, _jsxRuntime.jsx)(_column.Column, {
+      }), !hideRowActions && !isSelectable && (0, _jsxRuntime.jsx)(_column.Column, {
         field: _staticTexts.ID,
         body: row => (0, _jsxRuntime.jsx)(_editDeleteColumnTemplate.default, {
           confirmDeleteMessage: confirmDeleteMessage,

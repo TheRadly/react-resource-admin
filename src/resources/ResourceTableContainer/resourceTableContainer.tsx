@@ -29,6 +29,7 @@ interface ResourceTableContainerProps {
   onRowClick: (arg: string) => void;
   hideCreate?: boolean;
   tableListRows?: number;
+  hideRowActions?: boolean;
 }
 
 const ResourceTableContainer = ({
@@ -55,6 +56,7 @@ const ResourceTableContainer = ({
   onRowClick,
   hideCreate,
   tableListRows,
+  hideRowActions,
 }: ResourceTableContainerProps) => {
   const {
     handleDeleteClick,
@@ -107,6 +109,7 @@ const ResourceTableContainer = ({
         fields={tableFields}
         paginatorCount={paginatorCount}
         showMode={showMode}
+        hideRowActions={hideRowActions}
       >
         {children}
       </ResourceTableList>

@@ -22,6 +22,7 @@ interface ResourceTableListProps {
     confirmDeleteMessage: string;
     onRowClick: (arg: string) => void;
     rows?: number;
+    hideRowActions?: boolean;
 }
-declare const ResourceTableList: ({ values, loading, emptyMessage, children, isSelectable, onSelectionChange, onClickEditField, selection, isPaginator, fields, getQueryMethod, paginatorCount, handleSortField, showMode, deleteQueryMethod, confirmDeleteMessage, onRowClick, rows, }: ResourceTableListProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceTableList: ({ values, loading, emptyMessage, children, isSelectable, onSelectionChange, onClickEditField, selection, isPaginator, fields, getQueryMethod, paginatorCount, handleSortField, showMode, deleteQueryMethod, confirmDeleteMessage, onRowClick, rows, hideRowActions, }: ResourceTableListProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceTableList;

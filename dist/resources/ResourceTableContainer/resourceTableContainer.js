@@ -36,7 +36,8 @@ const ResourceTableContainer = _ref => {
     confirmDeleteMessage,
     onRowClick,
     hideCreate,
-    tableListRows
+    tableListRows,
+    hideRowActions
   } = _ref;
   const {
     handleDeleteClick,
@@ -86,6 +87,7 @@ const ResourceTableContainer = _ref => {
       fields: tableFields,
       paginatorCount: paginatorCount,
       showMode: showMode,
+      hideRowActions: hideRowActions,
       children: children
     })]
   });
