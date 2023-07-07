@@ -10,7 +10,6 @@ var _pageActionsWrapper = _interopRequireDefault(require("./styled/pageActionsWr
 var _useResourceTableActions = _interopRequireDefault(require("./talons/useResourceTableActions"));
 var _staticTexts = require("../../staticTexts");
 var _pageActions = _interopRequireDefault(require("./styles/pageActions.scss"));
-var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ResourceTableActions = _ref => {
@@ -26,7 +25,8 @@ const ResourceTableActions = _ref => {
     createLabel,
     deleteConfirmMessage,
     disabledTooltipDeleteLabel,
-    hideCreate
+    hideCreate,
+    hideMultiSelect
   } = _ref;
   const {
     tooltipExtraButtonProps,
@@ -55,18 +55,16 @@ const ResourceTableActions = _ref => {
         size: _staticTexts.SMALL_SIZE,
         icon: searchIcon
       })]
-    }) : null, (0, _jsxRuntime.jsx)(_button.Button, {
+    }) : null, !hideMultiSelect && (0, _jsxRuntime.jsx)(_button.Button, {
       outlined: true,
       size: _staticTexts.SMALL_SIZE,
       onClick: handleChangeSelectMode,
       icon: selectIcon
-    }), (0, _jsxRuntime.jsx)(_react.Fragment, {
-      children: isSelectable ? (0, _jsxRuntime.jsx)("div", {
-        children: (0, _jsxRuntime.jsx)(_button.Button, {
-          ...tooltipExtraButtonProps
-        })
-      }) : null
-    })]
+    }), isSelectable ? (0, _jsxRuntime.jsx)("div", {
+      children: (0, _jsxRuntime.jsx)(_button.Button, {
+        ...tooltipExtraButtonProps
+      })
+    }) : null]
   });
 };
 var _default = ResourceTableActions;

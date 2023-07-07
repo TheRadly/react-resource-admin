@@ -12,4 +12,5 @@ export interface ResourceTableActionsProps {
   deleteConfirmMessage: string;
   disabledTooltipDeleteLabel: string;
   hideCreate?: boolean;
+  hideMultiSelect?: boolean;
 }

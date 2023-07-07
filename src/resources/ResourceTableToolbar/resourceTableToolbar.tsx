@@ -25,6 +25,7 @@ interface ResourceTableActionsProps {
   searchPlaceholder: string;
   dropdownPlaceholder: string;
   hideCreate?: boolean;
+  hideMultiSelect?: boolean;
 }
 
 const ResourceTableToolbar = ({
@@ -47,6 +48,7 @@ const ResourceTableToolbar = ({
   searchPlaceholder,
   dropdownPlaceholder,
   hideCreate,
+  hideMultiSelect,
 }: ResourceTableActionsProps) => {
   const { handleChangeSearchMode, isDisplaySearch } = useResourceTableActions();
 
@@ -67,6 +69,7 @@ const ResourceTableToolbar = ({
       handleCreateButton={onCreate}
       handleChangeSearchMode={handleChangeSearchMode}
       handleDeleteClick={handleDeleteClick}
+      hideMultiSelect={hideMultiSelect}
     />
   ) : null;
 

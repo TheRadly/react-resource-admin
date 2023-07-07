@@ -37,7 +37,8 @@ const ResourceTableContainer = _ref => {
     onRowClick,
     hideCreate,
     tableListRows,
-    hideRowActions
+    hideRowActions,
+    hideMultiSelect
   } = _ref;
   const {
     handleDeleteClick,
@@ -69,7 +70,8 @@ const ResourceTableContainer = _ref => {
       handleChangeSelectMode: handleChangeSelectMode,
       handleDeleteClick: handleDeleteClick,
       pageTitle: pageTitle,
-      excludedSearchFields: excludedSearchFields
+      excludedSearchFields: excludedSearchFields,
+      hideMultiSelect: hideMultiSelect
     }), (0, _jsxRuntime.jsx)(_ResourceTableList.default, {
       rows: tableListRows,
       confirmDeleteMessage: confirmDeleteMessage,

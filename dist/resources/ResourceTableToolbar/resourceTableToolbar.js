@@ -32,7 +32,8 @@ const ResourceTableToolbar = _ref => {
     onCreate,
     searchPlaceholder,
     dropdownPlaceholder,
-    hideCreate
+    hideCreate,
+    hideMultiSelect
   } = _ref;
   const {
     handleChangeSearchMode,
@@ -53,7 +54,8 @@ const ResourceTableToolbar = _ref => {
     handleChangeSelectMode: handleChangeSelectMode,
     handleCreateButton: onCreate,
     handleChangeSearchMode: handleChangeSearchMode,
-    handleDeleteClick: handleDeleteClick
+    handleDeleteClick: handleDeleteClick,
+    hideMultiSelect: hideMultiSelect
   }) : null;
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [(0, _jsxRuntime.jsx)(_resourceTableToolbarWrapper.default, {

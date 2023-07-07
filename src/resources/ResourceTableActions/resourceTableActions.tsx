@@ -5,7 +5,6 @@ import useResourceTableActions from "./talons/useResourceTableActions";
 import { ResourceTableActionsProps } from "./models/ResourceTableActionsProps";
 import { PLUS_ICON, SMALL_SIZE } from "../../staticTexts";
 import classes from "./styles/pageActions.scss";
-import { Fragment } from "react";
 
 const ResourceTableActions = ({
   handleDeleteClick,
@@ -20,6 +19,7 @@ const ResourceTableActions = ({
   deleteConfirmMessage,
   disabledTooltipDeleteLabel,
   hideCreate,
+  hideMultiSelect,
 }: ResourceTableActionsProps) => {
   const { tooltipExtraButtonProps, selectIcon, searchIcon } =
     useResourceTableActions({
@@ -56,19 +56,19 @@ const ResourceTableActions = ({
           )}
         </>
       ) : null}
-      <Button
-        outlined
-        size={SMALL_SIZE}
-        onClick={handleChangeSelectMode}
-        icon={selectIcon}
-      />
-      <Fragment>
-        {isSelectable ? (
-          <div>
-            <Button {...tooltipExtraButtonProps} />
-          </div>
-        ) : null}
-      </Fragment>
+      {!hideMultiSelect && (
+        <Button
+          outlined
+          size={SMALL_SIZE}
+          onClick={handleChangeSelectMode}
+          icon={selectIcon}
+        />
+      )}
+      {isSelectable ? (
+        <div>
+          <Button {...tooltipExtraButtonProps} />
+        </div>
+      ) : null}
     </PageActionsWrapper>
   );
 };

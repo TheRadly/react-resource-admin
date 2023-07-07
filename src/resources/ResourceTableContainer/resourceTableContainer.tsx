@@ -30,6 +30,7 @@ interface ResourceTableContainerProps {
   hideCreate?: boolean;
   tableListRows?: number;
   hideRowActions?: boolean;
+  hideMultiSelect?: boolean;
 }
 
 const ResourceTableContainer = ({
@@ -57,6 +58,7 @@ const ResourceTableContainer = ({
   hideCreate,
   tableListRows,
   hideRowActions,
+  hideMultiSelect,
 }: ResourceTableContainerProps) => {
   const {
     handleDeleteClick,
@@ -91,6 +93,7 @@ const ResourceTableContainer = ({
         handleDeleteClick={handleDeleteClick}
         pageTitle={pageTitle}
         excludedSearchFields={excludedSearchFields}
+        hideMultiSelect={hideMultiSelect}
       />
       <ResourceTableList
         rows={tableListRows}
