@@ -34,7 +34,7 @@ const InputFloatLabel = _ref => {
     children: [(0, _jsxRuntime.jsx)("label", {
       htmlFor: label,
       children: label
-    }), isNumber ? (0, _jsxRuntime.jsx)(_inputnumber.InputNumber, {
+    }), isNumber && !isFloat ? (0, _jsxRuntime.jsx)(_inputnumber.InputNumber, {
       placeholder: !withoutPlaceholder ? placeholder : undefined,
       defaultValue: 0,
       showButtons: true,

@@ -33,7 +33,7 @@ const InputFloatLabel = ({
   return (
     <InputFloatLabelWrapper fullWidth={fullWidth}>
       <label htmlFor={label}>{label}</label>
-      {isNumber ? (
+      {isNumber && !isFloat ? (
         <InputNumber
           placeholder={!withoutPlaceholder ? placeholder : undefined}
           defaultValue={0}
