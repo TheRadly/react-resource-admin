@@ -9,7 +9,6 @@ interface InputFloatLabelProps {
   isNumber?: boolean;
   disabled?: boolean;
   withoutPlaceholder?: boolean;
-  type?: string;
   isFloat?: boolean;
   fullWidth?: boolean;
   label: string;
@@ -25,7 +24,6 @@ const InputFloatLabel = ({
   isFloat,
   disabled,
   withoutPlaceholder,
-  type,
   fullWidth,
 }: InputFloatLabelProps) => {
   const { handleChangeInputText } = useInputFloatLabel({ isFloat, onChange });
@@ -46,7 +44,7 @@ const InputFloatLabel = ({
         />
       ) : (
         <InputText
-          type={type || "text"}
+          type="text"
           placeholder={!withoutPlaceholder ? placeholder : undefined}
           disabled={disabled}
           id={label}

@@ -68,7 +68,7 @@ const UniversalInput = ({
 
   return (
     <>
-      {typeof value === TYPES.NUMBER && (
+      {typeof value === TYPES.NUMBER && !isFloat && (
         <InputFloatLabel
           fullWidth={fullWidth}
           label={label}

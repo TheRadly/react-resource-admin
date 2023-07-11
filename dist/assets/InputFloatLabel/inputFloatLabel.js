@@ -20,7 +20,6 @@ const InputFloatLabel = _ref => {
     isFloat,
     disabled,
     withoutPlaceholder,
-    type,
     fullWidth
   } = _ref;
   const {
@@ -44,7 +43,7 @@ const InputFloatLabel = _ref => {
       value: Number(value) || 0,
       onChange: e => onChange(e.value || 0)
     }) : (0, _jsxRuntime.jsx)(_inputtext.InputText, {
-      type: type || "text",
+      type: "text",
       placeholder: !withoutPlaceholder ? placeholder : undefined,
       disabled: disabled,
       id: label,

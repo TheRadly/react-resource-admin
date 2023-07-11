@@ -45,7 +45,7 @@ const UniversalInput = _ref => {
   } = _ref;
   const label = (0, _toFirstUpperCase.default)(propLabel, true);
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-    children: [typeof value === _config.default.NUMBER && (0, _jsxRuntime.jsx)(_inputFloatLabel.default, {
+    children: [typeof value === _config.default.NUMBER && !isFloat && (0, _jsxRuntime.jsx)(_inputFloatLabel.default, {
       fullWidth: fullWidth,
       label: label,
       placeholder: placeholder,
