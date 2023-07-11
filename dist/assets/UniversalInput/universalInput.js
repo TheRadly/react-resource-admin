@@ -78,7 +78,7 @@ const UniversalInput = _ref => {
       label: label,
       values: value,
       fieldsToExclude: fieldsToExcludeInQueryInput
-    }), typeof value === _config.default.OBJECT && !isMultiInput && !withChildQuery && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
+    }), typeof value === _config.default.OBJECT && !isDate && !isMultiInput && !withChildQuery && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
       disabled: disabled,
       fullWidth: fullWidth,
       currentOption: currentOption,
@@ -90,7 +90,7 @@ const UniversalInput = _ref => {
       disabled: disabled,
       onChange: onChange,
       values: value
-    }), typeof value === _config.default.STRING && isDate && (0, _jsxRuntime.jsx)(_dateInput.default, {
+    }), isDate && (0, _jsxRuntime.jsx)(_dateInput.default, {
       disabled: disabled,
       fullWidth: fullWidth,
       label: label,

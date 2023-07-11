@@ -1,11 +1,10 @@
 import { Calendar } from "primereact/calendar";
 import DateInputWrapper from "./styled/DateInputWrapper";
 import useDateInput from "./talons/useDateInput";
-import { Nullable } from "primereact/ts-helpers";
 
 interface DateInputProps {
   label: string;
-  onChange: (arg: Nullable<string | Date | Date[]>) => void;
+  onChange: (arg: any) => void;
   fullWidth?: boolean;
   disabled?: boolean;
   value: any;

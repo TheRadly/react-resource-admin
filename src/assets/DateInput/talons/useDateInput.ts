@@ -1,9 +1,8 @@
 import { CalendarChangeEvent } from "primereact/calendar";
-import { Nullable } from "primereact/ts-helpers";
 import { useCallback } from "react";
 
 interface UseDateInputProps {
-  onChange: (val: Nullable<string | Date | Date[]>) => void;
+  onChange: (arg: any) => void;
 }
 
 const useDateInput = ({ onChange }: UseDateInputProps) => {

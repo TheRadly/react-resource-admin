@@ -81,7 +81,7 @@ const useResourceTableSearch = _ref => {
   }, [dropdownFields, setSavedFields]);
   (0, _react.useEffect)(() => {
     return () => getQueryMethod();
-  }, []);
+  }, [getQueryMethod]);
   return {
     isChecked,
     onChangeSwitch,

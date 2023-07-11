@@ -1,7 +1,6 @@
-import { Nullable } from "primereact/ts-helpers";
 interface DateInputProps {
     label: string;
-    onChange: (arg: Nullable<string | Date | Date[]>) => void;
+    onChange: (arg: any) => void;
     fullWidth?: boolean;
     disabled?: boolean;
     value: any;

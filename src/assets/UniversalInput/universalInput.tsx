@@ -114,6 +114,7 @@ const UniversalInput = ({
         />
       )}
       {typeof value === TYPES.OBJECT &&
+        !isDate &&
         !isMultiInput &&
         !withChildQuery &&
         !isArray && (
@@ -134,7 +135,7 @@ const UniversalInput = ({
           values={value}
         />
       )}
-      {typeof value === TYPES.STRING && isDate && (
+      {isDate && (
         <DateInput
           disabled={disabled}
           fullWidth={fullWidth}
