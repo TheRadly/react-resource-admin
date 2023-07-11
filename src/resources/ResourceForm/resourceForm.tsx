@@ -61,8 +61,10 @@ const ResourceForm = ({
             withChildQuery,
             excludeFields,
             isFloat,
+            isDate,
           }) => (
             <UniversalInput
+              isDate={isDate}
               extraFormCruds={extraFormCruds}
               fieldsToExcludeInQueryInput={excludeFields}
               isShowQueryContainer={isShowQueryContainer}

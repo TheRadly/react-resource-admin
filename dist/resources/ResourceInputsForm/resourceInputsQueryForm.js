@@ -42,9 +42,11 @@ const ResourceCrudQueryForm = _ref => {
         field,
         value,
         isArray,
-        isDisabled
+        isDisabled,
+        isDate
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        isDate: isDate,
         isDisabled: isDisabled,
         isArray: isArray,
         label: field,

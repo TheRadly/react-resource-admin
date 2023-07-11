@@ -51,9 +51,11 @@ const ResourceForm = _ref => {
         isJson,
         withChildQuery,
         excludeFields,
-        isFloat
+        isFloat,
+        isDate
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        isDate: isDate,
         extraFormCruds: extraFormCruds,
         fieldsToExcludeInQueryInput: excludeFields,
         isShowQueryContainer: isShowQueryContainer,

@@ -1,4 +1,3 @@
-import React from "react";
 import InputFloatLabel from "../InputFloatLabel/inputFloatLabel";
 import TYPES from "./config";
 import SwitchInput from "../SwitchInput/switchInput";
@@ -10,6 +9,8 @@ import { memo } from "react";
 import InputFieldsWithQuery from "../InputFieldsWithQuery/inputFieldsWithQuery";
 import InputArray from "../InputArray";
 import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
+import DateInput from "../DateInput/dateInput";
+import toFirstUpperCase from "../../utils/toFirstUpperCase";
 
 interface UniversalInputProps {
   value: any;
@@ -24,6 +25,7 @@ interface UniversalInputProps {
   handleShowQueryContainer?: (arg?: any) => void;
   isArray?: boolean;
   isDisabled?: boolean;
+  isDate?: boolean;
   fieldsToExcludeInQueryInput?: string[];
   extraFormCruds?: CrudType;
   isFloat?: boolean;
@@ -38,117 +40,131 @@ interface UniversalInputProps {
 }
 
 const UniversalInput = ({
-  label,
+  label: propLabel,
   placeholder,
   value,
   onChange,
   disabled,
   currentOption,
   isMultiInput,
-  isJson,
   withChildQuery,
-  isShowQueryContainer,
   handleShowQueryContainer,
-  isArray,
-  isDisabled,
   fieldsToExcludeInQueryInput,
   extraFormCruds,
-  isFloat,
   fullWidth,
   emptyLabel,
+  isArray,
+  isDisabled,
+  isFloat,
+  isJson,
+  isShowQueryContainer,
+  isDate,
   closeTooltipLabel,
   addTooltipLabel,
   deleteTooltipLabel,
   editTooltipLabel,
-}: UniversalInputProps) => (
-  <>
-    {typeof value === TYPES.NUMBER && (
-      <InputFloatLabel
-        fullWidth={fullWidth}
-        label={label}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        isNumber
-      />
-    )}
-    {typeof value === TYPES.BOOLEAN && (
-      <SwitchInput
-        label={label}
-        checked={value}
-        onChange={onChange}
-        disabled={disabled}
-      />
-    )}
-    {isArray && (
-      <InputArray
-        disabled={disabled}
-        fullWidth={fullWidth}
-        values={value}
-        label={label}
-        onChange={onChange}
-      />
-    )}
-    {Array.isArray(value) && withChildQuery && (
-      <InputFieldsWithQuery
-        closeTooltipLabel={closeTooltipLabel}
-        addTooltipLabel={addTooltipLabel}
-        deleteTooltipLabel={deleteTooltipLabel}
-        editTooltipLabel={editTooltipLabel}
-        emptyLabel={emptyLabel}
-        disabled={disabled}
-        fullWidth={fullWidth}
-        extraFormCruds={extraFormCruds}
-        isShowQueryContainer={isShowQueryContainer}
-        handleShowQueryContainer={handleShowQueryContainer}
-        label={label}
-        values={value}
-        fieldsToExclude={fieldsToExcludeInQueryInput}
-      />
-    )}
-    {typeof value === TYPES.OBJECT &&
-      !isMultiInput &&
-      !withChildQuery &&
-      !isArray && (
-        <DropdownInput
-          disabled={disabled}
+}: UniversalInputProps) => {
+  const label = toFirstUpperCase(propLabel, true);
+
+  return (
+    <>
+      {typeof value === TYPES.NUMBER && (
+        <InputFloatLabel
           fullWidth={fullWidth}
-          currentOption={currentOption}
-          onChange={onChange}
-          options={value}
+          label={label}
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          isNumber
         />
       )}
-    {typeof value === TYPES.OBJECT && isMultiInput && (
-      <InputMultiField
-        fullWidth={fullWidth}
-        disabled={disabled}
-        onChange={onChange}
-        values={value}
-      />
-    )}
-    {typeof value === TYPES.STRING && isJson && (
-      <JsonEditor
-        disabled={disabled}
-        fullWidth={fullWidth}
-        label={label}
-        value={value}
-        onChange={onChange}
-      />
-    )}
-    {typeof value === TYPES.STRING && !isJson && (
-      <InputFloatLabel
-        fullWidth={fullWidth}
-        isFloat={isFloat}
-        label={label}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        disabled={isDisabled || disabled}
-      />
-    )}
-  </>
-);
+      {typeof value === TYPES.BOOLEAN && (
+        <SwitchInput
+          label={label}
+          checked={value}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      )}
+      {isArray && (
+        <InputArray
+          disabled={disabled}
+          fullWidth={fullWidth}
+          values={value}
+          label={label}
+          onChange={onChange}
+        />
+      )}
+      {Array.isArray(value) && withChildQuery && (
+        <InputFieldsWithQuery
+          closeTooltipLabel={closeTooltipLabel}
+          addTooltipLabel={addTooltipLabel}
+          deleteTooltipLabel={deleteTooltipLabel}
+          editTooltipLabel={editTooltipLabel}
+          emptyLabel={emptyLabel}
+          disabled={disabled}
+          fullWidth={fullWidth}
+          extraFormCruds={extraFormCruds}
+          isShowQueryContainer={isShowQueryContainer}
+          handleShowQueryContainer={handleShowQueryContainer}
+          label={label}
+          values={value}
+          fieldsToExclude={fieldsToExcludeInQueryInput}
+        />
+      )}
+      {typeof value === TYPES.OBJECT &&
+        !isMultiInput &&
+        !withChildQuery &&
+        !isArray && (
+          <DropdownInput
+            disabled={disabled}
+            fullWidth={fullWidth}
+            currentOption={currentOption}
+            onChange={onChange}
+            options={value}
+            placeholder={placeholder}
+          />
+        )}
+      {typeof value === TYPES.OBJECT && isMultiInput && (
+        <InputMultiField
+          fullWidth={fullWidth}
+          disabled={disabled}
+          onChange={onChange}
+          values={value}
+        />
+      )}
+      {typeof value === TYPES.STRING && isDate && (
+        <DateInput
+          disabled={disabled}
+          fullWidth={fullWidth}
+          label={label}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+      {typeof value === TYPES.STRING && isJson && (
+        <JsonEditor
+          disabled={disabled}
+          fullWidth={fullWidth}
+          label={label}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+      {typeof value === TYPES.STRING && !isJson && !isDate && (
+        <InputFloatLabel
+          fullWidth={fullWidth}
+          isFloat={isFloat}
+          label={label}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          disabled={isDisabled || disabled}
+        />
+      )}
+    </>
+  );
+};
 
 export default memo(UniversalInput);

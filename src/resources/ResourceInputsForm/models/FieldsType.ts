@@ -11,4 +11,5 @@ export type FieldsType = {
   isJson?: boolean;
   withChildQuery?: boolean;
   isFloat?: boolean;
+  isDate?: boolean;
 };

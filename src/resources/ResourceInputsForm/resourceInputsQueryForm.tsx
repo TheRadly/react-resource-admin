@@ -39,8 +39,9 @@ const ResourceCrudQueryForm = ({
   ) : (
     <ResourceCrudFormWrapper onSubmit={handleSubmit}>
       {children ||
-        arrayOfValues.map(({ field, value, isArray, isDisabled }) => (
+        arrayOfValues.map(({ field, value, isArray, isDisabled, isDate }) => (
           <UniversalInput
+            isDate={isDate}
             isDisabled={isDisabled}
             isArray={isArray}
             label={field}
