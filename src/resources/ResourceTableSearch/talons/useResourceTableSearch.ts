@@ -104,7 +104,7 @@ const useResourceTableSearch = ({
 
   useEffect(() => {
     return () => getQueryMethod();
-  }, []);
+  }, [getQueryMethod]);
 
   return {
     isChecked,

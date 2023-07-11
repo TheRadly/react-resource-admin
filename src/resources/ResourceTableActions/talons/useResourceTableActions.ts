@@ -4,7 +4,6 @@ import { confirmPopup } from "primereact/confirmpopup";
 import { useCallback } from "react";
 import {
   CANCEL_ICON,
-  CHECK_ICON,
   EXCLAMATION_TRIANGLE_ICON,
   LIST_ICON,
   POSITIONS,
