@@ -70,7 +70,6 @@ const UniversalInput = ({
     <>
       {typeof value === TYPES.NUMBER && (
         <InputFloatLabel
-          isFloat={isFloat}
           fullWidth={fullWidth}
           label={label}
           placeholder={placeholder}
