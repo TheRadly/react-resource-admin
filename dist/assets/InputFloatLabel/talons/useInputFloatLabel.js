@@ -12,7 +12,7 @@ const useInputFloatLabel = _ref => {
   } = _ref;
   const handleChangeInputText = (0, _react.useCallback)(e => {
     if (isFloat && /^[0-9]*(\.|,)?[0-9]*$/g.test(e.target.value)) {
-      onChange(parseFloat(e.target.value));
+      onChange(parseFloat(e.target.value.toString()));
     } else if (!isFloat) {
       onChange(e.target.value);
     }

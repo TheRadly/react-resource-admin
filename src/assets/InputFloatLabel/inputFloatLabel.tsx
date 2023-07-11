@@ -48,7 +48,7 @@ const InputFloatLabel = ({
           placeholder={!withoutPlaceholder ? placeholder : undefined}
           disabled={disabled}
           id={label}
-          value={value}
+          value={typeof value === "number" ? value.toString() : value}
           onChange={handleChangeInputText}
         />
       )}
