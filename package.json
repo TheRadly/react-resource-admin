@@ -1,8 +1,8 @@
 {
   "name": "react-resource-admin",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Alexey Vodyanitsky <alex5011999@gmail.com>",
-  "description": "React resource admin for using in L2P, Jinn applications and etc",
+  "description": "React resource admin",
   "license": "Apache-2.0",
   "private": false,
   "keywords": [
