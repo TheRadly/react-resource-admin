@@ -13,4 +13,5 @@ export interface ResourceTableActionsProps {
   disabledTooltipDeleteLabel: string;
   hideCreate?: boolean;
   hideMultiSelect?: boolean;
+  extraToolbarItem?: React.ReactNode;
 }

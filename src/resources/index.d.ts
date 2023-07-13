@@ -3,5 +3,6 @@ import UniversalInput from "../assets/UniversalInput";
 import ResourceForm from "./ResourceForm";
 import ResourceShowContainer from "./ResourceShowContainer";
 import ResourceTableContainer from "./ResourceTableContainer/resourceTableContainer";
+import DropdownInput from "../assets/DropdownInput";
 import useForm from "./ResourceForm/talons/useForm";
-export { ResourceShowContainer, ResourceTableContainer, ResourceForm, UniversalInput, LoaderSpinner, useForm, };
+export { ResourceShowContainer, ResourceTableContainer, ResourceForm, UniversalInput, LoaderSpinner, DropdownInput, useForm, };

@@ -26,7 +26,8 @@ const ResourceTableActions = _ref => {
     deleteConfirmMessage,
     disabledTooltipDeleteLabel,
     hideCreate,
-    hideMultiSelect
+    hideMultiSelect,
+    extraToolbarItem
   } = _ref;
   const {
     tooltipExtraButtonProps,
@@ -43,7 +44,9 @@ const ResourceTableActions = _ref => {
     disabledTooltipDeleteLabel
   });
   return (0, _jsxRuntime.jsxs)(_pageActionsWrapper.default, {
-    children: [(0, _jsxRuntime.jsx)(_confirmpopup.ConfirmPopup, {}), !isSelectable ? (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    children: [(0, _jsxRuntime.jsx)(_confirmpopup.ConfirmPopup, {}), extraToolbarItem ? (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+      children: extraToolbarItem
+    }) : null, !isSelectable ? (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
       children: [!hideCreate && (0, _jsxRuntime.jsx)(_button.Button, {
         onClick: handleCreateButton,
         size: _staticTexts.SMALL_SIZE,

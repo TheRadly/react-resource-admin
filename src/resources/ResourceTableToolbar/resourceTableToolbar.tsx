@@ -26,6 +26,7 @@ interface ResourceTableActionsProps {
   dropdownPlaceholder: string;
   hideCreate?: boolean;
   hideMultiSelect?: boolean;
+  extraToolbarItem?: React.ReactNode;
 }
 
 const ResourceTableToolbar = ({
@@ -49,6 +50,7 @@ const ResourceTableToolbar = ({
   dropdownPlaceholder,
   hideCreate,
   hideMultiSelect,
+  extraToolbarItem,
 }: ResourceTableActionsProps) => {
   const { handleChangeSearchMode, isDisplaySearch } = useResourceTableActions();
 
@@ -57,6 +59,7 @@ const ResourceTableToolbar = ({
   ) : null;
   const end = !hideActions ? (
     <ResourceTableActions
+      extraToolbarItem={extraToolbarItem}
       hideCreate={hideCreate}
       createLabel={createLabel}
       deleteConfirmMessage={deleteConfirmMessage}

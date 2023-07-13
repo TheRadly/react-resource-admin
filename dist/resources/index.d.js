@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "DropdownInput", {
+  enumerable: true,
+  get: function () {
+    return _DropdownInput.default;
+  }
+});
 Object.defineProperty(exports, "LoaderSpinner", {
   enumerable: true,
   get: function () {
@@ -44,6 +50,7 @@ var _UniversalInput = _interopRequireDefault(require("../assets/UniversalInput")
 var _ResourceForm = _interopRequireDefault(require("./ResourceForm"));
 var _ResourceShowContainer = _interopRequireDefault(require("./ResourceShowContainer"));
 var _resourceTableContainer = _interopRequireDefault(require("./ResourceTableContainer/resourceTableContainer"));
+var _DropdownInput = _interopRequireDefault(require("../assets/DropdownInput"));
 var _useForm = _interopRequireDefault(require("./ResourceForm/talons/useForm"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.d.js.map

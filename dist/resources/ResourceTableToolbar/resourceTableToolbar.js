@@ -33,7 +33,8 @@ const ResourceTableToolbar = _ref => {
     searchPlaceholder,
     dropdownPlaceholder,
     hideCreate,
-    hideMultiSelect
+    hideMultiSelect,
+    extraToolbarItem
   } = _ref;
   const {
     handleChangeSearchMode,
@@ -43,6 +44,7 @@ const ResourceTableToolbar = _ref => {
     children: pageTitle
   }) : null;
   const end = !hideActions ? (0, _jsxRuntime.jsx)(_resourceTableActions.default, {
+    extraToolbarItem: extraToolbarItem,
     hideCreate: hideCreate,
     createLabel: createLabel,
     deleteConfirmMessage: deleteConfirmMessage,

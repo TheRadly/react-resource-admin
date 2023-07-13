@@ -20,6 +20,7 @@ const ResourceTableActions = ({
   disabledTooltipDeleteLabel,
   hideCreate,
   hideMultiSelect,
+  extraToolbarItem,
 }: ResourceTableActionsProps) => {
   const { tooltipExtraButtonProps, selectIcon, searchIcon } =
     useResourceTableActions({
@@ -36,6 +37,7 @@ const ResourceTableActions = ({
   return (
     <PageActionsWrapper>
       <ConfirmPopup />
+      {extraToolbarItem ? <>{extraToolbarItem}</> : null}
       {!isSelectable ? (
         <>
           {!hideCreate && (

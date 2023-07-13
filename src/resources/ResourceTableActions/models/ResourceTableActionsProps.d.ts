@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface ResourceTableActionsProps {
     selectedValues?: any[];
     handleDeleteClick: () => void;
@@ -13,4 +14,5 @@ export interface ResourceTableActionsProps {
     disabledTooltipDeleteLabel: string;
     hideCreate?: boolean;
     hideMultiSelect?: boolean;
+    extraToolbarItem?: React.ReactNode;
 }

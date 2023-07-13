@@ -31,6 +31,7 @@ interface ResourceTableContainerProps {
   tableListRows?: number;
   hideRowActions?: boolean;
   hideMultiSelect?: boolean;
+  extraToolbarItem?: React.ReactNode;
 }
 
 const ResourceTableContainer = ({
@@ -59,6 +60,7 @@ const ResourceTableContainer = ({
   tableListRows,
   hideRowActions,
   hideMultiSelect,
+  extraToolbarItem,
 }: ResourceTableContainerProps) => {
   const {
     handleDeleteClick,
@@ -76,6 +78,7 @@ const ResourceTableContainer = ({
   return (
     <ResourceTableContainerWrapper>
       <ResourceTableToolbar
+        extraToolbarItem={extraToolbarItem}
         hideCreate={hideCreate}
         searchPlaceholder={searchPlaceholder}
         dropdownPlaceholder={dropdownPlaceholder}

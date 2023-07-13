@@ -38,7 +38,8 @@ const ResourceTableContainer = _ref => {
     hideCreate,
     tableListRows,
     hideRowActions,
-    hideMultiSelect
+    hideMultiSelect,
+    extraToolbarItem
   } = _ref;
   const {
     handleDeleteClick,
@@ -54,6 +55,7 @@ const ResourceTableContainer = _ref => {
   });
   return (0, _jsxRuntime.jsxs)(_resourceTableContainerWrapper.default, {
     children: [(0, _jsxRuntime.jsx)(_ResourceTableToolbar.default, {
+      extraToolbarItem: extraToolbarItem,
       hideCreate: hideCreate,
       searchPlaceholder: searchPlaceholder,
       dropdownPlaceholder: dropdownPlaceholder,
