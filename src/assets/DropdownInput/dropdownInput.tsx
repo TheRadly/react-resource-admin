@@ -4,6 +4,7 @@ import useDropdownInput from "./talons/useDropdownInput";
 import type { SelectType } from "../../types/InputEventTypes";
 
 interface DropdownInputProps {
+  label: string;
   placeholder?: string;
   onChange: (arg: string) => void;
   options: SelectType[];
@@ -13,6 +14,7 @@ interface DropdownInputProps {
 }
 
 const DropdownInput = ({
+  label,
   onChange,
   options,
   currentOption,
@@ -26,7 +28,9 @@ const DropdownInput = ({
 
   return (
     <DropdownInputWrapper fullWidth={fullWidth}>
+      <label htmlFor={label}>{label}</label>
       <Dropdown
+        id={label}
         disabled={disabled}
         value={selectedDropdown || currentOption}
         onChange={handleChangeValue}

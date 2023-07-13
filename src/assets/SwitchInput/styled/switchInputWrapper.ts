@@ -3,8 +3,8 @@ import styled from "styled-components";
 const SwitchInputWrapper = styled.span`
   display: flex;
   gap: 10px;
-  align-items: center;
-  color: var(--clr-blackFontColor);
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 10px;
 
   & > label {
@@ -14,12 +14,6 @@ const SwitchInputWrapper = styled.span`
     font-weight: 400;
     font-family: var(--font-family);
     text-transform: capitalize;
-  }
-
-  div[class*="p-inputswitch-checked"] {
-    span {
-      background: var(--clr-hoverBackgroundColor) !important;
-    }
   }
 `;
 

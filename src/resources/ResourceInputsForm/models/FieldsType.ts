@@ -12,4 +12,5 @@ export type FieldsType = {
   withChildQuery?: boolean;
   isFloat?: boolean;
   isDate?: boolean;
+  placeholder?: string;
 };

@@ -52,7 +52,8 @@ const ResourceForm = _ref => {
         withChildQuery,
         excludeFields,
         isFloat,
-        isDate
+        isDate,
+        placeholder
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
         isDate: isDate,
@@ -65,6 +66,7 @@ const ResourceForm = _ref => {
         isMultiInput: isMultiInput,
         currentOption: activeValue,
         label: field,
+        placeholder: placeholder,
         disabled: loading,
         value: value,
         isFloat: isFloat,

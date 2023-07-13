@@ -119,6 +119,7 @@ const UniversalInput = ({
         !withChildQuery &&
         !isArray && (
           <DropdownInput
+            label={label}
             disabled={disabled}
             fullWidth={fullWidth}
             currentOption={currentOption}

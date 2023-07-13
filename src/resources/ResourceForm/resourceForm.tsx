@@ -62,6 +62,7 @@ const ResourceForm = ({
             excludeFields,
             isFloat,
             isDate,
+            placeholder,
           }) => (
             <UniversalInput
               isDate={isDate}
@@ -74,6 +75,7 @@ const ResourceForm = ({
               isMultiInput={isMultiInput}
               currentOption={activeValue}
               label={field}
+              placeholder={placeholder}
               disabled={loading}
               value={value}
               isFloat={isFloat}

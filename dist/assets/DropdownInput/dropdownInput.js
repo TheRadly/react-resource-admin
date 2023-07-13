@@ -11,6 +11,7 @@ var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const DropdownInput = _ref => {
   let {
+    label,
     onChange,
     options,
     currentOption,
@@ -24,16 +25,20 @@ const DropdownInput = _ref => {
   } = (0, _useDropdownInput.default)({
     onChange
   });
-  return (0, _jsxRuntime.jsx)(_dropdownInputWrapper.default, {
+  return (0, _jsxRuntime.jsxs)(_dropdownInputWrapper.default, {
     fullWidth: fullWidth,
-    children: (0, _jsxRuntime.jsx)(_dropdown.Dropdown, {
+    children: [(0, _jsxRuntime.jsx)("label", {
+      htmlFor: label,
+      children: label
+    }), (0, _jsxRuntime.jsx)(_dropdown.Dropdown, {
+      id: label,
       disabled: disabled,
       value: selectedDropdown || currentOption,
       onChange: handleChangeValue,
       optionLabel: "name",
       options: options,
       placeholder: placeholder
-    })
+    })]
   });
 };
 var _default = DropdownInput;
