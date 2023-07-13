@@ -1,6 +1,6 @@
 import type { SelectType } from "../../types/InputEventTypes";
 interface DropdownInputProps {
-    label: string;
+    label?: string;
     placeholder?: string;
     onChange: (arg: string) => void;
     options: SelectType[];
