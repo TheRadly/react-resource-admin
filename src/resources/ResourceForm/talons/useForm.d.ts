@@ -2,8 +2,10 @@
 interface UseFormProps {
     initialValues?: any;
     onSubmitMethod: any;
+    valuesForEdit?: any;
+    omitValuesForEdit?: any;
 }
-declare const useForm: ({ initialValues, onSubmitMethod }: UseFormProps) => {
+declare const useForm: ({ initialValues, onSubmitMethod, valuesForEdit, omitValuesForEdit, }: UseFormProps) => {
     formHandler: {
         initialValues: any;
         initialErrors: import("formik").FormikErrors<unknown>;

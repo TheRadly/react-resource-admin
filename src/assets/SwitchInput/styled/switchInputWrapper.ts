@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-const SwitchInputWrapper = styled.span`
+const SwitchInputWrapper = styled.div<{ fullWidth?: boolean }>`
   display: flex;
   gap: 10px;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 10px;
+  width: ${(props) => (props.fullWidth ? "100%" : "50%")};
 
   & > label {
     font-size: 12px;
@@ -14,6 +15,14 @@ const SwitchInputWrapper = styled.span`
     font-weight: 400;
     font-family: var(--font-family);
     text-transform: capitalize;
+  }
+
+  span[class*="p-inputswitch-slider"] {
+    border-radius: 6px !important;
+
+    &::before {
+      border-radius: 6px !important;
+    }
   }
 `;
 

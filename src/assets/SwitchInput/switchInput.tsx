@@ -1,5 +1,6 @@
 import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
 import SwitchInputWrapper from "./styled/switchInputWrapper";
+import SwitchInnerWrapper from "./styled/switchInnerWrapper";
 
 interface SwitchInputProps {
   checked: boolean;
@@ -7,6 +8,8 @@ interface SwitchInputProps {
   disabled?: boolean;
   withLabel?: boolean;
   label?: string;
+  activeText?: string;
+  fullWidth?: boolean;
 }
 
 const SwitchInput = ({
@@ -15,15 +18,20 @@ const SwitchInput = ({
   disabled,
   withLabel = true,
   label,
+  activeText,
+  fullWidth = false,
 }: SwitchInputProps) => (
-  <SwitchInputWrapper>
-    <InputSwitch
-      id={label}
-      checked={checked}
-      onChange={(e: InputSwitchChangeEvent) => onChange(e.value as any)}
-      disabled={disabled}
-    />
+  <SwitchInputWrapper fullWidth={fullWidth}>
     {withLabel && <label htmlFor={label}>{label}</label>}
+    <SwitchInnerWrapper>
+      <InputSwitch
+        id={label}
+        checked={checked}
+        onChange={(e: InputSwitchChangeEvent) => onChange(e.value as any)}
+        disabled={disabled}
+      />
+      {activeText && <span>{activeText}</span>}
+    </SwitchInnerWrapper>
   </SwitchInputWrapper>
 );
 

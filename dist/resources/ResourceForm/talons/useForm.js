@@ -12,7 +12,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const useForm = _ref => {
   let {
     initialValues = null,
-    onSubmitMethod
+    onSubmitMethod,
+    valuesForEdit,
+    omitValuesForEdit
   } = _ref;
   const form = (0, _formik.useFormik)({
     initialValues: (0, _typenameIdFilter.default)(initialValues || {}),
@@ -23,6 +25,14 @@ const useForm = _ref => {
     setFieldValue,
     handleSubmit
   } = form;
+  (0, _react.useEffect)(() => {
+    if (valuesForEdit && !initialValues) {
+      const filteredValues = (0, _typenameIdFilter.default)({
+        ...valuesForEdit
+      }, omitValuesForEdit && [...omitValuesForEdit]);
+      form.setValues(filteredValues);
+    }
+  }, [form, initialValues, omitValuesForEdit, valuesForEdit]);
   const values = (0, _react.useMemo)(() => Object.keys(formValues).map(field => ({
     field,
     value: formValues[field]
