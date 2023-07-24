@@ -8,7 +8,11 @@ interface UseDateInputProps {
 const useDateInput = ({ onChange }: UseDateInputProps) => {
   const handleChangeDateInput = useCallback(
     (e: CalendarChangeEvent) => {
-      onChange(e.value);
+      const date = e.value?.toString();
+      if (date) {
+        const correctDate = new Date(date).toISOString();
+        onChange(correctDate);
+      }
     },
     [onChange]
   );

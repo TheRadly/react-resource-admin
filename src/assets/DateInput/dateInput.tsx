@@ -7,7 +7,7 @@ interface DateInputProps {
   onChange: (arg: any) => void;
   fullWidth?: boolean;
   disabled?: boolean;
-  value: any;
+  value: string | Date;
 }
 const DateInput = ({
   label,
@@ -23,7 +23,7 @@ const DateInput = ({
       <label htmlFor={label}>{label}</label>
       <Calendar
         id={label}
-        value={value}
+        value={typeof value === "string" ? new Date(value) : value}
         onChange={handleChangeDateInput}
         showTime
         disabled={disabled}

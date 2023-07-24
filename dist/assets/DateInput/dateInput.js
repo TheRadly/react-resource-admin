@@ -29,7 +29,7 @@ const DateInput = _ref => {
       children: label
     }), (0, _jsxRuntime.jsx)(_calendar.Calendar, {
       id: label,
-      value: value,
+      value: typeof value === "string" ? new Date(value) : value,
       onChange: handleChangeDateInput,
       showTime: true,
       disabled: disabled,

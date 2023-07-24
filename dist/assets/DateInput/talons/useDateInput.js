@@ -10,7 +10,12 @@ const useDateInput = _ref => {
     onChange
   } = _ref;
   const handleChangeDateInput = (0, _react.useCallback)(e => {
-    onChange(e.value);
+    var _e$value;
+    const date = (_e$value = e.value) === null || _e$value === void 0 ? void 0 : _e$value.toString();
+    if (date) {
+      const correctDate = new Date(date).toISOString();
+      onChange(correctDate);
+    }
   }, [onChange]);
   return {
     handleChangeDateInput
