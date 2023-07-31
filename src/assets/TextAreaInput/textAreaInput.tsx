@@ -7,7 +7,7 @@ interface InputFloatLabelProps {
   onChange: any;
   disabled?: boolean;
   fullWidth?: boolean;
-  label: string;
+  label?: string;
 }
 
 const TextAreaInput = ({
@@ -21,7 +21,7 @@ const TextAreaInput = ({
 
   return (
     <TextAreaInputWrapper fullWidth={fullWidth}>
-      <label htmlFor={label}>{label}</label>
+      {label && <label htmlFor={label}>{label}</label>}
       <InputTextarea
         autoResize
         disabled={disabled}

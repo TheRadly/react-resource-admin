@@ -24,7 +24,7 @@ const TextAreaInput = _ref => {
   });
   return (0, _jsxRuntime.jsxs)(_textAreaInputWrapper.default, {
     fullWidth: fullWidth,
-    children: [(0, _jsxRuntime.jsx)("label", {
+    children: [label && (0, _jsxRuntime.jsx)("label", {
       htmlFor: label,
       children: label
     }), (0, _jsxRuntime.jsx)(_inputtextarea.InputTextarea, {
