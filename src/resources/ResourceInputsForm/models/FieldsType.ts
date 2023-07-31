@@ -13,4 +13,5 @@ export type FieldsType = {
   isFloat?: boolean;
   isDate?: boolean;
   placeholder?: string;
+  isTextArea?: boolean;
 };

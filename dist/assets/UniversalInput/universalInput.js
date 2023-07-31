@@ -15,6 +15,7 @@ var _inputFieldsWithQuery = _interopRequireDefault(require("../InputFieldsWithQu
 var _InputArray = _interopRequireDefault(require("../InputArray"));
 var _dateInput = _interopRequireDefault(require("../DateInput/dateInput"));
 var _toFirstUpperCase = _interopRequireDefault(require("../../utils/toFirstUpperCase"));
+var _textAreaInput = _interopRequireDefault(require("../TextAreaInput/textAreaInput"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const UniversalInput = _ref => {
@@ -38,6 +39,7 @@ const UniversalInput = _ref => {
     isJson,
     isShowQueryContainer,
     isDate,
+    isTextArea,
     closeTooltipLabel,
     addTooltipLabel,
     deleteTooltipLabel,
@@ -45,7 +47,12 @@ const UniversalInput = _ref => {
   } = _ref;
   const label = (0, _toFirstUpperCase.default)(propLabel, true);
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-    children: [typeof value === _config.default.NUMBER && (0, _jsxRuntime.jsx)(_inputFloatLabel.default, {
+    children: [isTextArea && (0, _jsxRuntime.jsx)(_textAreaInput.default, {
+      fullWidth: fullWidth,
+      label: label,
+      value: value,
+      onChange: onChange
+    }), typeof value === _config.default.NUMBER && (0, _jsxRuntime.jsx)(_inputFloatLabel.default, {
       fullWidth: fullWidth,
       label: label,
       placeholder: placeholder,
@@ -103,7 +110,7 @@ const UniversalInput = _ref => {
       label: label,
       value: value,
       onChange: onChange
-    }), typeof value === _config.default.STRING && !isJson && !isDate && (0, _jsxRuntime.jsx)(_inputFloatLabel.default, {
+    }), typeof value === _config.default.STRING && !isJson && !isDate && !isTextArea && (0, _jsxRuntime.jsx)(_inputFloatLabel.default, {
       fullWidth: fullWidth,
       isFloat: isFloat,
       label: label,

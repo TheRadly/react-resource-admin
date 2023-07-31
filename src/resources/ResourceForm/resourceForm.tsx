@@ -63,8 +63,10 @@ const ResourceForm = ({
             isFloat,
             isDate,
             placeholder,
+            isTextArea,
           }) => (
             <UniversalInput
+              isTextArea={isTextArea}
               isDate={isDate}
               extraFormCruds={extraFormCruds}
               fieldsToExcludeInQueryInput={excludeFields}

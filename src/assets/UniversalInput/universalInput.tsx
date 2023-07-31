@@ -11,6 +11,7 @@ import InputArray from "../InputArray";
 import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
 import DateInput from "../DateInput/dateInput";
 import toFirstUpperCase from "../../utils/toFirstUpperCase";
+import TextAreaInput from "../TextAreaInput/textAreaInput";
 
 interface UniversalInputProps {
   value: any;
@@ -26,6 +27,7 @@ interface UniversalInputProps {
   isArray?: boolean;
   isDisabled?: boolean;
   isDate?: boolean;
+  isTextArea?: boolean;
   fieldsToExcludeInQueryInput?: string[];
   extraFormCruds?: CrudType;
   isFloat?: boolean;
@@ -59,6 +61,7 @@ const UniversalInput = ({
   isJson,
   isShowQueryContainer,
   isDate,
+  isTextArea,
   closeTooltipLabel,
   addTooltipLabel,
   deleteTooltipLabel,
@@ -68,6 +71,14 @@ const UniversalInput = ({
 
   return (
     <>
+      {isTextArea && (
+        <TextAreaInput
+          fullWidth={fullWidth}
+          label={label}
+          value={value}
+          onChange={onChange}
+        />
+      )}
       {typeof value === TYPES.NUMBER && (
         <InputFloatLabel
           fullWidth={fullWidth}
@@ -154,7 +165,7 @@ const UniversalInput = ({
           onChange={onChange}
         />
       )}
-      {typeof value === TYPES.STRING && !isJson && !isDate && (
+      {typeof value === TYPES.STRING && !isJson && !isDate && !isTextArea && (
         <InputFloatLabel
           fullWidth={fullWidth}
           isFloat={isFloat}

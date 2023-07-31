@@ -53,9 +53,11 @@ const ResourceForm = _ref => {
         excludeFields,
         isFloat,
         isDate,
-        placeholder
+        placeholder,
+        isTextArea
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        isTextArea: isTextArea,
         isDate: isDate,
         extraFormCruds: extraFormCruds,
         fieldsToExcludeInQueryInput: excludeFields,
