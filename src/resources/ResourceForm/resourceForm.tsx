@@ -53,6 +53,7 @@ const ResourceForm = ({
       {children ||
         values.map(
           ({
+            label,
             field,
             value,
             activeValue,
@@ -76,7 +77,7 @@ const ResourceForm = ({
               isJson={isJson}
               isMultiInput={isMultiInput}
               currentOption={activeValue}
-              label={field}
+              label={label || field}
               placeholder={placeholder}
               disabled={loading}
               value={value}

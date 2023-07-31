@@ -44,6 +44,7 @@ const ResourceForm = _ref => {
     onSubmit: handleSubmit,
     children: [children || values.map(_ref2 => {
       let {
+        label,
         field,
         value,
         activeValue,
@@ -67,7 +68,7 @@ const ResourceForm = _ref => {
         isJson: isJson,
         isMultiInput: isMultiInput,
         currentOption: activeValue,
-        label: field,
+        label: label || field,
         placeholder: placeholder,
         disabled: loading,
         value: value,

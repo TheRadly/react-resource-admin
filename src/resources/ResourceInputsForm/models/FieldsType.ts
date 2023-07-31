@@ -2,6 +2,7 @@ import { SelectType } from "../../../types/InputEventTypes";
 
 export type FieldsType = {
   field: string;
+  label?: string;
   isArray?: boolean;
   isDisabled?: boolean;
   excludeFields?: string[];
