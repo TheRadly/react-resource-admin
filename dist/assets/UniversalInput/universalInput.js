@@ -49,6 +49,7 @@ const UniversalInput = _ref => {
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [isTextArea && (0, _jsxRuntime.jsx)(_textAreaInput.default, {
       fullWidth: fullWidth,
+      disabled: disabled,
       label: label,
       value: value,
       onChange: onChange

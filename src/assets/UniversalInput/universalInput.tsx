@@ -74,6 +74,7 @@ const UniversalInput = ({
       {isTextArea && (
         <TextAreaInput
           fullWidth={fullWidth}
+          disabled={disabled}
           label={label}
           value={value}
           onChange={onChange}
