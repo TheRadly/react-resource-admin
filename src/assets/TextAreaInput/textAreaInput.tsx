@@ -27,7 +27,7 @@ const TextAreaInput = ({
         disabled={disabled}
         value={value}
         onChange={handleChangeTextAreaInput}
-        cols={5}
+        cols={10}
       />
     </TextAreaInputWrapper>
   );
