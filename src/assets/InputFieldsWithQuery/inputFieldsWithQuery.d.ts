@@ -1,6 +1,6 @@
 import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
 interface InputFieldsWithQueryProps {
-    label: string;
+    label?: string;
     emptyLabel?: string;
     values: any[];
     isShowQueryContainer?: boolean;

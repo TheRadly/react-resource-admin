@@ -20,7 +20,7 @@ interface UniversalInputProps {
     extraFormCruds?: CrudType;
     isFloat?: boolean;
     fullWidth?: boolean;
-    label: string;
+    label?: string;
     placeholder?: string;
     emptyLabel?: string;
     closeTooltipLabel?: string;

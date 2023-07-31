@@ -3,7 +3,7 @@ import JsonEditorWrapper from "./styled/jsonEditorWrapper";
 interface JsonEditorProps {
   value: any;
   onChange: (arg: any) => void;
-  label: string;
+  label?: string;
   fullWidth?: boolean;
   disabled?: boolean;
 }
@@ -16,7 +16,7 @@ const JsonEditor = ({
   disabled,
 }: JsonEditorProps) => (
   <JsonEditorWrapper fullWidth={fullWidth}>
-    <span>{label}</span>
+    {label && <span>{label}</span>}
     <div>Test!</div>
   </JsonEditorWrapper>
 );

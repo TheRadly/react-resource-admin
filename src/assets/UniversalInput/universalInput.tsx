@@ -32,7 +32,7 @@ interface UniversalInputProps {
   extraFormCruds?: CrudType;
   isFloat?: boolean;
   fullWidth?: boolean;
-  label: string;
+  label?: string;
   placeholder?: string;
   emptyLabel?: string;
   closeTooltipLabel?: string;
@@ -67,7 +67,7 @@ const UniversalInput = ({
   deleteTooltipLabel,
   editTooltipLabel,
 }: UniversalInputProps) => {
-  const label = toFirstUpperCase(propLabel, true);
+  const label = propLabel ? toFirstUpperCase(propLabel, true) : undefined;
 
   return (
     <>

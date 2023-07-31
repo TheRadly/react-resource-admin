@@ -1,5 +1,5 @@
 interface DateInputProps {
-    label: string;
+    label?: string;
     onChange: (arg: any) => void;
     fullWidth?: boolean;
     disabled?: boolean;

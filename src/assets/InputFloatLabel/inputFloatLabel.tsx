@@ -11,7 +11,7 @@ interface InputFloatLabelProps {
   withoutPlaceholder?: boolean;
   isFloat?: boolean;
   fullWidth?: boolean;
-  label: string;
+  label?: string;
   placeholder?: string;
 }
 
@@ -30,7 +30,7 @@ const InputFloatLabel = ({
 
   return (
     <InputFloatLabelWrapper fullWidth={fullWidth}>
-      <label htmlFor={label}>{label}</label>
+      {label && <label htmlFor={label}>{label}</label>}
       {isNumber ? (
         <InputNumber
           placeholder={!withoutPlaceholder ? placeholder : undefined}

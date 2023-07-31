@@ -17,7 +17,7 @@ const JsonEditor = _ref => {
   } = _ref;
   return (0, _jsxRuntime.jsxs)(_jsonEditorWrapper.default, {
     fullWidth: fullWidth,
-    children: [(0, _jsxRuntime.jsx)("span", {
+    children: [label && (0, _jsxRuntime.jsx)("span", {
       children: label
     }), (0, _jsxRuntime.jsx)("div", {
       children: "Test!"

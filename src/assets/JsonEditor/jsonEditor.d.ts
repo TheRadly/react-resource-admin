@@ -1,7 +1,7 @@
 interface JsonEditorProps {
     value: any;
     onChange: (arg: any) => void;
-    label: string;
+    label?: string;
     fullWidth?: boolean;
     disabled?: boolean;
 }

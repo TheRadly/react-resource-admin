@@ -45,7 +45,7 @@ const UniversalInput = _ref => {
     deleteTooltipLabel,
     editTooltipLabel
   } = _ref;
-  const label = (0, _toFirstUpperCase.default)(propLabel, true);
+  const label = propLabel ? (0, _toFirstUpperCase.default)(propLabel, true) : undefined;
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [isTextArea && (0, _jsxRuntime.jsx)(_textAreaInput.default, {
       fullWidth: fullWidth,

@@ -30,7 +30,7 @@ const InputFloatLabel = _ref => {
   });
   return (0, _jsxRuntime.jsxs)(_inputFloatLabelWrapper.default, {
     fullWidth: fullWidth,
-    children: [(0, _jsxRuntime.jsx)("label", {
+    children: [label && (0, _jsxRuntime.jsx)("label", {
       htmlFor: label,
       children: label
     }), isNumber ? (0, _jsxRuntime.jsx)(_inputnumber.InputNumber, {

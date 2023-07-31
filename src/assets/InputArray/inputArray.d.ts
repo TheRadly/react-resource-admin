@@ -1,6 +1,6 @@
 interface InputArrayProps {
     values: string[];
-    label: string;
+    label?: string;
     onChange: (arg: string[]) => void;
     fullWidth?: boolean;
     disabled?: boolean;

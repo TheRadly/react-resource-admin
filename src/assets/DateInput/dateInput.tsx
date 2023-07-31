@@ -3,7 +3,7 @@ import DateInputWrapper from "./styled/DateInputWrapper";
 import useDateInput from "./talons/useDateInput";
 
 interface DateInputProps {
-  label: string;
+  label?: string;
   onChange: (arg: any) => void;
   fullWidth?: boolean;
   disabled?: boolean;
@@ -20,7 +20,7 @@ const DateInput = ({
 
   return (
     <DateInputWrapper fullWidth={fullWidth}>
-      <label htmlFor={label}>{label}</label>
+      {label && <label htmlFor={label}>{label}</label>}
       <Calendar
         id={label}
         value={typeof value === "string" ? new Date(value) : value}

@@ -8,7 +8,7 @@ import InputField from "./inputField";
 import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
 
 interface InputFieldsWithQueryProps {
-  label: string;
+  label?: string;
   emptyLabel?: string;
   values: any[];
   isShowQueryContainer?: boolean;
@@ -46,7 +46,7 @@ const InputFieldsWithQuery = ({
 
   return (
     <InputFieldsWithQueryWrapper fullWidth={fullWidth}>
-      <label htmlFor={label}>{label}</label>
+      {label && <label htmlFor={label}>{label}</label>}
       <InputContainer>
         <InputFieldsWrapper id={label}>
           {values.length

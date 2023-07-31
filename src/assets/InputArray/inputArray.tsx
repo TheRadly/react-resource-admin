@@ -4,7 +4,7 @@ import InputArrayWrapper from "./styled/inputArrayWrapper";
 
 interface InputArrayProps {
   values: string[];
-  label: string;
+  label?: string;
   onChange: (arg: string[]) => void;
   fullWidth?: boolean;
   disabled?: boolean;
@@ -24,7 +24,7 @@ const InputArray = ({
 
   return (
     <InputArrayWrapper fullWidth={fullWidth}>
-      <label htmlFor={label}>{label}</label>
+      {label && <label htmlFor={label}>{label}</label>}
       <Chips
         disabled={disabled}
         id={label}
