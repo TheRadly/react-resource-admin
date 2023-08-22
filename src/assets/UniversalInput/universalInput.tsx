@@ -74,7 +74,7 @@ const UniversalInput = ({
 
   return (
     <>
-      {isMultiSelect && (
+      {Array.isArray(value) && isMultiSelect && (
         <MultiSelectInput
           currentOption={currentOption}
           fullWidth={fullWidth}
@@ -141,6 +141,7 @@ const UniversalInput = ({
       {typeof value === TYPES.OBJECT &&
         !isDate &&
         !isMultiInput &&
+        !isMultiSelect &&
         !withChildQuery &&
         !isArray && (
           <DropdownInput

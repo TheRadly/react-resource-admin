@@ -49,7 +49,7 @@ const UniversalInput = _ref => {
   } = _ref;
   const label = propLabel ? (0, _toFirstUpperCase.default)(propLabel, true) : undefined;
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-    children: [isMultiSelect && (0, _jsxRuntime.jsx)(_multiSelectInput.default, {
+    children: [Array.isArray(value) && isMultiSelect && (0, _jsxRuntime.jsx)(_multiSelectInput.default, {
       currentOption: currentOption,
       fullWidth: fullWidth,
       disabled: disabled,
@@ -95,7 +95,7 @@ const UniversalInput = _ref => {
       label: label,
       values: value,
       fieldsToExclude: fieldsToExcludeInQueryInput
-    }), typeof value === _config.default.OBJECT && !isDate && !isMultiInput && !withChildQuery && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
+    }), typeof value === _config.default.OBJECT && !isDate && !isMultiInput && !isMultiSelect && !withChildQuery && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
       label: label,
       disabled: disabled,
       fullWidth: fullWidth,
