@@ -58,6 +58,7 @@ const ResourceForm = ({
             value,
             activeValue,
             isMultiInput,
+            isMultiSelect,
             isJson,
             withChildQuery,
             excludeFields,
@@ -67,6 +68,7 @@ const ResourceForm = ({
             isTextArea,
           }) => (
             <UniversalInput
+              isMultiSelect={isMultiSelect}
               isTextArea={isTextArea}
               isDate={isDate}
               extraFormCruds={extraFormCruds}

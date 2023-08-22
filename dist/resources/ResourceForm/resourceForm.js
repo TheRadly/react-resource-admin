@@ -49,6 +49,7 @@ const ResourceForm = _ref => {
         value,
         activeValue,
         isMultiInput,
+        isMultiSelect,
         isJson,
         withChildQuery,
         excludeFields,
@@ -58,6 +59,7 @@ const ResourceForm = _ref => {
         isTextArea
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        isMultiSelect: isMultiSelect,
         isTextArea: isTextArea,
         isDate: isDate,
         extraFormCruds: extraFormCruds,

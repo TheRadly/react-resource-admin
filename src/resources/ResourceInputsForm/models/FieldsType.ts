@@ -15,4 +15,5 @@ export type FieldsType = {
   isDate?: boolean;
   placeholder?: string;
   isTextArea?: boolean;
+  isMultiSelect?: boolean;
 };
