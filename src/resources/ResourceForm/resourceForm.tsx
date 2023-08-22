@@ -66,8 +66,10 @@ const ResourceForm = ({
             isDate,
             placeholder,
             isTextArea,
+            isArray,
           }) => (
             <UniversalInput
+              isArray={isArray}
               isMultiSelect={isMultiSelect}
               isTextArea={isTextArea}
               isDate={isDate}

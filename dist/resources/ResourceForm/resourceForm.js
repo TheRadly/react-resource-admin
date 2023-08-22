@@ -56,9 +56,11 @@ const ResourceForm = _ref => {
         isFloat,
         isDate,
         placeholder,
-        isTextArea
+        isTextArea,
+        isArray
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        isArray: isArray,
         isMultiSelect: isMultiSelect,
         isTextArea: isTextArea,
         isDate: isDate,
