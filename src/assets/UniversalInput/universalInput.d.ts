@@ -6,7 +6,7 @@ interface UniversalInputProps {
     onChange: (arg: any) => void;
     disabled?: boolean;
     dropdownValues?: any;
-    currentOption?: SelectType;
+    currentOption?: SelectType | any;
     isMultiInput?: boolean;
     isJson?: boolean;
     withChildQuery?: boolean;
@@ -27,6 +27,7 @@ interface UniversalInputProps {
     addTooltipLabel?: string;
     deleteTooltipLabel?: string;
     editTooltipLabel?: string;
+    isMultiSelect?: boolean;
 }
-declare const _default: import("react").MemoExoticComponent<({ label: propLabel, placeholder, value, onChange, disabled, currentOption, isMultiInput, withChildQuery, handleShowQueryContainer, fieldsToExcludeInQueryInput, extraFormCruds, fullWidth, emptyLabel, isArray, isDisabled, isFloat, isJson, isShowQueryContainer, isDate, isTextArea, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, }: UniversalInputProps) => import("react/jsx-runtime").JSX.Element>;
+declare const _default: import("react").MemoExoticComponent<({ label: propLabel, placeholder, value, onChange, disabled, currentOption, isMultiInput, isMultiSelect, withChildQuery, handleShowQueryContainer, fieldsToExcludeInQueryInput, extraFormCruds, fullWidth, emptyLabel, isArray, isDisabled, isFloat, isJson, isShowQueryContainer, isDate, isTextArea, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, }: UniversalInputProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

@@ -16,6 +16,7 @@ var _InputArray = _interopRequireDefault(require("../InputArray"));
 var _dateInput = _interopRequireDefault(require("../DateInput/dateInput"));
 var _toFirstUpperCase = _interopRequireDefault(require("../../utils/toFirstUpperCase"));
 var _textAreaInput = _interopRequireDefault(require("../TextAreaInput/textAreaInput"));
+var _multiSelectInput = _interopRequireDefault(require("../MultiSelectInput/multiSelectInput"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const UniversalInput = _ref => {
@@ -27,6 +28,7 @@ const UniversalInput = _ref => {
     disabled,
     currentOption,
     isMultiInput,
+    isMultiSelect,
     withChildQuery,
     handleShowQueryContainer,
     fieldsToExcludeInQueryInput,
@@ -47,7 +49,14 @@ const UniversalInput = _ref => {
   } = _ref;
   const label = propLabel ? (0, _toFirstUpperCase.default)(propLabel, true) : undefined;
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-    children: [isTextArea && (0, _jsxRuntime.jsx)(_textAreaInput.default, {
+    children: [isMultiSelect && (0, _jsxRuntime.jsx)(_multiSelectInput.default, {
+      currentOption: currentOption,
+      fullWidth: fullWidth,
+      disabled: disabled,
+      label: label,
+      options: value,
+      onChange: onChange
+    }), isTextArea && (0, _jsxRuntime.jsx)(_textAreaInput.default, {
       fullWidth: fullWidth,
       disabled: disabled,
       label: label,

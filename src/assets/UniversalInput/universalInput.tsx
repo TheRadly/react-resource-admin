@@ -12,13 +12,14 @@ import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
 import DateInput from "../DateInput/dateInput";
 import toFirstUpperCase from "../../utils/toFirstUpperCase";
 import TextAreaInput from "../TextAreaInput/textAreaInput";
+import MultiSelectInput from "../MultiSelectInput/multiSelectInput";
 
 interface UniversalInputProps {
   value: any;
   onChange: (arg: any) => void;
   disabled?: boolean;
   dropdownValues?: any;
-  currentOption?: SelectType;
+  currentOption?: SelectType | any;
   isMultiInput?: boolean;
   isJson?: boolean;
   withChildQuery?: boolean;
@@ -39,6 +40,7 @@ interface UniversalInputProps {
   addTooltipLabel?: string;
   deleteTooltipLabel?: string;
   editTooltipLabel?: string;
+  isMultiSelect?: boolean;
 }
 
 const UniversalInput = ({
@@ -49,6 +51,7 @@ const UniversalInput = ({
   disabled,
   currentOption,
   isMultiInput,
+  isMultiSelect,
   withChildQuery,
   handleShowQueryContainer,
   fieldsToExcludeInQueryInput,
@@ -71,6 +74,16 @@ const UniversalInput = ({
 
   return (
     <>
+      {isMultiSelect && (
+        <MultiSelectInput
+          currentOption={currentOption}
+          fullWidth={fullWidth}
+          disabled={disabled}
+          label={label}
+          options={value}
+          onChange={onChange}
+        />
+      )}
       {isTextArea && (
         <TextAreaInput
           fullWidth={fullWidth}
