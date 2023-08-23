@@ -7,6 +7,7 @@ interface UseFormProps {
   onSubmitMethod: any;
   valuesForEdit?: any;
   omitValuesForEdit?: any;
+  loading?: boolean;
 }
 
 const useForm = ({
@@ -14,6 +15,7 @@ const useForm = ({
   onSubmitMethod,
   valuesForEdit,
   omitValuesForEdit,
+  loading,
 }: UseFormProps) => {
   const form = useFormik({
     initialValues: typenameIdFilter(initialValues || {}) as any,
@@ -31,7 +33,7 @@ const useForm = ({
 
       form.setValues(filteredValues);
     }
-  }, [form, initialValues, omitValuesForEdit, valuesForEdit]);
+  }, [initialValues, omitValuesForEdit, valuesForEdit, loading]);
 
   const values = useMemo(
     () =>

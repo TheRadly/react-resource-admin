@@ -14,7 +14,8 @@ const useForm = _ref => {
     initialValues = null,
     onSubmitMethod,
     valuesForEdit,
-    omitValuesForEdit
+    omitValuesForEdit,
+    loading
   } = _ref;
   const form = (0, _formik.useFormik)({
     initialValues: (0, _typenameIdFilter.default)(initialValues || {}),
@@ -32,7 +33,7 @@ const useForm = _ref => {
       }, omitValuesForEdit && [...omitValuesForEdit]);
       form.setValues(filteredValues);
     }
-  }, [form, initialValues, omitValuesForEdit, valuesForEdit]);
+  }, [initialValues, omitValuesForEdit, valuesForEdit, loading]);
   const values = (0, _react.useMemo)(() => Object.keys(formValues).map(field => ({
     field,
     value: formValues[field]
