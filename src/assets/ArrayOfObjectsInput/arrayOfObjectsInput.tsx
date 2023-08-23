@@ -5,6 +5,9 @@ import {
   ArrayOfObjectsContainer,
   ArrayOfObjectsInputsBox,
   ArrayOfObjectsItems,
+  ArrayOfObjectsItem,
+  ArrayOfObjectsItemData,
+  ArrayOfObjectsItemDataFields,
 } from "./styled/arrayOfObjectInputWrapper";
 import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
 import { PLUS_ICON } from "../../staticTexts";
@@ -48,17 +51,17 @@ const ArrayOfObjectsInput = ({
       <ArrayOfObjectsItems>
         {arrayOfItems.length ? (
           arrayOfItems.map((item, index) => (
-            <div>
+            <ArrayOfObjectsItem>
               <span>{index}.</span>
-              <div>
+              <ArrayOfObjectsItemData>
                 {Object.keys(item).map((key) => (
-                  <div>
+                  <ArrayOfObjectsItemDataFields>
                     <span>{key}</span>
                     <span>{item[key]}</span>
-                  </div>
+                  </ArrayOfObjectsItemDataFields>
                 ))}
-              </div>
-            </div>
+              </ArrayOfObjectsItemData>
+            </ArrayOfObjectsItem>
           ))
         ) : (
           <span>{emptyMessage}</span>

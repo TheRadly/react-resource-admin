@@ -13,3 +13,12 @@ export declare const ArrayOfObjectsContainer: import("styled-components").IStyle
 export declare const ArrayOfObjectsInputsBox: import("styled-components").IStyledComponent<"web", Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
     ref?: import("react").RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void) | null | undefined;
 }, never>>;
+export declare const ArrayOfObjectsItem: import("styled-components").IStyledComponent<"web", Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
+    ref?: import("react").RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void) | null | undefined;
+}, never>>;
+export declare const ArrayOfObjectsItemData: import("styled-components").IStyledComponent<"web", Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
+    ref?: import("react").RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void) | null | undefined;
+}, never>>;
+export declare const ArrayOfObjectsItemDataFields: import("styled-components").IStyledComponent<"web", Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
+    ref?: import("react").RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void) | null | undefined;
+}, never>>;

@@ -40,11 +40,11 @@ const ArrayOfObjectsInput = _ref => {
       htmlFor: label,
       children: label
     }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItems, {
-      children: arrayOfItems.length ? arrayOfItems.map((item, index) => (0, _jsxRuntime.jsxs)("div", {
+      children: arrayOfItems.length ? arrayOfItems.map((item, index) => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItem, {
         children: [(0, _jsxRuntime.jsxs)("span", {
           children: [index, "."]
-        }), (0, _jsxRuntime.jsx)("div", {
-          children: Object.keys(item).map(key => (0, _jsxRuntime.jsxs)("div", {
+        }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemData, {
+          children: Object.keys(item).map(key => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemDataFields, {
             children: [(0, _jsxRuntime.jsx)("span", {
               children: key
             }), (0, _jsxRuntime.jsx)("span", {

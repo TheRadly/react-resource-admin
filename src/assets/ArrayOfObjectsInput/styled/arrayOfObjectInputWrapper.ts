@@ -31,6 +31,7 @@ export const ArrayOfObjectsItems = styled.div`
   span {
     font-family: var(--font-family);
     font-size: 14px;
+    color: var(--surface-800);
   }
 `;
 
@@ -49,4 +50,27 @@ export const ArrayOfObjectsInputsBox = styled.div`
   flex-direction: column;
   gap: 10px;
   border: 1.5px solid var(--surface-300);
+`;
+
+export const ArrayOfObjectsItem = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+`;
+
+export const ArrayOfObjectsItemData = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const ArrayOfObjectsItemDataFields = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &:first-child {
+    &::after {
+      content: ":";
+    }
+  }
 `;
