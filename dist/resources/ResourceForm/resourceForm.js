@@ -57,9 +57,17 @@ const ResourceForm = _ref => {
         isDate,
         placeholder,
         isTextArea,
-        isArray
+        isArray,
+        initialValue,
+        itemTitledBy,
+        isArrayWithObject,
+        emptyLabel
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        emptyLabel: emptyLabel,
+        isArrayWithObjects: isArrayWithObject,
+        initialValue: initialValue,
+        itemTitledBy: itemTitledBy,
         isArray: isArray,
         isMultiSelect: isMultiSelect,
         isTextArea: isTextArea,

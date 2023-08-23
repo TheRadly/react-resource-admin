@@ -16,4 +16,8 @@ export type FieldsType = {
   placeholder?: string;
   isTextArea?: boolean;
   isMultiSelect?: boolean;
+  initialValue?: any;
+  itemTitledBy?: string;
+  isArrayWithObject?: boolean;
+  emptyLabel?: string;
 };

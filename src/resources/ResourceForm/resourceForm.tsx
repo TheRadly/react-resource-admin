@@ -67,8 +67,16 @@ const ResourceForm = ({
             placeholder,
             isTextArea,
             isArray,
+            initialValue,
+            itemTitledBy,
+            isArrayWithObject,
+            emptyLabel,
           }) => (
             <UniversalInput
+              emptyLabel={emptyLabel}
+              isArrayWithObjects={isArrayWithObject}
+              initialValue={initialValue}
+              itemTitledBy={itemTitledBy}
               isArray={isArray}
               isMultiSelect={isMultiSelect}
               isTextArea={isTextArea}
