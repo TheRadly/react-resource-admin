@@ -68,9 +68,11 @@ export const ArrayOfObjectsItemDataFields = styled.div`
   align-items: center;
   gap: 5px;
 
-  &:first-child {
-    &::after {
-      content: ":";
+  span {
+    &:first-child {
+      &::after {
+        content: ":";
+      }
     }
   }
 `;

@@ -20,6 +20,6 @@ const ArrayOfObjectsItem = _styledComponents.default.div(_templateObject5 || (_t
 exports.ArrayOfObjectsItem = ArrayOfObjectsItem;
 const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n"])));
 exports.ArrayOfObjectsItemData = ArrayOfObjectsItemData;
-const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n\n  &:first-child {\n    &::after {\n      content: \":\";\n    }\n  }\n"])));
+const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n\n  span {\n    &:first-child {\n      &::after {\n        content: \":\";\n      }\n    }\n  }\n"])));
 exports.ArrayOfObjectsItemDataFields = ArrayOfObjectsItemDataFields;
 //# sourceMappingURL=arrayOfObjectInputWrapper.js.map
