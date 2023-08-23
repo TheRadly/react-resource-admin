@@ -40,8 +40,18 @@ const ArrayOfObjectsInput = _ref => {
       htmlFor: label,
       children: label
     }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItems, {
-      children: arrayOfItems.length ? arrayOfItems.map(item => (0, _jsxRuntime.jsx)("span", {
-        children: item
+      children: arrayOfItems.length ? arrayOfItems.map((item, index) => (0, _jsxRuntime.jsxs)("div", {
+        children: [(0, _jsxRuntime.jsxs)("span", {
+          children: [index, "."]
+        }), (0, _jsxRuntime.jsx)("div", {
+          children: Object.keys(item).map(key => (0, _jsxRuntime.jsxs)("div", {
+            children: [(0, _jsxRuntime.jsx)("span", {
+              children: key
+            }), (0, _jsxRuntime.jsx)("span", {
+              children: item[key]
+            })]
+          }))
+        })]
       })) : (0, _jsxRuntime.jsx)("span", {
         children: emptyMessage
       })

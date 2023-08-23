@@ -6,7 +6,7 @@ interface UseArrayOfObjectsInputProps {
 }
 declare const useArrayOfObjectsInput: ({ initialValue, values, itemTitledBy, onChange, }: UseArrayOfObjectsInputProps) => {
     arrayOfFields: any;
-    arrayOfItems: string[];
+    arrayOfItems: any[];
     handleChangeFieldValue: (field: string, data: any) => void;
     handleSetFieldsData: () => void;
 };

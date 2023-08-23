@@ -15,7 +15,7 @@ const useArrayOfObjectsInput = _ref => {
     onChange
   } = _ref;
   const [objectOfArray, setObjectOfArray] = (0, _react.useState)(initialValue);
-  const arrayOfItems = (0, _react.useMemo)(() => values.map(item => Object.keys(item[itemTitledBy])[0] || Object.keys(item)[0]), [itemTitledBy, values]);
+  const arrayOfItems = (0, _react.useMemo)(() => itemTitledBy ? values.filter(item => Object.keys(item).some(key => key === itemTitledBy)) : values, [itemTitledBy, values]);
   const arrayOfFields = (0, _react.useMemo)(() => Object.keys(objectOfArray).map(key => {
     const defaultData = {
       field: key,

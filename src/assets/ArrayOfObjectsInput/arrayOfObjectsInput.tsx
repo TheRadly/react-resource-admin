@@ -47,7 +47,19 @@ const ArrayOfObjectsInput = ({
       {label && <label htmlFor={label}>{label}</label>}
       <ArrayOfObjectsItems>
         {arrayOfItems.length ? (
-          arrayOfItems.map((item) => <span>{item}</span>)
+          arrayOfItems.map((item, index) => (
+            <div>
+              <span>{index}.</span>
+              <div>
+                {Object.keys(item).map((key) => (
+                  <div>
+                    <span>{key}</span>
+                    <span>{item[key]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
         ) : (
           <span>{emptyMessage}</span>
         )}

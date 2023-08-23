@@ -19,10 +19,11 @@ const useArrayOfObjectsInput = ({
 
   const arrayOfItems = useMemo(
     () =>
-      values.map(
-        (item) =>
-          Object.keys(item[itemTitledBy as string])[0] || Object.keys(item)[0]
-      ),
+      itemTitledBy
+        ? values.filter((item) =>
+            Object.keys(item).some((key) => key === itemTitledBy)
+          )
+        : values,
     [itemTitledBy, values]
   );
 
