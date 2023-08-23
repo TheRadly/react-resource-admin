@@ -62,6 +62,7 @@ const ArrayOfObjectsInput = _ref => {
           onChange: data => handleChangeFieldValue(item.field, data)
         }))
       }), (0, _jsxRuntime.jsx)(_button.Button, {
+        type: "button",
         disabled: disabled,
         outlined: true,
         icon: _staticTexts.PLUS_ICON,

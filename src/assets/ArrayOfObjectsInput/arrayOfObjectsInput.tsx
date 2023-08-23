@@ -72,6 +72,7 @@ const ArrayOfObjectsInput = ({
           ))}
         </ArrayOfObjectsInputsBox>
         <Button
+          type="button"
           disabled={disabled}
           outlined
           icon={PLUS_ICON}
