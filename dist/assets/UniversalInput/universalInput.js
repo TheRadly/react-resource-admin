@@ -17,6 +17,7 @@ var _dateInput = _interopRequireDefault(require("../DateInput/dateInput"));
 var _toFirstUpperCase = _interopRequireDefault(require("../../utils/toFirstUpperCase"));
 var _textAreaInput = _interopRequireDefault(require("../TextAreaInput/textAreaInput"));
 var _multiSelectInput = _interopRequireDefault(require("../MultiSelectInput/multiSelectInput"));
+var _arrayOfObjectsInput = _interopRequireDefault(require("../ArrayOfObjectsInput/arrayOfObjectsInput"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const UniversalInput = _ref => {
@@ -42,14 +43,26 @@ const UniversalInput = _ref => {
     isShowQueryContainer,
     isDate,
     isTextArea,
+    isArrayWithObjects,
     closeTooltipLabel,
     addTooltipLabel,
     deleteTooltipLabel,
-    editTooltipLabel
+    editTooltipLabel,
+    initialValue,
+    itemTitledBy
   } = _ref;
   const label = propLabel ? (0, _toFirstUpperCase.default)(propLabel, true) : undefined;
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-    children: [Array.isArray(value) && isMultiSelect && (0, _jsxRuntime.jsx)(_multiSelectInput.default, {
+    children: [Array.isArray(value) && isArrayWithObjects && (0, _jsxRuntime.jsx)(_arrayOfObjectsInput.default, {
+      label: label,
+      fullWidth: fullWidth,
+      disabled: disabled,
+      onChange: onChange,
+      initialValue: initialValue,
+      values: value,
+      itemTitledBy: itemTitledBy,
+      emptyMessage: emptyLabel
+    }), Array.isArray(value) && isMultiSelect && (0, _jsxRuntime.jsx)(_multiSelectInput.default, {
       currentOption: currentOption,
       fullWidth: fullWidth,
       disabled: disabled,
@@ -95,7 +108,7 @@ const UniversalInput = _ref => {
       label: label,
       values: value,
       fieldsToExclude: fieldsToExcludeInQueryInput
-    }), typeof value === _config.default.OBJECT && !isDate && !isMultiInput && !isMultiSelect && !withChildQuery && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
+    }), typeof value === _config.default.OBJECT && !isDate && !isMultiInput && !isMultiSelect && !withChildQuery && !isArrayWithObjects && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
       label: label,
       disabled: disabled,
       fullWidth: fullWidth,

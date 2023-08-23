@@ -13,6 +13,7 @@ import DateInput from "../DateInput/dateInput";
 import toFirstUpperCase from "../../utils/toFirstUpperCase";
 import TextAreaInput from "../TextAreaInput/textAreaInput";
 import MultiSelectInput from "../MultiSelectInput/multiSelectInput";
+import ArrayOfObjectsInput from "../ArrayOfObjectsInput/arrayOfObjectsInput";
 
 interface UniversalInputProps {
   value: any;
@@ -41,6 +42,9 @@ interface UniversalInputProps {
   deleteTooltipLabel?: string;
   editTooltipLabel?: string;
   isMultiSelect?: boolean;
+  isArrayWithObjects?: boolean;
+  initialValue?: any;
+  itemTitledBy?: string;
 }
 
 const UniversalInput = ({
@@ -65,15 +69,30 @@ const UniversalInput = ({
   isShowQueryContainer,
   isDate,
   isTextArea,
+  isArrayWithObjects,
   closeTooltipLabel,
   addTooltipLabel,
   deleteTooltipLabel,
   editTooltipLabel,
+  initialValue,
+  itemTitledBy,
 }: UniversalInputProps) => {
   const label = propLabel ? toFirstUpperCase(propLabel, true) : undefined;
 
   return (
     <>
+      {Array.isArray(value) && isArrayWithObjects && (
+        <ArrayOfObjectsInput
+          label={label}
+          fullWidth={fullWidth}
+          disabled={disabled}
+          onChange={onChange}
+          initialValue={initialValue}
+          values={value}
+          itemTitledBy={itemTitledBy}
+          emptyMessage={emptyLabel}
+        />
+      )}
       {Array.isArray(value) && isMultiSelect && (
         <MultiSelectInput
           currentOption={currentOption}
@@ -143,6 +162,7 @@ const UniversalInput = ({
         !isMultiInput &&
         !isMultiSelect &&
         !withChildQuery &&
+        !isArrayWithObjects &&
         !isArray && (
           <DropdownInput
             label={label}
