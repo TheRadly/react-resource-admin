@@ -61,7 +61,6 @@ export const ArrayOfObjectsItem = styled.div`
 
 export const ArrayOfObjectsItemData = styled.div`
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
   border: 1px solid var(--surface-400);
   padding: 5px;

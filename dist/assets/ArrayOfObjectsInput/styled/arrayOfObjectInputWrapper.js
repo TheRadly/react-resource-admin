@@ -18,7 +18,7 @@ const ArrayOfObjectsInputsBox = _styledComponents.default.div(_templateObject4 |
 exports.ArrayOfObjectsInputsBox = ArrayOfObjectsInputsBox;
 const ArrayOfObjectsItem = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  align-items: center;\n"])));
 exports.ArrayOfObjectsItem = ArrayOfObjectsItem;
-const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  flex-wrap: wrap;\n  border: 1px solid var(--surface-400);\n  padding: 5px;\n  border-radius: 6px;\n"])));
+const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  border: 1px solid var(--surface-400);\n  padding: 5px;\n  border-radius: 6px;\n"])));
 exports.ArrayOfObjectsItemData = ArrayOfObjectsItemData;
 const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-right: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n\n  span {\n    &:first-child {\n      &::after {\n        content: \":\";\n      }\n    }\n  }\n"])));
 exports.ArrayOfObjectsItemDataFields = ArrayOfObjectsItemDataFields;

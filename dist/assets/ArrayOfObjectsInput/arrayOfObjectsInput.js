@@ -27,7 +27,8 @@ const ArrayOfObjectsInput = _ref => {
     arrayOfFields,
     arrayOfItems,
     handleChangeFieldValue,
-    handleSetFieldsData
+    handleSetFieldsData,
+    handleRemoveItem
   } = (0, _useArrayOfObjectsInput.default)({
     onChange,
     initialValue,
@@ -51,6 +52,12 @@ const ArrayOfObjectsInput = _ref => {
               children: item[key]
             })]
           }))
+        }), (0, _jsxRuntime.jsx)(_button.Button, {
+          type: "button",
+          disabled: disabled,
+          rounded: true,
+          icon: _staticTexts.TRASH_ICON,
+          onClick: () => handleRemoveItem(index)
         })]
       })) : (0, _jsxRuntime.jsx)("span", {
         children: emptyMessage

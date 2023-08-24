@@ -12,6 +12,7 @@ import {
 } from "./styled/arrayOfObjectInputWrapper";
 import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
 import { PLUS_ICON } from "../../staticTexts";
+import { TRASH_ICON } from "../../staticTexts";
 
 interface ArrayOfObjectsInputProps {
   label?: string;
@@ -39,6 +40,7 @@ const ArrayOfObjectsInput = ({
     arrayOfItems,
     handleChangeFieldValue,
     handleSetFieldsData,
+    handleRemoveItem,
   } = useArrayOfObjectsInput({
     onChange,
     initialValue,
@@ -62,6 +64,13 @@ const ArrayOfObjectsInput = ({
                   </ArrayOfObjectsItemDataFields>
                 ))}
               </ArrayOfObjectsItemData>
+              <Button
+                type="button"
+                disabled={disabled}
+                rounded
+                icon={TRASH_ICON}
+                onClick={() => handleRemoveItem(index)}
+              />
             </ArrayOfObjectsItem>
           ))
         ) : (

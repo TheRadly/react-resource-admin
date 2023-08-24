@@ -9,5 +9,6 @@ declare const useArrayOfObjectsInput: ({ initialValue, values, itemTitledBy, onC
     arrayOfItems: any[];
     handleChangeFieldValue: (field: string, data: any) => void;
     handleSetFieldsData: () => void;
+    handleRemoveItem: (propIndex: number) => void;
 };
 export default useArrayOfObjectsInput;

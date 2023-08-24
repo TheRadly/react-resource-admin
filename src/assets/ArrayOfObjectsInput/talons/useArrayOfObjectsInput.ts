@@ -61,11 +61,25 @@ const useArrayOfObjectsInput = ({
     setObjectOfArray(initialValue);
   }, [objectOfArray, onChange, values, initialValue]);
 
+  const handleRemoveItem = useCallback(
+    (propIndex: number) => {
+      if (objectOfArray.length) {
+        const newArray = objectOfArray.filter(
+          (_: any, index: number) => index !== propIndex
+        );
+
+        setObjectOfArray(newArray);
+      }
+    },
+    [objectOfArray]
+  );
+
   return {
     arrayOfFields,
     arrayOfItems,
     handleChangeFieldValue,
     handleSetFieldsData,
+    handleRemoveItem,
   };
 };
 
