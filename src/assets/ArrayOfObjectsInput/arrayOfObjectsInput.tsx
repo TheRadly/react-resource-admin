@@ -8,6 +8,7 @@ import {
   ArrayOfObjectsItem,
   ArrayOfObjectsItemData,
   ArrayOfObjectsItemDataFields,
+  ArrayOfObjectsItemIndex,
 } from "./styled/arrayOfObjectInputWrapper";
 import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
 import { PLUS_ICON } from "../../staticTexts";
@@ -52,7 +53,7 @@ const ArrayOfObjectsInput = ({
         {arrayOfItems.length ? (
           arrayOfItems.map((item, index) => (
             <ArrayOfObjectsItem>
-              <span>{index}.</span>
+              <ArrayOfObjectsItemIndex>{index}</ArrayOfObjectsItemIndex>
               <ArrayOfObjectsItemData>
                 {Object.keys(item).map((key) => (
                   <ArrayOfObjectsItemDataFields>

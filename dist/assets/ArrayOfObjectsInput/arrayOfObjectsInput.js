@@ -41,8 +41,8 @@ const ArrayOfObjectsInput = _ref => {
       children: label
     }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItems, {
       children: arrayOfItems.length ? arrayOfItems.map((item, index) => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItem, {
-        children: [(0, _jsxRuntime.jsxs)("span", {
-          children: [index, "."]
+        children: [(0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemIndex, {
+          children: index
         }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemData, {
           children: Object.keys(item).map(key => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemDataFields, {
             children: [(0, _jsxRuntime.jsx)("span", {

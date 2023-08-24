@@ -22,3 +22,6 @@ export declare const ArrayOfObjectsItemData: import("styled-components").IStyled
 export declare const ArrayOfObjectsItemDataFields: import("styled-components").IStyledComponent<"web", Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
     ref?: import("react").RefObject<HTMLDivElement> | ((instance: HTMLDivElement | null) => void) | null | undefined;
 }, never>>;
+export declare const ArrayOfObjectsItemIndex: import("styled-components").IStyledComponent<"web", Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "ref"> & {
+    ref?: import("react").RefObject<HTMLSpanElement> | ((instance: HTMLSpanElement | null) => void) | null | undefined;
+}, never>>;

@@ -27,6 +27,7 @@ export const ArrayOfObjectsItems = styled.div`
   background: var(--surface-100);
   padding: 10px;
   border-radius: 6px;
+  gap: 10px;
 
   span {
     font-family: var(--font-family);
@@ -61,12 +62,20 @@ export const ArrayOfObjectsItem = styled.div`
 export const ArrayOfObjectsItemData = styled.div`
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  border: 1px solid var(--surface-400);
+  padding: 5px;
+  border-radius: 6px;
 `;
 
 export const ArrayOfObjectsItemDataFields = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   span {
     &:first-child {
@@ -74,5 +83,13 @@ export const ArrayOfObjectsItemDataFields = styled.div`
         content: ":";
       }
     }
+  }
+`;
+
+export const ArrayOfObjectsItemIndex = styled.span`
+  display: flex;
+
+  &::after {
+    content: ".";
   }
 `;
