@@ -57,6 +57,19 @@ export const ArrayOfObjectsItem = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+
+  button {
+    align-self: flex-start;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+
+    span {
+      font-family: "primeicons" !important;
+      font-size: 10px !important;
+      color: unset;
+    }
+  }
 `;
 
 export const ArrayOfObjectsItemData = styled.div`

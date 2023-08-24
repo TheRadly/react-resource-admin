@@ -57,21 +57,20 @@ const useArrayOfObjectsInput = ({
   const handleSetFieldsData = useCallback(() => {
     const mutatedArr = [...values, objectOfArray];
     onChange(mutatedArr);
-
     setObjectOfArray(initialValue);
   }, [objectOfArray, onChange, values, initialValue]);
 
   const handleRemoveItem = useCallback(
     (propIndex: number) => {
-      if (objectOfArray.length) {
-        const newArray = objectOfArray.filter(
+      if (values.length) {
+        const newArray = values.filter(
           (_: any, index: number) => index !== propIndex
         );
 
         setObjectOfArray(newArray);
       }
     },
-    [objectOfArray]
+    [values]
   );
 
   return {

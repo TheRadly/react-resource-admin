@@ -16,7 +16,7 @@ const ArrayOfObjectsContainer = _styledComponents.default.div(_templateObject3 |
 exports.ArrayOfObjectsContainer = ArrayOfObjectsContainer;
 const ArrayOfObjectsInputsBox = _styledComponents.default.div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-radius: 6px;\n  padding: 10px;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  border: 1.5px solid var(--surface-300);\n"])));
 exports.ArrayOfObjectsInputsBox = ArrayOfObjectsInputsBox;
-const ArrayOfObjectsItem = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  align-items: center;\n"])));
+const ArrayOfObjectsItem = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  align-items: center;\n\n  button {\n    align-self: flex-start;\n    width: 20px;\n    height: 20px;\n    padding: 10px;\n\n    span {\n      font-family: \"primeicons\" !important;\n      font-size: 10px !important;\n      color: unset;\n    }\n  }\n"])));
 exports.ArrayOfObjectsItem = ArrayOfObjectsItem;
 const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  border: 1px solid var(--surface-400);\n  padding: 5px;\n  border-radius: 6px;\n"])));
 exports.ArrayOfObjectsItemData = ArrayOfObjectsItemData;
