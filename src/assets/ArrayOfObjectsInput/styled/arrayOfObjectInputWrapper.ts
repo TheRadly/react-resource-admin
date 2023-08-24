@@ -84,6 +84,7 @@ export const ArrayOfObjectsItemDataFields = styled.div`
   display: flex;
   align-items: center;
   margin-right: 5px;
+  gap: 5px;
 
   &:last-child {
     margin-right: 0;
@@ -104,4 +105,10 @@ export const ArrayOfObjectsItemIndex = styled.span`
   &::after {
     content: ".";
   }
+`;
+
+export const ArrayOfObjectsItemActions = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

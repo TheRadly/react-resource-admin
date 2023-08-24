@@ -14,6 +14,8 @@ const useArrayOfObjectsInput = _ref => {
     itemTitledBy,
     onChange
   } = _ref;
+  const [indexEditItem, setIndexEditItem] = (0, _react.useState)(null);
+  const [isEditMode, setEditMode] = (0, _react.useState)(false);
   const [objectOfArray, setObjectOfArray] = (0, _react.useState)(initialValue);
   const arrayOfItems = (0, _react.useMemo)(() => itemTitledBy ? values.filter(item => Object.keys(item).some(key => key === itemTitledBy)) : values, [itemTitledBy, values]);
   const arrayOfFields = (0, _react.useMemo)(() => Object.keys(objectOfArray).map(key => {
@@ -45,12 +47,28 @@ const useArrayOfObjectsInput = _ref => {
       onChange(newArray);
     }
   }, [onChange, values]);
+  const handleEditItem = (0, _react.useCallback)((item, index) => {
+    setEditMode(true);
+    setObjectOfArray(item);
+    setIndexEditItem(index);
+  }, []);
+  const handleSetEditedFieldData = (0, _react.useCallback)(() => {
+    const newArray = values.filter((item, index) => item.id ? item.id !== objectOfArray.id : index !== indexEditItem);
+    newArray.push(objectOfArray);
+    onChange(newArray);
+    setEditMode(false);
+    setIndexEditItem(null);
+    setObjectOfArray(initialValue);
+  }, [indexEditItem, objectOfArray, values, onChange, initialValue]);
   return {
+    isEditMode,
     arrayOfFields,
     arrayOfItems,
     handleChangeFieldValue,
     handleSetFieldsData,
-    handleRemoveItem
+    handleSetEditedFieldData,
+    handleRemoveItem,
+    handleEditItem
   };
 };
 var _default = useArrayOfObjectsInput;

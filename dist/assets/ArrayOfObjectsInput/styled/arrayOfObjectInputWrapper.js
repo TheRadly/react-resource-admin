@@ -3,9 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ArrayOfObjectsItems = exports.ArrayOfObjectsItemIndex = exports.ArrayOfObjectsItemDataFields = exports.ArrayOfObjectsItemData = exports.ArrayOfObjectsItem = exports.ArrayOfObjectsInputsBox = exports.ArrayOfObjectsInputWrapper = exports.ArrayOfObjectsContainer = void 0;
+exports.ArrayOfObjectsItems = exports.ArrayOfObjectsItemIndex = exports.ArrayOfObjectsItemDataFields = exports.ArrayOfObjectsItemData = exports.ArrayOfObjectsItemActions = exports.ArrayOfObjectsItem = exports.ArrayOfObjectsInputsBox = exports.ArrayOfObjectsInputWrapper = exports.ArrayOfObjectsContainer = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 const ArrayOfObjectsInputWrapper = _styledComponents.default.span(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  width: ", " !important;\n\n  & > label {\n    font-size: 12px;\n    line-height: 12px;\n    color: var(--surface-600);\n    font-weight: 400;\n    font-family: var(--font-family);\n    text-transform: capitalize;\n  }\n\n  & > div {\n    width: 100%;\n  }\n"])), props => props.fullWidth ? "100%" : "50%");
@@ -20,8 +20,10 @@ const ArrayOfObjectsItem = _styledComponents.default.div(_templateObject5 || (_t
 exports.ArrayOfObjectsItem = ArrayOfObjectsItem;
 const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  border: 1px solid var(--surface-400);\n  padding: 5px;\n  border-radius: 6px;\n"])));
 exports.ArrayOfObjectsItemData = ArrayOfObjectsItemData;
-const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-right: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n\n  span {\n    &:first-child {\n      &::after {\n        content: \":\";\n      }\n    }\n  }\n"])));
+const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-right: 5px;\n  gap: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n\n  span {\n    &:first-child {\n      &::after {\n        content: \":\";\n      }\n    }\n  }\n"])));
 exports.ArrayOfObjectsItemDataFields = ArrayOfObjectsItemDataFields;
 const ArrayOfObjectsItemIndex = _styledComponents.default.span(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n\n  &::after {\n    content: \".\";\n  }\n"])));
 exports.ArrayOfObjectsItemIndex = ArrayOfObjectsItemIndex;
+const ArrayOfObjectsItemActions = _styledComponents.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
+exports.ArrayOfObjectsItemActions = ArrayOfObjectsItemActions;
 //# sourceMappingURL=arrayOfObjectInputWrapper.js.map

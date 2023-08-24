@@ -15,6 +15,8 @@ const useArrayOfObjectsInput = ({
   itemTitledBy,
   onChange,
 }: UseArrayOfObjectsInputProps) => {
+  const [indexEditItem, setIndexEditItem] = useState<number | null>(null);
+  const [isEditMode, setEditMode] = useState<boolean>(false);
   const [objectOfArray, setObjectOfArray] = useState<any>(initialValue);
 
   const arrayOfItems = useMemo(
@@ -73,12 +75,34 @@ const useArrayOfObjectsInput = ({
     [onChange, values]
   );
 
+  const handleEditItem = useCallback((item: any, index: number) => {
+    setEditMode(true);
+    setObjectOfArray(item);
+    setIndexEditItem(index);
+  }, []);
+
+  const handleSetEditedFieldData = useCallback(() => {
+    const newArray = values.filter((item, index) =>
+      item.id ? item.id !== objectOfArray.id : index !== indexEditItem
+    );
+
+    newArray.push(objectOfArray);
+    onChange(newArray);
+
+    setEditMode(false);
+    setIndexEditItem(null);
+    setObjectOfArray(initialValue);
+  }, [indexEditItem, objectOfArray, values, onChange, initialValue]);
+
   return {
+    isEditMode,
     arrayOfFields,
     arrayOfItems,
     handleChangeFieldValue,
     handleSetFieldsData,
+    handleSetEditedFieldData,
     handleRemoveItem,
+    handleEditItem,
   };
 };
 

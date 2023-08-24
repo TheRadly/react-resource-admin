@@ -24,11 +24,14 @@ const ArrayOfObjectsInput = _ref => {
     disabled
   } = _ref;
   const {
+    isEditMode,
     arrayOfFields,
     arrayOfItems,
     handleChangeFieldValue,
     handleSetFieldsData,
-    handleRemoveItem
+    handleSetEditedFieldData,
+    handleRemoveItem,
+    handleEditItem
   } = (0, _useArrayOfObjectsInput.default)({
     onChange,
     initialValue,
@@ -52,13 +55,22 @@ const ArrayOfObjectsInput = _ref => {
               children: item[key]
             })]
           }))
-        }), (0, _jsxRuntime.jsx)(_button.Button, {
-          type: "button",
-          disabled: disabled,
-          rounded: true,
-          outlined: true,
-          icon: _staticTexts.TRASH_ICON,
-          onClick: () => handleRemoveItem(index)
+        }), (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemActions, {
+          children: [(0, _jsxRuntime.jsx)(_button.Button, {
+            type: "button",
+            disabled: disabled,
+            rounded: true,
+            outlined: true,
+            icon: _staticTexts.TRASH_ICON,
+            onClick: () => handleRemoveItem(index)
+          }), (0, _jsxRuntime.jsx)(_button.Button, {
+            type: "button",
+            disabled: disabled,
+            rounded: true,
+            outlined: true,
+            icon: _staticTexts.EDIT_ICON,
+            onClick: () => handleEditItem(item, index)
+          })]
         })]
       })) : (0, _jsxRuntime.jsx)("span", {
         children: emptyMessage
@@ -79,7 +91,13 @@ const ArrayOfObjectsInput = _ref => {
           value: item.value,
           onChange: data => handleChangeFieldValue(item.field, data)
         }))
-      }), (0, _jsxRuntime.jsx)(_button.Button, {
+      }), isEditMode ? (0, _jsxRuntime.jsx)(_button.Button, {
+        type: "button",
+        disabled: disabled,
+        outlined: true,
+        icon: _staticTexts.CHECK_ICON,
+        onClick: handleSetEditedFieldData
+      }) : (0, _jsxRuntime.jsx)(_button.Button, {
         type: "button",
         disabled: disabled,
         outlined: true,

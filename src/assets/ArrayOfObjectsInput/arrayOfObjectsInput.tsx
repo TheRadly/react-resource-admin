@@ -9,9 +9,10 @@ import {
   ArrayOfObjectsItemData,
   ArrayOfObjectsItemDataFields,
   ArrayOfObjectsItemIndex,
+  ArrayOfObjectsItemActions,
 } from "./styled/arrayOfObjectInputWrapper";
 import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
-import { PLUS_ICON } from "../../staticTexts";
+import { CHECK_ICON, EDIT_ICON, PLUS_ICON } from "../../staticTexts";
 import { TRASH_ICON } from "../../staticTexts";
 
 interface ArrayOfObjectsInputProps {
@@ -36,11 +37,14 @@ const ArrayOfObjectsInput = ({
   disabled,
 }: ArrayOfObjectsInputProps) => {
   const {
+    isEditMode,
     arrayOfFields,
     arrayOfItems,
     handleChangeFieldValue,
     handleSetFieldsData,
+    handleSetEditedFieldData,
     handleRemoveItem,
+    handleEditItem,
   } = useArrayOfObjectsInput({
     onChange,
     initialValue,
@@ -64,14 +68,24 @@ const ArrayOfObjectsInput = ({
                   </ArrayOfObjectsItemDataFields>
                 ))}
               </ArrayOfObjectsItemData>
-              <Button
-                type="button"
-                disabled={disabled}
-                rounded
-                outlined
-                icon={TRASH_ICON}
-                onClick={() => handleRemoveItem(index)}
-              />
+              <ArrayOfObjectsItemActions>
+                <Button
+                  type="button"
+                  disabled={disabled}
+                  rounded
+                  outlined
+                  icon={TRASH_ICON}
+                  onClick={() => handleRemoveItem(index)}
+                />
+                <Button
+                  type="button"
+                  disabled={disabled}
+                  rounded
+                  outlined
+                  icon={EDIT_ICON}
+                  onClick={() => handleEditItem(item, index)}
+                />
+              </ArrayOfObjectsItemActions>
             </ArrayOfObjectsItem>
           ))
         ) : (
@@ -97,13 +111,23 @@ const ArrayOfObjectsInput = ({
             />
           ))}
         </ArrayOfObjectsInputsBox>
-        <Button
-          type="button"
-          disabled={disabled}
-          outlined
-          icon={PLUS_ICON}
-          onClick={handleSetFieldsData}
-        />
+        {isEditMode ? (
+          <Button
+            type="button"
+            disabled={disabled}
+            outlined
+            icon={CHECK_ICON}
+            onClick={handleSetEditedFieldData}
+          />
+        ) : (
+          <Button
+            type="button"
+            disabled={disabled}
+            outlined
+            icon={PLUS_ICON}
+            onClick={handleSetFieldsData}
+          />
+        )}
       </ArrayOfObjectsContainer>
     </ArrayOfObjectsInputWrapper>
   );
