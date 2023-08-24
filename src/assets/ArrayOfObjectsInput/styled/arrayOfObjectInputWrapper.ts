@@ -86,8 +86,15 @@ export const ArrayOfObjectsItemDataFields = styled.div`
   margin-right: 5px;
   gap: 5px;
 
+  &::after {
+    content: "|";
+  }
+
   &:last-child {
     margin-right: 0;
+    &::after {
+      content: "";
+    }
   }
 
   span {
