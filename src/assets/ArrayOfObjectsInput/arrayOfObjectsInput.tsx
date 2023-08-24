@@ -12,9 +12,9 @@ import {
   ArrayOfObjectsItemActions,
 } from "./styled/arrayOfObjectInputWrapper";
 import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
-import { CHECK_ICON, EDIT_ICON, ID, PLUS_ICON } from "../../staticTexts";
+import { CHECK_ICON, EDIT_ICON, PLUS_ICON } from "../../staticTexts";
 import { TRASH_ICON } from "../../staticTexts";
-import { EXCLUDED_FIELD_ITEMS } from "./config";
+import { EXCLUDED_FIELD_ITEMS, TOURNAMENT_ID, ID } from "./config";
 
 interface ArrayOfObjectsInputProps {
   label?: string;
@@ -99,27 +99,29 @@ const ArrayOfObjectsInput = ({
       </ArrayOfObjectsItems>
       <ArrayOfObjectsContainer>
         <ArrayOfObjectsInputsBox>
-          {arrayOfFields.map((item: any) => (
-            <UniversalInput
-              disabled={item.field === ID}
-              isArrayWithObjects={item.isArrayWithObjects}
-              isMultiSelect={item.isMultiSelect}
-              isArray={item.isArray}
-              isDate={item.isDate}
-              isDisabled={item.isDisabled}
-              isJson={item.isJson}
-              isMultiInput={item.isMultiInput}
-              isTextArea={item.isTextArea}
-              isFloat={item.isFloat}
-              label={item.field}
-              value={item.value}
-              onChange={(data) =>
-                item.field !== ID
-                  ? handleChangeFieldValue(item.field, data)
-                  : null
-              }
-            />
-          ))}
+          {arrayOfFields
+            .filter((filterItem: any) => filterItem.field !== TOURNAMENT_ID)
+            .map((item: any) => (
+              <UniversalInput
+                disabled={item.field === ID}
+                isArrayWithObjects={item.isArrayWithObjects}
+                isMultiSelect={item.isMultiSelect}
+                isArray={item.isArray}
+                isDate={item.isDate}
+                isDisabled={item.isDisabled}
+                isJson={item.isJson}
+                isMultiInput={item.isMultiInput}
+                isTextArea={item.isTextArea}
+                isFloat={item.isFloat}
+                label={item.field}
+                value={item.value}
+                onChange={(data) =>
+                  item.field !== ID
+                    ? handleChangeFieldValue(item.field, data)
+                    : null
+                }
+              />
+            ))}
         </ArrayOfObjectsInputsBox>
         {isEditMode ? (
           <Button

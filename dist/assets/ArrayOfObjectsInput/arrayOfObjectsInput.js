@@ -78,8 +78,8 @@ const ArrayOfObjectsInput = _ref => {
       })
     }), (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsContainer, {
       children: [(0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsInputsBox, {
-        children: arrayOfFields.map(item => (0, _jsxRuntime.jsx)(_UniversalInput.default, {
-          disabled: item.field === _staticTexts.ID,
+        children: arrayOfFields.filter(filterItem => filterItem.field !== _config.TOURNAMENT_ID).map(item => (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+          disabled: item.field === _config.ID,
           isArrayWithObjects: item.isArrayWithObjects,
           isMultiSelect: item.isMultiSelect,
           isArray: item.isArray,
@@ -91,7 +91,7 @@ const ArrayOfObjectsInput = _ref => {
           isFloat: item.isFloat,
           label: item.field,
           value: item.value,
-          onChange: data => item.field !== _staticTexts.ID ? handleChangeFieldValue(item.field, data) : null
+          onChange: data => item.field !== _config.ID ? handleChangeFieldValue(item.field, data) : null
         }))
       }), isEditMode ? (0, _jsxRuntime.jsx)(_button.Button, {
         type: "button",
