@@ -22,6 +22,7 @@ interface ResourceFormProps {
   saveLabel?: string;
   createLabel?: string;
   cancelLabel: string;
+  hideCancel?: boolean;
 }
 
 const ResourceForm = ({
@@ -38,6 +39,7 @@ const ResourceForm = ({
   saveLabel,
   createLabel,
   cancelLabel,
+  hideCancel,
 }: ResourceFormProps) => {
   const { handleSubmit, submitButtonLabel, handleSetFieldValue } =
     useResourceForm({
@@ -102,9 +104,11 @@ const ResourceForm = ({
         <Button loading={loading} type={SUBMIT_INPUT}>
           {submitButtonLabel}
         </Button>
-        <Button disabled={loading} type={BUTTON_INPUT} onClick={onCancel}>
-          {cancelLabel}
-        </Button>
+        {hideCancel && (
+          <Button disabled={loading} type={BUTTON_INPUT} onClick={onCancel}>
+            {cancelLabel}
+          </Button>
+        )}
       </ButtonsWrapper>
     </ResourceInputsFormWrapper>
   );

@@ -27,7 +27,8 @@ const ResourceForm = _ref => {
     onCancel,
     saveLabel,
     createLabel,
-    cancelLabel
+    cancelLabel,
+    hideCancel
   } = _ref;
   const {
     handleSubmit,
@@ -92,7 +93,7 @@ const ResourceForm = _ref => {
         loading: loading,
         type: _staticTexts.SUBMIT_INPUT,
         children: submitButtonLabel
-      }), (0, _jsxRuntime.jsx)(_button.Button, {
+      }), hideCancel && (0, _jsxRuntime.jsx)(_button.Button, {
         disabled: loading,
         type: _staticTexts.BUTTON_INPUT,
         onClick: onCancel,
