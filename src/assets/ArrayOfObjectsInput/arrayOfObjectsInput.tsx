@@ -68,6 +68,7 @@ const ArrayOfObjectsInput = ({
                 type="button"
                 disabled={disabled}
                 rounded
+                outlined
                 icon={TRASH_ICON}
                 onClick={() => handleRemoveItem(index)}
               />

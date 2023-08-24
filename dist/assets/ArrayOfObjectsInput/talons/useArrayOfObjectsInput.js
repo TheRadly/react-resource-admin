@@ -42,9 +42,9 @@ const useArrayOfObjectsInput = _ref => {
   const handleRemoveItem = (0, _react.useCallback)(propIndex => {
     if (values.length) {
       const newArray = values.filter((_, index) => index !== propIndex);
-      setObjectOfArray(newArray);
+      onChange(newArray);
     }
-  }, [values]);
+  }, [onChange, values]);
   return {
     arrayOfFields,
     arrayOfItems,

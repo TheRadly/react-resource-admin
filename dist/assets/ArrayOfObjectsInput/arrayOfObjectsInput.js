@@ -56,6 +56,7 @@ const ArrayOfObjectsInput = _ref => {
           type: "button",
           disabled: disabled,
           rounded: true,
+          outlined: true,
           icon: _staticTexts.TRASH_ICON,
           onClick: () => handleRemoveItem(index)
         })]

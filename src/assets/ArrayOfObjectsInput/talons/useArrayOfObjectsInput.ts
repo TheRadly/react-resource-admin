@@ -67,10 +67,10 @@ const useArrayOfObjectsInput = ({
           (_: any, index: number) => index !== propIndex
         );
 
-        setObjectOfArray(newArray);
+        onChange(newArray);
       }
     },
-    [values]
+    [onChange, values]
   );
 
   return {

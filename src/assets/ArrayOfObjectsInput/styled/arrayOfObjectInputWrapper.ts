@@ -60,9 +60,9 @@ export const ArrayOfObjectsItem = styled.div`
 
   button {
     align-self: flex-start;
-    width: 20px;
-    height: 20px;
-    padding: 10px;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 10px !important;
 
     span {
       font-family: "primeicons" !important;
