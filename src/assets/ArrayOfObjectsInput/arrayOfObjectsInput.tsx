@@ -14,6 +14,7 @@ import {
 import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
 import { CHECK_ICON, EDIT_ICON, PLUS_ICON } from "../../staticTexts";
 import { TRASH_ICON } from "../../staticTexts";
+import { EXCLUDED_FIELD_ITEMS } from "./config";
 
 interface ArrayOfObjectsInputProps {
   label?: string;
@@ -61,12 +62,16 @@ const ArrayOfObjectsInput = ({
             <ArrayOfObjectsItem>
               <ArrayOfObjectsItemIndex>{index}</ArrayOfObjectsItemIndex>
               <ArrayOfObjectsItemData>
-                {Object.keys(item).map((key) => (
-                  <ArrayOfObjectsItemDataFields>
-                    <span>{key}</span>
-                    <span>{item[key]}</span>
-                  </ArrayOfObjectsItemDataFields>
-                ))}
+                {Object.keys(item)
+                  .filter(
+                    (filterKey) => !EXCLUDED_FIELD_ITEMS.includes(filterKey)
+                  )
+                  .map((key) => (
+                    <ArrayOfObjectsItemDataFields>
+                      <span>{key}</span>
+                      <span>{item[key]}</span>
+                    </ArrayOfObjectsItemDataFields>
+                  ))}
               </ArrayOfObjectsItemData>
               <ArrayOfObjectsItemActions>
                 <Button
@@ -94,22 +99,27 @@ const ArrayOfObjectsInput = ({
       </ArrayOfObjectsItems>
       <ArrayOfObjectsContainer>
         <ArrayOfObjectsInputsBox>
-          {arrayOfFields.map((item: any) => (
-            <UniversalInput
-              isArrayWithObjects={item.isArrayWithObjects}
-              isMultiSelect={item.isMultiSelect}
-              isArray={item.isArray}
-              isDate={item.isDate}
-              isDisabled={item.isDisabled}
-              isJson={item.isJson}
-              isMultiInput={item.isMultiInput}
-              isTextArea={item.isTextArea}
-              isFloat={item.isFloat}
-              label={item.field}
-              value={item.value}
-              onChange={(data) => handleChangeFieldValue(item.field, data)}
-            />
-          ))}
+          {arrayOfFields
+            .filter(
+              (filterItem: any) =>
+                !EXCLUDED_FIELD_ITEMS.includes(filterItem.field)
+            )
+            .map((item: any) => (
+              <UniversalInput
+                isArrayWithObjects={item.isArrayWithObjects}
+                isMultiSelect={item.isMultiSelect}
+                isArray={item.isArray}
+                isDate={item.isDate}
+                isDisabled={item.isDisabled}
+                isJson={item.isJson}
+                isMultiInput={item.isMultiInput}
+                isTextArea={item.isTextArea}
+                isFloat={item.isFloat}
+                label={item.field}
+                value={item.value}
+                onChange={(data) => handleChangeFieldValue(item.field, data)}
+              />
+            ))}
         </ArrayOfObjectsInputsBox>
         {isEditMode ? (
           <Button

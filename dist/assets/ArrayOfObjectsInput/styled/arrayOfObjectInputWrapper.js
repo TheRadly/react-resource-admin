@@ -24,6 +24,6 @@ const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObje
 exports.ArrayOfObjectsItemDataFields = ArrayOfObjectsItemDataFields;
 const ArrayOfObjectsItemIndex = _styledComponents.default.span(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n\n  &::after {\n    content: \".\";\n  }\n"])));
 exports.ArrayOfObjectsItemIndex = ArrayOfObjectsItemIndex;
-const ArrayOfObjectsItemActions = _styledComponents.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
+const ArrayOfObjectsItemActions = _styledComponents.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 5px;\n"])));
 exports.ArrayOfObjectsItemActions = ArrayOfObjectsItemActions;
 //# sourceMappingURL=arrayOfObjectInputWrapper.js.map

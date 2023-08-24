@@ -10,6 +10,7 @@ var _UniversalInput = _interopRequireDefault(require("../UniversalInput"));
 var _arrayOfObjectInputWrapper = require("./styled/arrayOfObjectInputWrapper");
 var _useArrayOfObjectsInput = _interopRequireDefault(require("./talons/useArrayOfObjectsInput"));
 var _staticTexts = require("../../staticTexts");
+var _config = require("./config");
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ArrayOfObjectsInput = _ref => {
@@ -48,7 +49,7 @@ const ArrayOfObjectsInput = _ref => {
         children: [(0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemIndex, {
           children: index
         }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemData, {
-          children: Object.keys(item).map(key => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemDataFields, {
+          children: Object.keys(item).filter(filterKey => !_config.EXCLUDED_FIELD_ITEMS.includes(filterKey)).map(key => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemDataFields, {
             children: [(0, _jsxRuntime.jsx)("span", {
               children: key
             }), (0, _jsxRuntime.jsx)("span", {
@@ -77,7 +78,7 @@ const ArrayOfObjectsInput = _ref => {
       })
     }), (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsContainer, {
       children: [(0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsInputsBox, {
-        children: arrayOfFields.map(item => (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        children: arrayOfFields.filter(filterItem => !_config.EXCLUDED_FIELD_ITEMS.includes(filterItem.field)).map(item => (0, _jsxRuntime.jsx)(_UniversalInput.default, {
           isArrayWithObjects: item.isArrayWithObjects,
           isMultiSelect: item.isMultiSelect,
           isArray: item.isArray,
