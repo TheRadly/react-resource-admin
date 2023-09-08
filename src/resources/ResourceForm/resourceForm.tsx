@@ -104,7 +104,7 @@ const ResourceForm = ({
         <Button loading={loading} type={SUBMIT_INPUT}>
           {submitButtonLabel}
         </Button>
-        {hideCancel && (
+        {!hideCancel && (
           <Button disabled={loading} type={BUTTON_INPUT} onClick={onCancel}>
             {cancelLabel}
           </Button>

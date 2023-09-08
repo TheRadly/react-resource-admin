@@ -21,6 +21,7 @@ export const LIST_ICON: string = "pi pi-list";
 export const PLUS_ICON: string = "pi pi-plus";
 export const CANCEL_ICON: string = "pi pi-ban";
 export const EDIT_ICON: string = "pi pi-pencil";
+export const COPY_ICON: string = "pi pi-copy";
 export const LANGUAGE_ICON: string = "pi pi-language";
 export const FLAG_ICON: string = "pi pi-flag";
 export const FILLED_FLAG_ICON: string = "pi pi-flag-fill";

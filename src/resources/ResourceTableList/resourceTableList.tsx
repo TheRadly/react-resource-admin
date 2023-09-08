@@ -33,8 +33,10 @@ interface ResourceTableListProps {
   getQueryMethod: any;
   confirmDeleteMessage: string;
   onRowClick: (arg: string) => void;
+  onClone?: (row: any) => void;
   rows?: number;
   hideRowActions?: boolean;
+  hideClone?: boolean;
 }
 
 const ResourceTableList = ({
@@ -55,8 +57,10 @@ const ResourceTableList = ({
   deleteQueryMethod,
   confirmDeleteMessage,
   onRowClick,
+  onClone,
   rows,
   hideRowActions = false,
+  hideClone = false,
 }: ResourceTableListProps) => {
   const {
     handleChangePagination,
@@ -110,8 +114,10 @@ const ResourceTableList = ({
             body={(row) => (
               <EditColumnTemplate
                 confirmDeleteMessage={confirmDeleteMessage}
+                hideClone={hideClone}
                 onClickEdit={() => onClickEditField && onClickEditField(row.id)}
                 onClickDelete={() => handleDeleteField(row.id)}
+                onClickClone={() => onClone && onClone(row)}
               />
             )}
           />

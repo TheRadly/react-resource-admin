@@ -15,6 +15,8 @@ const EditDeleteColumnTemplate = _ref => {
   let {
     onClickEdit,
     onClickDelete,
+    onClickClone,
+    hideClone,
     confirmDeleteMessage
   } = _ref;
   const {
@@ -30,6 +32,11 @@ const EditDeleteColumnTemplate = _ref => {
         size: _staticTexts.SMALL_SIZE,
         rounded: true,
         icon: _staticTexts.EDIT_ICON
+      }), !hideClone && (0, _jsxRuntime.jsx)(_button.Button, {
+        onClick: onClickClone,
+        size: _staticTexts.SMALL_SIZE,
+        rounded: true,
+        icon: _staticTexts.COPY_ICON
       }), (0, _jsxRuntime.jsx)(_button.Button, {
         onClick: handleClickDelete,
         size: _staticTexts.SMALL_SIZE,

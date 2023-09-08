@@ -25,9 +25,11 @@ interface ResourceTableContainerProps {
   deleteConfirmMessage: string;
   disabledTooltipDeleteLabel: string;
   onCreate?: () => void;
+  onClone?: (row: any) => void;
   confirmDeleteMessage: string;
   onRowClick: (arg: string) => void;
   hideCreate?: boolean;
+  hideClone?: boolean;
   tableListRows?: number;
   hideRowActions?: boolean;
   hideMultiSelect?: boolean;
@@ -56,7 +58,9 @@ const ResourceTableContainer = ({
   onCreate,
   confirmDeleteMessage,
   onRowClick,
+  onClone,
   hideCreate,
+  hideClone,
   tableListRows,
   hideRowActions,
   hideMultiSelect,
@@ -102,6 +106,8 @@ const ResourceTableContainer = ({
         rows={tableListRows}
         confirmDeleteMessage={confirmDeleteMessage}
         onRowClick={onRowClick}
+        onClone={onClone}
+        hideClone={hideClone}
         deleteQueryMethod={deleteQueryMethod}
         getQueryMethod={getQueryMethod}
         handleSortField={handleSortField}

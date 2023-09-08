@@ -35,8 +35,10 @@ const ResourceTableList = _ref => {
     deleteQueryMethod,
     confirmDeleteMessage,
     onRowClick,
+    onClone,
     rows,
-    hideRowActions = false
+    hideRowActions = false,
+    hideClone = false
   } = _ref;
   const {
     handleChangePagination,
@@ -82,8 +84,10 @@ const ResourceTableList = _ref => {
         field: _staticTexts.ID,
         body: row => (0, _jsxRuntime.jsx)(_editDeleteColumnTemplate.default, {
           confirmDeleteMessage: confirmDeleteMessage,
+          hideClone: hideClone,
           onClickEdit: () => onClickEditField && onClickEditField(row.id),
-          onClickDelete: () => handleDeleteField(row.id)
+          onClickDelete: () => handleDeleteField(row.id),
+          onClickClone: () => onClone && onClone(row)
         })
       })]
     }), isPaginator && !loading && (0, _jsxRuntime.jsx)(_paginator.Paginator, {

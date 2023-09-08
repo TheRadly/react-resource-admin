@@ -18,6 +18,7 @@ export declare const LIST_ICON: string;
 export declare const PLUS_ICON: string;
 export declare const CANCEL_ICON: string;
 export declare const EDIT_ICON: string;
+export declare const COPY_ICON: string;
 export declare const LANGUAGE_ICON: string;
 export declare const FLAG_ICON: string;
 export declare const FILLED_FLAG_ICON: string;
