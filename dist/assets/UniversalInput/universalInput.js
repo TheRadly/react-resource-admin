@@ -52,8 +52,14 @@ const UniversalInput = _ref => {
     itemTitledBy,
     withoutUpperCasing
   } = _ref;
-  const checkOnUpperCasing = withoutUpperCasing ? propLabel : (0, _toFirstUpperCase.default)(propLabel, true);
-  const label = propLabel ? checkOnUpperCasing : undefined;
+  const label = (0, _react.useMemo)(() => {
+    if (withoutUpperCasing && propLabel) {
+      return propLabel;
+    } else if (propLabel) {
+      return (0, _toFirstUpperCase.default)(propLabel, true);
+    }
+    return undefined;
+  }, [propLabel, withoutUpperCasing]);
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [Array.isArray(value) && isArrayWithObjects && (0, _jsxRuntime.jsx)(_arrayOfObjectsInput.default, {
       label: label,

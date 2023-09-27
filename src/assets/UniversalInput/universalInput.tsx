@@ -5,7 +5,7 @@ import DropdownInput from "../DropdownInput/dropdownInput";
 import { SelectType } from "../../types/InputEventTypes";
 import InputMultiField from "../InputMultiField";
 import JsonEditor from "../JsonEditor/jsonEditor";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import InputFieldsWithQuery from "../InputFieldsWithQuery/inputFieldsWithQuery";
 import InputArray from "../InputArray";
 import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
@@ -79,11 +79,15 @@ const UniversalInput = ({
   itemTitledBy,
   withoutUpperCasing,
 }: UniversalInputProps) => {
-  const checkOnUpperCasing = withoutUpperCasing
-    ? propLabel
-    : toFirstUpperCase(propLabel as string, true);
+  const label = useMemo(() => {
+    if (withoutUpperCasing && propLabel) {
+      return propLabel;
+    } else if (propLabel) {
+      return toFirstUpperCase(propLabel, true);
+    }
 
-  const label = propLabel ? checkOnUpperCasing : undefined;
+    return undefined;
+  }, [propLabel, withoutUpperCasing]);
 
   return (
     <>
