@@ -45,6 +45,7 @@ interface UniversalInputProps {
   isArrayWithObjects?: boolean;
   initialValue?: any;
   itemTitledBy?: string;
+  withoutUpperCasing?: boolean;
 }
 
 const UniversalInput = ({
@@ -76,8 +77,13 @@ const UniversalInput = ({
   editTooltipLabel,
   initialValue,
   itemTitledBy,
+  withoutUpperCasing,
 }: UniversalInputProps) => {
-  const label = propLabel ? toFirstUpperCase(propLabel, true) : undefined;
+  const checkOnUpperCasing = withoutUpperCasing
+    ? propLabel
+    : toFirstUpperCase(propLabel as string, true);
+
+  const label = propLabel ? checkOnUpperCasing : undefined;
 
   return (
     <>

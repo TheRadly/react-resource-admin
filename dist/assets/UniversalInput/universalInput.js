@@ -49,9 +49,11 @@ const UniversalInput = _ref => {
     deleteTooltipLabel,
     editTooltipLabel,
     initialValue,
-    itemTitledBy
+    itemTitledBy,
+    withoutUpperCasing
   } = _ref;
-  const label = propLabel ? (0, _toFirstUpperCase.default)(propLabel, true) : undefined;
+  const checkOnUpperCasing = withoutUpperCasing ? propLabel : (0, _toFirstUpperCase.default)(propLabel, true);
+  const label = propLabel ? checkOnUpperCasing : undefined;
   return (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [Array.isArray(value) && isArrayWithObjects && (0, _jsxRuntime.jsx)(_arrayOfObjectsInput.default, {
       label: label,
