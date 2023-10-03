@@ -62,9 +62,11 @@ const ResourceForm = _ref => {
         initialValue,
         itemTitledBy,
         isArrayWithObject,
-        emptyLabel
+        emptyLabel,
+        fullWidth
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
+        fullWidth: fullWidth,
         emptyLabel: emptyLabel,
         isArrayWithObjects: isArrayWithObject,
         initialValue: initialValue,

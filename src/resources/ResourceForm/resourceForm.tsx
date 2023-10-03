@@ -73,8 +73,10 @@ const ResourceForm = ({
             itemTitledBy,
             isArrayWithObject,
             emptyLabel,
+            fullWidth,
           }) => (
             <UniversalInput
+              fullWidth={fullWidth}
               emptyLabel={emptyLabel}
               isArrayWithObjects={isArrayWithObject}
               initialValue={initialValue}

@@ -22,4 +22,5 @@ export type FieldsType = {
     itemTitledBy?: string;
     isArrayWithObject?: boolean;
     emptyLabel?: string;
+    fullWidth?: boolean;
 };
