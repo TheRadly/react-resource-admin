@@ -1,0 +1,1 @@
+{"version":3,"file":"helpers.d.js","names":[],"sources":["../../../src/resources/ResourceInputsForm/helpers.d.ts"],"sourcesContent":["export declare const getCorrectExtraFormSubmitValues: (val: any, parentType?: string) => any;\n"],"mappings":""}

@@ -14,6 +14,7 @@ import {
   WITHDRAW_LIMIT,
 } from "../config";
 import { has } from "lodash";
+import { getCorrectExtraFormSubmitValues } from "../helpers";
 
 interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
@@ -50,16 +51,14 @@ const useResourceInputsQueryForm = ({
           variables: {
             input: {
               id,
-              update: {
-                ...val,
-              },
+              data: getCorrectExtraFormSubmitValues(val, parentType),
             },
           },
         });
       } else {
         createValue({
           variables: {
-            input: val,
+            input: getCorrectExtraFormSubmitValues(val, parentType),
           },
         });
       }
@@ -68,7 +67,7 @@ const useResourceInputsQueryForm = ({
         handleCloseQueryContainer();
       }
     },
-    [updateValue, createValue, item, id, handleCloseQueryContainer]
+    [updateValue, createValue, item, id, handleCloseQueryContainer, parentType]
   );
 
   const formOptions = useMemo(

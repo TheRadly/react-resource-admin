@@ -9,6 +9,7 @@ var _react = require("react");
 var _useForm = _interopRequireDefault(require("../../ResourceForm/talons/useForm"));
 var _config = require("../config");
 var _lodash = require("lodash");
+var _helpers = require("../helpers");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const useResourceInputsQueryForm = _ref => {
   let {
@@ -40,23 +41,21 @@ const useResourceInputsQueryForm = _ref => {
         variables: {
           input: {
             id,
-            update: {
-              ...val
-            }
+            data: (0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType)
           }
         }
       });
     } else {
       createValue({
         variables: {
-          input: val
+          input: (0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType)
         }
       });
     }
     if (handleCloseQueryContainer) {
       handleCloseQueryContainer();
     }
-  }, [updateValue, createValue, item, id, handleCloseQueryContainer]);
+  }, [updateValue, createValue, item, id, handleCloseQueryContainer, parentType]);
   const formOptions = (0, _react.useMemo)(() => item ? {
     valuesForEdit: item,
     onSubmitMethod: onSubmitInputs,

@@ -52,7 +52,6 @@ const ResourceCrudQueryForm = _ref => {
         isDisabled: isDisabled,
         isArray: isArray,
         label: field,
-        placeholder: field,
         currentOption: activeValue,
         isFloat: isFloat,
         disabled: loading,
