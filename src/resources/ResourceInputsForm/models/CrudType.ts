@@ -11,4 +11,5 @@ export type CrudType = {
   loading?: boolean;
   saveLabel: string;
   createLabel: string;
+  parentType?: string;
 };

@@ -41,9 +41,11 @@ const ResourceCrudQueryForm = _ref => {
       let {
         field,
         value,
+        activeValue,
         isArray,
         isDisabled,
-        isDate
+        isDate,
+        isFloat
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
         isDate: isDate,
@@ -51,6 +53,8 @@ const ResourceCrudQueryForm = _ref => {
         isArray: isArray,
         label: field,
         placeholder: field,
+        currentOption: activeValue,
+        isFloat: isFloat,
         disabled: loading,
         value: value,
         onChange: data => handleChangeField(data, field)

@@ -4,6 +4,7 @@ const InputContainer = styled.div`
   display: flex;
   gap: 10px;
   align-items: flex-start;
+  font-family: var(--font-family);
 
   button {
     span {

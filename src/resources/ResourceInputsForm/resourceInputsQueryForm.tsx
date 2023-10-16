@@ -39,18 +39,30 @@ const ResourceCrudQueryForm = ({
   ) : (
     <ResourceCrudFormWrapper onSubmit={handleSubmit}>
       {children ||
-        arrayOfValues.map(({ field, value, isArray, isDisabled, isDate }) => (
-          <UniversalInput
-            isDate={isDate}
-            isDisabled={isDisabled}
-            isArray={isArray}
-            label={field}
-            placeholder={field}
-            disabled={loading}
-            value={value}
-            onChange={(data) => handleChangeField(data, field)}
-          />
-        ))}
+        arrayOfValues.map(
+          ({
+            field,
+            value,
+            activeValue,
+            isArray,
+            isDisabled,
+            isDate,
+            isFloat,
+          }) => (
+            <UniversalInput
+              isDate={isDate}
+              isDisabled={isDisabled}
+              isArray={isArray}
+              label={field}
+              placeholder={field}
+              currentOption={activeValue}
+              isFloat={isFloat}
+              disabled={loading}
+              value={value}
+              onChange={(data) => handleChangeField(data, field)}
+            />
+          )
+        )}
       <ButtonsWrapper>
         <Button loading={loading} type={SUBMIT_INPUT}>
           {submitLocale}
