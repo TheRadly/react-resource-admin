@@ -53,8 +53,8 @@ const useResourceInputsQueryForm = _ref => {
       updateValue({
         variables: {
           input: {
-            id,
-            data: (0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType)
+            id: item === null || item === void 0 ? void 0 : item.id,
+            data: (0, _helpers.removeExtraFormItemId)((0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType), parentType)
           }
         }
       });

@@ -14,7 +14,10 @@ import {
   WITHDRAW_LIMIT,
 } from "../config";
 import { has } from "lodash";
-import { getCorrectExtraFormSubmitValues } from "../helpers";
+import {
+  getCorrectExtraFormSubmitValues,
+  removeExtraFormItemId,
+} from "../helpers";
 
 interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
@@ -67,8 +70,11 @@ const useResourceInputsQueryForm = ({
         updateValue({
           variables: {
             input: {
-              id,
-              data: getCorrectExtraFormSubmitValues(val, parentType),
+              id: item?.id,
+              data: removeExtraFormItemId(
+                getCorrectExtraFormSubmitValues(val, parentType),
+                parentType
+              ),
             },
           },
         });

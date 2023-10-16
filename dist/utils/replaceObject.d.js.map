@@ -1,0 +1,1 @@
+{"version":3,"file":"replaceObject.d.js","names":[],"sources":["../../src/utils/replaceObject.d.ts"],"sourcesContent":["declare const replaceObject: (object: any, fields: string[], reverse?: boolean) => {};\nexport default replaceObject;\n"],"mappings":""}

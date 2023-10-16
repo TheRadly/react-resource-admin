@@ -3,8 +3,10 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getCorrectExtraFormSubmitValues = void 0;
+exports.removeExtraFormItemId = exports.getCorrectExtraFormSubmitValues = void 0;
+var _replaceObject = _interopRequireDefault(require("../../utils/replaceObject"));
 var _config = require("./config");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const checkOnFloat = value => typeof value === "string" ? parseFloat(value) : value;
 const getCorrectExtraFormSubmitValues = (val, parentType) => {
   if (parentType === _config.LOYALTY_LEVEL) {
@@ -18,4 +20,11 @@ const getCorrectExtraFormSubmitValues = (val, parentType) => {
   return val;
 };
 exports.getCorrectExtraFormSubmitValues = getCorrectExtraFormSubmitValues;
+const removeExtraFormItemId = (item, parentType) => {
+  if (parentType === _config.LOYALTY_LEVEL) {
+    return (0, _replaceObject.default)(item, [_config.LOYALITY_LEVEL_ID]);
+  }
+  return item;
+};
+exports.removeExtraFormItemId = removeExtraFormItemId;
 //# sourceMappingURL=helpers.js.map
