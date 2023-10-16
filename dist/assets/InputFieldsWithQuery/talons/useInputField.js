@@ -20,7 +20,8 @@ const useInputField = _ref => {
   } = _ref;
   const {
     deleteQuery,
-    deleteConfirmMessage
+    deleteConfirmMessage,
+    refetchDocument
   } = extraFormCruds || {};
   const fields = (0, _parseFormValues.default)((0, _typenameIdFilter.default)(item, fieldsToExclude));
   const [handleDeleteValues] = deleteQuery();
@@ -30,9 +31,22 @@ const useInputField = _ref => {
         input: {
           ids: [item.id]
         }
-      }
+      },
+      ...(refetchDocument ? {
+        refetchQueries: [{
+          query: refetchDocument,
+          variables: {
+            input: {
+              pagination: {
+                page: 0,
+                limit: 10
+              }
+            }
+          }
+        }]
+      } : null)
     });
-  }, [handleDeleteValues, item]);
+  }, [refetchDocument, handleDeleteValues, item]);
   const handleDeleteItem = (0, _react.useCallback)(event => {
     (0, _confirmpopup.confirmPopup)({
       target: event.target,
