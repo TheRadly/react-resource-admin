@@ -130,9 +130,13 @@ const useResourceInputsQueryForm = _ref => {
           value: dropdownTypeValues
         };
       } else if (pv.field === _config.CASHBACK_PERCENT || pv.field === _config.DEPOSIT_LIMIT || pv.field === _config.WITHDRAW_LIMIT) {
-        return {
+        var _pv$value;
+        return item ? {
           ...pv,
-          value: typeof pv.value === "string" ? pv.value : pv.value.toString(),
+          isFloat: true,
+          value: typeof pv.value === "string" ? pv.value : ((_pv$value = pv.value) === null || _pv$value === void 0 ? void 0 : _pv$value.toString()) || ""
+        } : {
+          ...pv,
           isFloat: true
         };
       } else if (pv.field === _config.LOYALITY_LEVEL_ID) {

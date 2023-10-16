@@ -209,12 +209,19 @@ const useResourceInputsQueryForm = ({
             pv.field === DEPOSIT_LIMIT ||
             pv.field === WITHDRAW_LIMIT
           ) {
-            return {
-              ...pv,
-              value:
-                typeof pv.value === "string" ? pv.value : pv.value.toString(),
-              isFloat: true,
-            };
+            return item
+              ? {
+                  ...pv,
+                  isFloat: true,
+                  value:
+                    typeof pv.value === "string"
+                      ? pv.value
+                      : pv.value?.toString() || "",
+                }
+              : {
+                  ...pv,
+                  isFloat: true,
+                };
           } else if (pv.field === LOYALITY_LEVEL_ID) {
             return {
               ...item,
