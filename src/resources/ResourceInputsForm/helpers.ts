@@ -1,7 +1,7 @@
 import { LOYALTY_LEVEL } from "./config";
 
 const checkOnFloat = (value: string) =>
-  typeof value === "string" ? parseFloat(value).toFixed(2) : value;
+  typeof value === "string" ? parseFloat(value) : value;
 
 export const getCorrectExtraFormSubmitValues = (
   val: any,

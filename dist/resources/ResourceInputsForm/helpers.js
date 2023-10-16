@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getCorrectExtraFormSubmitValues = void 0;
 var _config = require("./config");
-const checkOnFloat = value => typeof value === "string" ? parseFloat(value).toFixed(2) : value;
+const checkOnFloat = value => typeof value === "string" ? parseFloat(value) : value;
 const getCorrectExtraFormSubmitValues = (val, parentType) => {
   if (parentType === _config.LOYALTY_LEVEL) {
     return {
