@@ -15,6 +15,12 @@ Object.defineProperty(exports, "LoaderSpinner", {
     return _LoaderSpinner.default;
   }
 });
+Object.defineProperty(exports, "ResourceExtraQueryForm", {
+  enumerable: true,
+  get: function () {
+    return _resourceInputsQueryForm.default;
+  }
+});
 Object.defineProperty(exports, "ResourceForm", {
   enumerable: true,
   get: function () {
@@ -49,6 +55,7 @@ var _LoaderSpinner = _interopRequireDefault(require("../assets/LoaderSpinner"));
 var _UniversalInput = _interopRequireDefault(require("../assets/UniversalInput"));
 var _ResourceForm = _interopRequireDefault(require("./ResourceForm"));
 var _ResourceShowContainer = _interopRequireDefault(require("./ResourceShowContainer"));
+var _resourceInputsQueryForm = _interopRequireDefault(require("./ResourceInputsForm/resourceInputsQueryForm"));
 var _resourceTableContainer = _interopRequireDefault(require("./ResourceTableContainer/resourceTableContainer"));
 var _DropdownInput = _interopRequireDefault(require("../assets/DropdownInput"));
 var _useForm = _interopRequireDefault(require("./ResourceForm/talons/useForm"));
