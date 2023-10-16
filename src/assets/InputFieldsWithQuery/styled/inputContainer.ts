@@ -6,9 +6,6 @@ const InputContainer = styled.div`
   align-items: flex-start;
 
   button {
-    background: none !important;
-    border: 1px solid var(--clr-hoverBackgroundColor) !important;
-
     span {
       color: var(--clr-hoverBackgroundColor) !important;
     }

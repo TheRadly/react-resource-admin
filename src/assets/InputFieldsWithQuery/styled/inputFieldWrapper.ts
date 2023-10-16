@@ -7,10 +7,10 @@ const InputFieldWrapper = styled.div`
   justify-content: space-between;
   gap: 10px;
   padding: 5px 10px;
-  color: var(--clr-fontColor);
-  background: var(--clr-whiteGrey);
-  border: 1px solid var(--clr-borderColor);
-  border-radius: 5px;
+  color: #495057;
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
 
   label {
     font-family: var(--font-family);
