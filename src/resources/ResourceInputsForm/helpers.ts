@@ -7,32 +7,14 @@ export const getCorrectExtraFormSubmitValues = (
   val: any,
   parentType?: string
 ) => {
-  console.log(parentType);
   if (parentType === LOYALTY_LEVEL) {
-    console.log("if works", "------>", {
-      ...val,
-      ...(val.cashbackPercent
-        ? { cashbackPercent: checkOnFloat(val.cashbackPercent) }
-        : null),
-      ...(val.depositLimit
-        ? { depositLimit: checkOnFloat(val.depositLimit) }
-        : null),
-      ...(val.withdrawLimit
-        ? { withdrawLimit: checkOnFloat(val.withdrawLimit) }
-        : null),
-    });
-
     return {
       ...val,
-      ...(val.cashbackPercent
-        ? { cashbackPercent: checkOnFloat(val.cashbackPercent) }
-        : null),
-      ...(val.depositLimit
-        ? { depositLimit: checkOnFloat(val.depositLimit) }
-        : null),
-      ...(val.withdrawLimit
-        ? { withdrawLimit: checkOnFloat(val.withdrawLimit) }
-        : null),
+      cashbackPercent: val.cashbackPercent
+        ? checkOnFloat(val.cashbackPercent)
+        : null,
+      depositLimit: val.depositLimit ? checkOnFloat(val.depositLimit) : null,
+      withdrawLimit: val.withdrawLimit ? checkOnFloat(val.withdrawLimit) : null,
     };
   }
 

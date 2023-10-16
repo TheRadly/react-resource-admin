@@ -20,12 +20,25 @@ interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
   item?: any;
   handleCloseQueryContainer?: () => void;
+  saveLabel?: string;
+  createLabel?: string;
 }
+
+const defaultRefetchVariables = {
+  input: {
+    pagination: {
+      page: 0,
+      limit: 10,
+    },
+  },
+};
 
 const useResourceInputsQueryForm = ({
   extraFormCruds,
   item,
   handleCloseQueryContainer,
+  saveLabel,
+  createLabel,
 }: UseResourceInputsQueryForm) => {
   const {
     initialValues,
@@ -33,17 +46,23 @@ const useResourceInputsQueryForm = ({
     updateQuery,
     id,
     loading,
-    saveLabel,
-    createLabel,
     parentType,
+    refetchDocument,
   } = useMemo(() => extraFormCruds || {}, [extraFormCruds]);
 
-  const [createValue, { loading: createLoading }] = createQuery();
-  const [updateValue, { loading: updateLoading }] = updateQuery();
+  const queryOptions = refetchDocument
+    ? {
+        refetchQueries: [
+          { query: refetchDocument, variables: defaultRefetchVariables },
+        ],
+      }
+    : null;
+
+  const [createValue, { loading: createLoading }] = createQuery(queryOptions);
+  const [updateValue, { loading: updateLoading }] = updateQuery(queryOptions);
 
   const onSubmitInputs = useCallback(
     (val: any) => {
-      console.log(val);
       if (item) {
         updateValue({
           variables: {

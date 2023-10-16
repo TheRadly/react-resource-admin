@@ -5,6 +5,8 @@ interface ResourceCrudQueryFormProps {
     children?: React.ReactNode;
     item?: any;
     handleCloseQueryContainer?: () => void;
+    saveLabel?: string;
+    createLabel?: string;
 }
-declare const _default: React.MemoExoticComponent<({ extraFormCruds, children, item, handleCloseQueryContainer, }: ResourceCrudQueryFormProps) => import("react/jsx-runtime").JSX.Element>;
+declare const _default: React.MemoExoticComponent<({ extraFormCruds, children, item, handleCloseQueryContainer, saveLabel, createLabel, }: ResourceCrudQueryFormProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

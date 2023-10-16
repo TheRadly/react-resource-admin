@@ -14,6 +14,8 @@ interface ResourceCrudQueryFormProps {
   children?: React.ReactNode;
   item?: any;
   handleCloseQueryContainer?: () => void;
+  saveLabel?: string;
+  createLabel?: string;
 }
 
 const ResourceCrudQueryForm = ({
@@ -21,6 +23,8 @@ const ResourceCrudQueryForm = ({
   children,
   item,
   handleCloseQueryContainer,
+  saveLabel,
+  createLabel,
 }: ResourceCrudQueryFormProps) => {
   const {
     loading,
@@ -30,6 +34,8 @@ const ResourceCrudQueryForm = ({
     submitLocale,
   } = useResourceCrudQueryForm({
     extraFormCruds,
+    saveLabel,
+    createLabel,
     item,
     handleCloseQueryContainer,
   });

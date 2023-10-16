@@ -22,7 +22,9 @@ const ResourceCrudQueryForm = _ref => {
     extraFormCruds,
     children,
     item,
-    handleCloseQueryContainer
+    handleCloseQueryContainer,
+    saveLabel,
+    createLabel
   } = _ref;
   const {
     loading,
@@ -32,6 +34,8 @@ const ResourceCrudQueryForm = _ref => {
     submitLocale
   } = (0, _useResourceInputsQueryForm.default)({
     extraFormCruds,
+    saveLabel,
+    createLabel,
     item,
     handleCloseQueryContainer
   });

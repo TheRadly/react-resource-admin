@@ -9,7 +9,5 @@ export type CrudType = {
     deleteConfirmMessage?: string;
     initialValues?: any;
     loading?: boolean;
-    saveLabel: string;
-    createLabel: string;
     parentType?: string;
 };

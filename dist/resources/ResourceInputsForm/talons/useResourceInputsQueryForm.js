@@ -11,11 +11,21 @@ var _config = require("../config");
 var _lodash = require("lodash");
 var _helpers = require("../helpers");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const defaultRefetchVariables = {
+  input: {
+    pagination: {
+      page: 0,
+      limit: 10
+    }
+  }
+};
 const useResourceInputsQueryForm = _ref => {
   let {
     extraFormCruds,
     item,
-    handleCloseQueryContainer
+    handleCloseQueryContainer,
+    saveLabel,
+    createLabel
   } = _ref;
   const {
     initialValues,
@@ -23,18 +33,22 @@ const useResourceInputsQueryForm = _ref => {
     updateQuery,
     id,
     loading,
-    saveLabel,
-    createLabel,
-    parentType
+    parentType,
+    refetchDocument
   } = (0, _react.useMemo)(() => extraFormCruds || {}, [extraFormCruds]);
+  const queryOptions = refetchDocument ? {
+    refetchQueries: [{
+      query: refetchDocument,
+      variables: defaultRefetchVariables
+    }]
+  } : null;
   const [createValue, {
     loading: createLoading
-  }] = createQuery();
+  }] = createQuery(queryOptions);
   const [updateValue, {
     loading: updateLoading
-  }] = updateQuery();
+  }] = updateQuery(queryOptions);
   const onSubmitInputs = (0, _react.useCallback)(val => {
-    console.log(val);
     if (item) {
       updateValue({
         variables: {
