@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
-var _typenameIdFilter = _interopRequireDefault(require("../../../utils/typenameIdFilter"));
 var _useForm = _interopRequireDefault(require("../../ResourceForm/talons/useForm"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const useResourceInputsQueryForm = _ref => {
@@ -14,40 +13,23 @@ const useResourceInputsQueryForm = _ref => {
     extraFormCruds,
     item,
     handleCloseQueryContainer,
-    filterItems,
-    saveLabel,
-    createLabel
+    filterItems
   } = _ref;
   const {
+    initialValues,
     createQuery,
     updateQuery,
-    id
+    id,
+    loading,
+    saveLabel,
+    createLabel
   } = (0, _react.useMemo)(() => extraFormCruds || {}, [extraFormCruds]);
-  const {
-    handleSubmit,
-    setFieldValue,
-    formValues,
-    formHandler
-  } = (0, _useForm.default)({
-    initialValues: (0, _typenameIdFilter.default)({
-      ...item
-    }),
-    onSubmitMethod: val => onSubmitInputs(val)
-  });
   const [createValue, {
     loading: createLoading
   }] = createQuery();
   const [updateValue, {
     loading: updateLoading
   }] = updateQuery();
-  (0, _react.useEffect)(() => {
-    if (item) {
-      const filteredBalance = (0, _typenameIdFilter.default)({
-        ...item
-      });
-      formHandler.setValues(filteredBalance, false);
-    }
-  }, [formHandler, item]);
   const onSubmitInputs = (0, _react.useCallback)(val => {
     if (item) {
       updateValue({
@@ -71,6 +53,19 @@ const useResourceInputsQueryForm = _ref => {
       handleCloseQueryContainer();
     }
   }, [updateValue, createValue, item, id, handleCloseQueryContainer]);
+  const formOptions = (0, _react.useMemo)(() => item ? {
+    valuesForEdit: item,
+    onSubmitMethod: onSubmitInputs,
+    loading
+  } : {
+    initialValues,
+    onSubmitMethod: onSubmitInputs
+  }, [initialValues, item, loading, onSubmitInputs]);
+  const {
+    handleSubmit,
+    setFieldValue,
+    formValues
+  } = (0, _useForm.default)(formOptions);
   const parsedValues = (0, _react.useMemo)(() => Object.keys(formValues).map(field => ({
     field,
     value: formValues[field]

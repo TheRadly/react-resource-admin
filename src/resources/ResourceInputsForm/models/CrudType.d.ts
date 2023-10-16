@@ -2,10 +2,13 @@ export type CrudType = {
     createQuery: any;
     updateQuery: any;
     deleteQuery?: any;
-    refetch: any;
-    generateTypeName: string;
+    refetchDocument?: any;
     name: string;
     successLocale: string;
     id?: string;
     deleteConfirmMessage?: string;
+    initialValues?: any;
+    loading?: boolean;
+    saveLabel: string;
+    createLabel: string;
 };

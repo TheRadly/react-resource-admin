@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import type { CrudType } from "../models/CrudType";
 import { FieldsType } from "../models/FieldsType";
-import typenameIdFilter from "../../../utils/typenameIdFilter";
 import useForm from "../../ResourceForm/talons/useForm";
 
 interface UseResourceInputsQueryForm {
@@ -9,8 +8,6 @@ interface UseResourceInputsQueryForm {
   item?: any;
   handleCloseQueryContainer?: () => void;
   filterItems?: FieldsType[];
-  saveLabel?: string;
-  createLabel?: string;
 }
 
 const useResourceInputsQueryForm = ({
@@ -18,28 +15,19 @@ const useResourceInputsQueryForm = ({
   item,
   handleCloseQueryContainer,
   filterItems,
-  saveLabel,
-  createLabel,
 }: UseResourceInputsQueryForm) => {
-  const { createQuery, updateQuery, id } = useMemo(
-    () => extraFormCruds || {},
-    [extraFormCruds]
-  );
-
-  const { handleSubmit, setFieldValue, formValues, formHandler } = useForm({
-    initialValues: typenameIdFilter({ ...item }),
-    onSubmitMethod: (val: any) => onSubmitInputs(val),
-  });
+  const {
+    initialValues,
+    createQuery,
+    updateQuery,
+    id,
+    loading,
+    saveLabel,
+    createLabel,
+  } = useMemo(() => extraFormCruds || {}, [extraFormCruds]);
 
   const [createValue, { loading: createLoading }] = createQuery();
   const [updateValue, { loading: updateLoading }] = updateQuery();
-
-  useEffect(() => {
-    if (item) {
-      const filteredBalance = typenameIdFilter({ ...item });
-      formHandler.setValues(filteredBalance, false);
-    }
-  }, [formHandler, item]);
 
   const onSubmitInputs = useCallback(
     (val: any) => {
@@ -68,6 +56,23 @@ const useResourceInputsQueryForm = ({
     },
     [updateValue, createValue, item, id, handleCloseQueryContainer]
   );
+
+  const formOptions = useMemo(
+    () =>
+      item
+        ? {
+            valuesForEdit: item,
+            onSubmitMethod: onSubmitInputs,
+            loading,
+          }
+        : {
+            initialValues,
+            onSubmitMethod: onSubmitInputs,
+          },
+    [initialValues, item, loading, onSubmitInputs]
+  );
+
+  const { handleSubmit, setFieldValue, formValues } = useForm(formOptions);
 
   const parsedValues = useMemo(
     () =>
