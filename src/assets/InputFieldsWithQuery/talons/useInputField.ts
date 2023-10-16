@@ -26,7 +26,9 @@ const useInputField = ({
   const onClickDelete = useCallback(() => {
     handleDeleteValues({
       variables: {
-        ids: [item.id],
+        input: {
+          ids: [item.id],
+        },
       },
     });
   }, [handleDeleteValues, item]);

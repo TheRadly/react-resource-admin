@@ -27,7 +27,9 @@ const useInputField = _ref => {
   const onClickDelete = (0, _react.useCallback)(() => {
     handleDeleteValues({
       variables: {
-        ids: [item.id]
+        input: {
+          ids: [item.id]
+        }
       }
     });
   }, [handleDeleteValues, item]);
