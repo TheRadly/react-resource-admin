@@ -15,8 +15,7 @@ const useResourceInputsQueryForm = _ref => {
   let {
     extraFormCruds,
     item,
-    handleCloseQueryContainer,
-    filterItems
+    handleCloseQueryContainer
   } = _ref;
   const {
     initialValues,

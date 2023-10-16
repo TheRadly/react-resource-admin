@@ -20,14 +20,12 @@ interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
   item?: any;
   handleCloseQueryContainer?: () => void;
-  filterItems?: FieldsType[];
 }
 
 const useResourceInputsQueryForm = ({
   extraFormCruds,
   item,
   handleCloseQueryContainer,
-  filterItems,
 }: UseResourceInputsQueryForm) => {
   const {
     initialValues,

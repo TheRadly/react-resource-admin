@@ -5,9 +5,8 @@ interface UseResourceInputsQueryForm {
     extraFormCruds: CrudType;
     item?: any;
     handleCloseQueryContainer?: () => void;
-    filterItems?: FieldsType[];
 }
-declare const useResourceInputsQueryForm: ({ extraFormCruds, item, handleCloseQueryContainer, filterItems, }: UseResourceInputsQueryForm) => {
+declare const useResourceInputsQueryForm: ({ extraFormCruds, item, handleCloseQueryContainer, }: UseResourceInputsQueryForm) => {
     loading: any;
     handleSubmit: (e?: import("react").FormEvent<HTMLFormElement> | undefined) => void;
     arrayOfValues: FieldsType[];
