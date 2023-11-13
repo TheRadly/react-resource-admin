@@ -23,4 +23,5 @@ export type FieldsType = {
     isArrayWithObject?: boolean;
     emptyLabel?: string;
     fullWidth?: boolean;
+    returnFullObjectEvent?: boolean;
 };

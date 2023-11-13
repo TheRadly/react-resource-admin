@@ -32,6 +32,7 @@ interface UniversalInputProps {
     initialValue?: any;
     itemTitledBy?: string;
     withoutUpperCasing?: boolean;
+    returnFullObjectEvent?: boolean;
 }
-declare const _default: import("react").MemoExoticComponent<({ label: propLabel, placeholder, value, onChange, disabled, currentOption, isMultiInput, isMultiSelect, withChildQuery, handleShowQueryContainer, fieldsToExcludeInQueryInput, extraFormCruds, fullWidth, emptyLabel, isArray, isDisabled, isFloat, isJson, isShowQueryContainer, isDate, isTextArea, isArrayWithObjects, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, initialValue, itemTitledBy, withoutUpperCasing, }: UniversalInputProps) => import("react/jsx-runtime").JSX.Element>;
+declare const _default: import("react").MemoExoticComponent<({ label: propLabel, placeholder, value, onChange, disabled, currentOption, isMultiInput, isMultiSelect, withChildQuery, handleShowQueryContainer, fieldsToExcludeInQueryInput, extraFormCruds, fullWidth, emptyLabel, isArray, isDisabled, isFloat, isJson, isShowQueryContainer, isDate, isTextArea, isArrayWithObjects, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, initialValue, itemTitledBy, withoutUpperCasing, returnFullObjectEvent, }: UniversalInputProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

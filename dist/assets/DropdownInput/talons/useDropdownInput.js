@@ -8,7 +8,8 @@ require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
 const useDropdownInput = _ref => {
   let {
-    onChange
+    onChange,
+    returnFullObjectEvent
   } = _ref;
   const [selectedDropdown, setSelectedDropdown] = (0, _react.useState)(null);
   const handleChangeValue = (0, _react.useCallback)(_ref2 => {
@@ -16,8 +17,8 @@ const useDropdownInput = _ref => {
       value
     } = _ref2;
     setSelectedDropdown(value);
-    onChange(value.code);
-  }, [setSelectedDropdown, onChange]);
+    onChange(returnFullObjectEvent ? value : value.code);
+  }, [setSelectedDropdown, onChange, returnFullObjectEvent]);
   return {
     selectedDropdown,
     handleChangeValue

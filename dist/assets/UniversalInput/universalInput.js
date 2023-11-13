@@ -50,7 +50,8 @@ const UniversalInput = _ref => {
     editTooltipLabel,
     initialValue,
     itemTitledBy,
-    withoutUpperCasing
+    withoutUpperCasing,
+    returnFullObjectEvent
   } = _ref;
   const label = (0, _react.useMemo)(() => {
     if (withoutUpperCasing && propLabel) {
@@ -118,6 +119,7 @@ const UniversalInput = _ref => {
       fieldsToExclude: fieldsToExcludeInQueryInput
     }), typeof value === _config.default.OBJECT && !isDate && !isMultiInput && !isMultiSelect && !withChildQuery && !isArrayWithObjects && !isArray && (0, _jsxRuntime.jsx)(_dropdownInput.default, {
       label: label,
+      returnFullObjectEvent: returnFullObjectEvent,
       disabled: disabled,
       fullWidth: fullWidth,
       currentOption: currentOption,

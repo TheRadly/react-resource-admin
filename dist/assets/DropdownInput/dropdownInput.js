@@ -17,13 +17,15 @@ const DropdownInput = _ref => {
     currentOption,
     fullWidth,
     disabled,
-    placeholder
+    placeholder,
+    returnFullObjectEvent
   } = _ref;
   const {
     selectedDropdown,
     handleChangeValue
   } = (0, _useDropdownInput.default)({
-    onChange
+    onChange,
+    returnFullObjectEvent
   });
   return (0, _jsxRuntime.jsxs)(_dropdownInputWrapper.default, {
     fullWidth: fullWidth,

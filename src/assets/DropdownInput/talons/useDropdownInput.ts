@@ -3,17 +3,21 @@ import { useCallback, useState } from "react";
 
 interface UseDropdownInputProps {
   onChange: (arg: string) => void;
+  returnFullObjectEvent?: boolean;
 }
 
-const useDropdownInput = ({ onChange }: UseDropdownInputProps) => {
+const useDropdownInput = ({
+  onChange,
+  returnFullObjectEvent,
+}: UseDropdownInputProps) => {
   const [selectedDropdown, setSelectedDropdown] = useState<string | null>(null);
 
   const handleChangeValue = useCallback(
     ({ value }: DropdownChangeEvent) => {
       setSelectedDropdown(value);
-      onChange(value.code);
+      onChange(returnFullObjectEvent ? value : value.code);
     },
-    [setSelectedDropdown, onChange]
+    [setSelectedDropdown, onChange, returnFullObjectEvent]
   );
 
   return { selectedDropdown, handleChangeValue };

@@ -63,7 +63,8 @@ const ResourceForm = _ref => {
         itemTitledBy,
         isArrayWithObject,
         emptyLabel,
-        fullWidth
+        fullWidth,
+        returnFullObjectEvent
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
         fullWidth: fullWidth,
@@ -87,6 +88,7 @@ const ResourceForm = _ref => {
         placeholder: placeholder,
         disabled: loading,
         value: value,
+        returnFullObjectEvent: returnFullObjectEvent,
         isFloat: isFloat,
         onChange: data => handleSetFieldValue(data, field)
       });

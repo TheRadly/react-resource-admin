@@ -11,6 +11,7 @@ interface DropdownInputProps {
   currentOption?: SelectType;
   fullWidth?: boolean;
   disabled?: boolean;
+  returnFullObjectEvent?: boolean;
 }
 
 const DropdownInput = ({
@@ -21,9 +22,11 @@ const DropdownInput = ({
   fullWidth,
   disabled,
   placeholder,
+  returnFullObjectEvent,
 }: DropdownInputProps) => {
   const { selectedDropdown, handleChangeValue } = useDropdownInput({
     onChange,
+    returnFullObjectEvent,
   });
 
   return (

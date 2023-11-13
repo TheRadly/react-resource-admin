@@ -74,6 +74,7 @@ const ResourceForm = ({
             isArrayWithObject,
             emptyLabel,
             fullWidth,
+            returnFullObjectEvent,
           }) => (
             <UniversalInput
               fullWidth={fullWidth}
@@ -97,6 +98,7 @@ const ResourceForm = ({
               placeholder={placeholder}
               disabled={loading}
               value={value}
+              returnFullObjectEvent={returnFullObjectEvent}
               isFloat={isFloat}
               onChange={(data) => handleSetFieldValue(data, field)}
             />
