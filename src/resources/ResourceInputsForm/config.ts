@@ -2,7 +2,7 @@ export const BONUS_ID = "bonusId";
 export const CASHBACK_PERCENT = "cashbackPercent";
 export const DEPOSIT_LIMIT = "depositLimit";
 export const WITHDRAW_LIMIT = "withdrawLimit";
-export const LOYALITY_LEVEL_ID = "loyalityLevelId";
+export const LOYALTY_LEVEL_ID = "loyaltyLevelId";
 export const TYPE = "type";
 
 export const LOYALTY_LEVEL = "LoyaltyLevel";

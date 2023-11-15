@@ -22,7 +22,7 @@ const getCorrectExtraFormSubmitValues = (val, parentType) => {
 exports.getCorrectExtraFormSubmitValues = getCorrectExtraFormSubmitValues;
 const removeExtraFormItemId = (item, parentType) => {
   if (parentType === _config.LOYALTY_LEVEL) {
-    return (0, _replaceObject.default)(item, [_config.LOYALITY_LEVEL_ID]);
+    return (0, _replaceObject.default)(item, [_config.LOYALTY_LEVEL_ID]);
   }
   return item;
 };

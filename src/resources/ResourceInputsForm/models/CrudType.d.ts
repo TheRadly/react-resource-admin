@@ -10,4 +10,5 @@ export type CrudType = {
     initialValues?: any;
     loading?: boolean;
     parentType?: string;
+    dynamicalInputs?: any;
 };

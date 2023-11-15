@@ -3,12 +3,10 @@ import type { CrudType } from "../models/CrudType";
 import { FieldsType } from "../models/FieldsType";
 import useForm from "../../ResourceForm/talons/useForm";
 import {
-  BONUS_ID,
   CASHBACK_PERCENT,
   DEPOSIT_LIMIT,
-  LOYALITY_LEVEL_ID,
+  LOYALTY_LEVEL_ID,
   LOYALTY_LEVEL,
-  LOYALTY_LEVEL_REWARD_TYPES,
   LoyaltyRewardTypeEnums,
   TYPE,
   WITHDRAW_LIMIT,
@@ -45,6 +43,7 @@ const useResourceInputsQueryForm = ({
 }: UseResourceInputsQueryForm) => {
   const {
     initialValues,
+    dynamicalInputs,
     createQuery,
     updateQuery,
     id,
@@ -112,66 +111,27 @@ const useResourceInputsQueryForm = ({
     useForm(formOptions);
 
   useEffect(() => {
-    if (parentType && parentType === LOYALTY_LEVEL) {
-      if (
-        formValues?.type === LOYALTY_LEVEL_REWARD_TYPES.BONUS &&
-        !has(formValues, BONUS_ID)
-      ) {
-        formHandler.setFieldValue(BONUS_ID, item?.bonusId || "");
-      } else if (
-        formValues?.type !== LOYALTY_LEVEL_REWARD_TYPES.BONUS &&
-        has(formValues, BONUS_ID)
-      ) {
-        formHandler.setFieldValue(BONUS_ID, undefined);
-      }
+    if (parentType && parentType === LOYALTY_LEVEL && dynamicalInputs) {
+      if (formValues?.type !== "") {
+        Object.keys(formValues).forEach((formValueKey) => {
+          if (formValueKey !== TYPE && formValueKey !== LOYALTY_LEVEL_ID) {
+            formHandler.setFieldValue(formValueKey, undefined);
+          }
+        });
 
-      if (
-        formValues?.type === LOYALTY_LEVEL_REWARD_TYPES.CASHBACK &&
-        !has(formValues, CASHBACK_PERCENT)
-      ) {
-        formHandler.setFieldValue(
-          CASHBACK_PERCENT,
-          item?.cashbackPercent || ""
-        );
-      } else if (
-        formValues?.type !== LOYALTY_LEVEL_REWARD_TYPES.CASHBACK &&
-        has(formValues, CASHBACK_PERCENT)
-      ) {
-        formHandler.setFieldValue(CASHBACK_PERCENT, undefined);
-      }
-
-      if (
-        formValues?.type === LOYALTY_LEVEL_REWARD_TYPES.DEPOSIT_LIMIT &&
-        !has(formValues, DEPOSIT_LIMIT)
-      ) {
-        formHandler.setFieldValue(DEPOSIT_LIMIT, item?.depositLimit || "");
-      } else if (
-        formValues?.type !== LOYALTY_LEVEL_REWARD_TYPES.DEPOSIT_LIMIT &&
-        has(formValues, DEPOSIT_LIMIT)
-      ) {
-        formHandler.setFieldValue(DEPOSIT_LIMIT, undefined);
-      }
-
-      if (
-        formValues?.type === LOYALTY_LEVEL_REWARD_TYPES.WITHDRAW_LIMIT &&
-        !has(formValues, WITHDRAW_LIMIT)
-      ) {
-        formHandler.setFieldValue(WITHDRAW_LIMIT, item?.withdrawLimit || "");
-      } else if (
-        formValues?.type !== LOYALTY_LEVEL_REWARD_TYPES.WITHDRAW_LIMIT &&
-        has(formValues, WITHDRAW_LIMIT)
-      ) {
-        formHandler.setFieldValue(WITHDRAW_LIMIT, undefined);
+        dynamicalInputs
+          .find(
+            (dynamicalInput: { type: string; inputs: string[] }) =>
+              dynamicalInput.type === formValues?.type
+          )
+          ?.inputs.forEach((input: string) => {
+            if (!has(formValues, input)) {
+              formHandler.setFieldValue(input, item?.[input] || "");
+            }
+          });
       }
     }
-  }, [
-    parentType,
-    formValues,
-    item?.bonusId,
-    item?.cashbackPercent,
-    item?.depositLimit,
-    item?.withdrawLimit,
-  ]);
+  }, [parentType, formValues, dynamicalInputs, item]);
 
   const parsedValues = useMemo(
     () =>
@@ -228,7 +188,7 @@ const useResourceInputsQueryForm = ({
                   ...pv,
                   isFloat: true,
                 };
-          } else if (pv.field === LOYALITY_LEVEL_ID) {
+          } else if (pv.field === LOYALTY_LEVEL_ID) {
             return {
               ...item,
               isDisabled: true,

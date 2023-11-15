@@ -1,5 +1,5 @@
 import replaceObject from "../../utils/replaceObject";
-import { LOYALITY_LEVEL_ID, LOYALTY_LEVEL } from "./config";
+import { LOYALTY_LEVEL_ID, LOYALTY_LEVEL } from "./config";
 
 const checkOnFloat = (value: string) =>
   typeof value === "string" ? parseFloat(value) : value;
@@ -24,7 +24,7 @@ export const getCorrectExtraFormSubmitValues = (
 
 export const removeExtraFormItemId = (item: any, parentType?: string) => {
   if (parentType === LOYALTY_LEVEL) {
-    return replaceObject(item, [LOYALITY_LEVEL_ID]);
+    return replaceObject(item, [LOYALTY_LEVEL_ID]);
   }
 
   return item;

@@ -29,6 +29,7 @@ const useResourceInputsQueryForm = _ref => {
   } = _ref;
   const {
     initialValues,
+    dynamicalInputs,
     createQuery,
     updateQuery,
     id,
@@ -84,29 +85,22 @@ const useResourceInputsQueryForm = _ref => {
     formHandler
   } = (0, _useForm.default)(formOptions);
   (0, _react.useEffect)(() => {
-    if (parentType && parentType === _config.LOYALTY_LEVEL) {
-      if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) === _config.LOYALTY_LEVEL_REWARD_TYPES.BONUS && !(0, _lodash.has)(formValues, _config.BONUS_ID)) {
-        formHandler.setFieldValue(_config.BONUS_ID, (item === null || item === void 0 ? void 0 : item.bonusId) || "");
-      } else if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== _config.LOYALTY_LEVEL_REWARD_TYPES.BONUS && (0, _lodash.has)(formValues, _config.BONUS_ID)) {
-        formHandler.setFieldValue(_config.BONUS_ID, undefined);
-      }
-      if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) === _config.LOYALTY_LEVEL_REWARD_TYPES.CASHBACK && !(0, _lodash.has)(formValues, _config.CASHBACK_PERCENT)) {
-        formHandler.setFieldValue(_config.CASHBACK_PERCENT, (item === null || item === void 0 ? void 0 : item.cashbackPercent) || "");
-      } else if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== _config.LOYALTY_LEVEL_REWARD_TYPES.CASHBACK && (0, _lodash.has)(formValues, _config.CASHBACK_PERCENT)) {
-        formHandler.setFieldValue(_config.CASHBACK_PERCENT, undefined);
-      }
-      if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) === _config.LOYALTY_LEVEL_REWARD_TYPES.DEPOSIT_LIMIT && !(0, _lodash.has)(formValues, _config.DEPOSIT_LIMIT)) {
-        formHandler.setFieldValue(_config.DEPOSIT_LIMIT, (item === null || item === void 0 ? void 0 : item.depositLimit) || "");
-      } else if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== _config.LOYALTY_LEVEL_REWARD_TYPES.DEPOSIT_LIMIT && (0, _lodash.has)(formValues, _config.DEPOSIT_LIMIT)) {
-        formHandler.setFieldValue(_config.DEPOSIT_LIMIT, undefined);
-      }
-      if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) === _config.LOYALTY_LEVEL_REWARD_TYPES.WITHDRAW_LIMIT && !(0, _lodash.has)(formValues, _config.WITHDRAW_LIMIT)) {
-        formHandler.setFieldValue(_config.WITHDRAW_LIMIT, (item === null || item === void 0 ? void 0 : item.withdrawLimit) || "");
-      } else if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== _config.LOYALTY_LEVEL_REWARD_TYPES.WITHDRAW_LIMIT && (0, _lodash.has)(formValues, _config.WITHDRAW_LIMIT)) {
-        formHandler.setFieldValue(_config.WITHDRAW_LIMIT, undefined);
+    if (parentType && parentType === _config.LOYALTY_LEVEL && dynamicalInputs) {
+      if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== "") {
+        var _dynamicalInputs$find;
+        Object.keys(formValues).forEach(formValueKey => {
+          if (formValueKey !== _config.TYPE && formValueKey !== _config.LOYALTY_LEVEL_ID) {
+            formHandler.setFieldValue(formValueKey, undefined);
+          }
+        });
+        (_dynamicalInputs$find = dynamicalInputs.find(dynamicalInput => dynamicalInput.type === (formValues === null || formValues === void 0 ? void 0 : formValues.type))) === null || _dynamicalInputs$find === void 0 ? void 0 : _dynamicalInputs$find.inputs.forEach(input => {
+          if (!(0, _lodash.has)(formValues, input)) {
+            formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || "");
+          }
+        });
       }
     }
-  }, [parentType, formValues, item === null || item === void 0 ? void 0 : item.bonusId, item === null || item === void 0 ? void 0 : item.cashbackPercent, item === null || item === void 0 ? void 0 : item.depositLimit, item === null || item === void 0 ? void 0 : item.withdrawLimit]);
+  }, [parentType, formValues, dynamicalInputs, item]);
   const parsedValues = (0, _react.useMemo)(() => Object.keys(formValues).map(field => ({
     field,
     value: formValues[field]
@@ -139,7 +133,7 @@ const useResourceInputsQueryForm = _ref => {
           ...pv,
           isFloat: true
         };
-      } else if (pv.field === _config.LOYALITY_LEVEL_ID) {
+      } else if (pv.field === _config.LOYALTY_LEVEL_ID) {
         return {
           ...item,
           isDisabled: true
