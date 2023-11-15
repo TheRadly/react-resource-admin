@@ -35,7 +35,8 @@ const useResourceInputsQueryForm = _ref => {
     id,
     loading,
     parentType,
-    refetchDocument
+    refetchDocument,
+    externalValues
   } = (0, _react.useMemo)(() => extraFormCruds || {}, [extraFormCruds]);
   const queryOptions = refetchDocument ? {
     refetchQueries: [{
@@ -55,7 +56,7 @@ const useResourceInputsQueryForm = _ref => {
         variables: {
           input: {
             id: item === null || item === void 0 ? void 0 : item.id,
-            data: (0, _helpers.removeExtraFormItemId)((0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType), parentType)
+            update: (0, _helpers.removeExtraFormItemId)((0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType), parentType)
           }
         }
       });
@@ -144,10 +145,22 @@ const useResourceInputsQueryForm = _ref => {
           ...item,
           isDisabled: true
         };
+      } else if (pv.field === _config.BONUS_ID) {
+        const bonusesValues = externalValues === null || externalValues === void 0 ? void 0 : externalValues.bonuses.map(bonus => ({
+          name: bonus.name,
+          code: bonus.id
+        }));
+        return {
+          ...pv,
+          ...(item ? {
+            activeValue: bonusesValues === null || bonusesValues === void 0 ? void 0 : bonusesValues.find(bonus => bonus.code === pv.value)
+          } : null),
+          value: bonusesValues
+        };
       }
     }
     return pv;
-  }), [parsedValues, parentType, item]);
+  }), [parsedValues, parentType, item, externalValues === null || externalValues === void 0 ? void 0 : externalValues.bonuses]);
   const handleChangeField = (0, _react.useCallback)((value, field) => {
     setFieldValue(field, value);
   }, [setFieldValue]);

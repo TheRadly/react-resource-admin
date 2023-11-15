@@ -10,6 +10,7 @@ import {
   LoyaltyRewardTypeEnums,
   TYPE,
   WITHDRAW_LIMIT,
+  BONUS_ID,
 } from "../config";
 import {
   getCorrectExtraFormSubmitValues,
@@ -50,6 +51,7 @@ const useResourceInputsQueryForm = ({
     loading,
     parentType,
     refetchDocument,
+    externalValues,
   } = useMemo(() => extraFormCruds || {}, [extraFormCruds]);
 
   const queryOptions = refetchDocument
@@ -70,7 +72,7 @@ const useResourceInputsQueryForm = ({
           variables: {
             input: {
               id: item?.id,
-              data: removeExtraFormItemId(
+              update: removeExtraFormItemId(
                 getCorrectExtraFormSubmitValues(val, parentType),
                 parentType
               ),
@@ -201,12 +203,29 @@ const useResourceInputsQueryForm = ({
               ...item,
               isDisabled: true,
             };
+          } else if (pv.field === BONUS_ID) {
+            const bonusesValues = externalValues?.bonuses.map((bonus: any) => ({
+              name: bonus.name,
+              code: bonus.id,
+            }));
+
+            return {
+              ...pv,
+              ...(item
+                ? {
+                    activeValue: bonusesValues?.find(
+                      (bonus: any) => bonus.code === pv.value
+                    ),
+                  }
+                : null),
+              value: bonusesValues,
+            };
           }
         }
 
         return pv;
       }),
-    [parsedValues, parentType, item]
+    [parsedValues, parentType, item, externalValues?.bonuses]
   ) as FieldsType[];
 
   const handleChangeField = useCallback(
