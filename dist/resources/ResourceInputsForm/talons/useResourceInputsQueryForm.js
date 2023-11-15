@@ -8,8 +8,8 @@ require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
 var _useForm = _interopRequireDefault(require("../../ResourceForm/talons/useForm"));
 var _config = require("../config");
-var _lodash = require("lodash");
 var _helpers = require("../helpers");
+var _lodash = require("lodash");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const defaultRefetchVariables = {
   input: {
@@ -87,17 +87,23 @@ const useResourceInputsQueryForm = _ref => {
   (0, _react.useEffect)(() => {
     if (parentType && parentType === _config.LOYALTY_LEVEL && dynamicalInputs) {
       if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== "") {
-        var _dynamicalInputs$find;
-        Object.keys(formValues).forEach(formValueKey => {
-          if (formValueKey !== _config.TYPE && formValueKey !== _config.LOYALTY_LEVEL_ID) {
-            formHandler.setFieldValue(formValueKey, undefined);
-          }
-        });
-        (_dynamicalInputs$find = dynamicalInputs.find(dynamicalInput => dynamicalInput.type === (formValues === null || formValues === void 0 ? void 0 : formValues.type))) === null || _dynamicalInputs$find === void 0 ? void 0 : _dynamicalInputs$find.inputs.forEach(input => {
-          if (!(0, _lodash.has)(formValues, input)) {
-            formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || "");
-          }
-        });
+        const selectedDynamicalInput = dynamicalInputs.find(dynamicalInput => dynamicalInput.type === (formValues === null || formValues === void 0 ? void 0 : formValues.type));
+        if (selectedDynamicalInput) {
+          dynamicalInputs.forEach(dynamicalInput => {
+            if (dynamicalInput.type !== (formValues === null || formValues === void 0 ? void 0 : formValues.type)) {
+              dynamicalInput.inputs.forEach(currentInput => {
+                if ((0, _lodash.has)(formValues, currentInput)) {
+                  formHandler.setFieldValue(currentInput, undefined);
+                }
+              });
+            }
+          });
+          selectedDynamicalInput === null || selectedDynamicalInput === void 0 ? void 0 : selectedDynamicalInput.inputs.forEach(input => {
+            if (!(0, _lodash.has)(formValues, input)) {
+              formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || "");
+            }
+          });
+        }
       }
     }
   }, [parentType, formValues, dynamicalInputs, item]);

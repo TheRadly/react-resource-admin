@@ -11,11 +11,11 @@ import {
   TYPE,
   WITHDRAW_LIMIT,
 } from "../config";
-import { has } from "lodash";
 import {
   getCorrectExtraFormSubmitValues,
   removeExtraFormItemId,
 } from "../helpers";
+import { has } from "lodash";
 
 interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
@@ -113,22 +113,30 @@ const useResourceInputsQueryForm = ({
   useEffect(() => {
     if (parentType && parentType === LOYALTY_LEVEL && dynamicalInputs) {
       if (formValues?.type !== "") {
-        Object.keys(formValues).forEach((formValueKey) => {
-          if (formValueKey !== TYPE && formValueKey !== LOYALTY_LEVEL_ID) {
-            formHandler.setFieldValue(formValueKey, undefined);
-          }
-        });
+        const selectedDynamicalInput = dynamicalInputs.find(
+          (dynamicalInput: { type: string; inputs: string[] }) =>
+            dynamicalInput.type === formValues?.type
+        );
 
-        dynamicalInputs
-          .find(
-            (dynamicalInput: { type: string; inputs: string[] }) =>
-              dynamicalInput.type === formValues?.type
-          )
-          ?.inputs.forEach((input: string) => {
+        if (selectedDynamicalInput) {
+          dynamicalInputs.forEach(
+            (dynamicalInput: { type: string; inputs: string[] }) => {
+              if (dynamicalInput.type !== formValues?.type) {
+                dynamicalInput.inputs.forEach((currentInput) => {
+                  if (has(formValues, currentInput)) {
+                    formHandler.setFieldValue(currentInput, undefined);
+                  }
+                });
+              }
+            }
+          );
+
+          selectedDynamicalInput?.inputs.forEach((input: string) => {
             if (!has(formValues, input)) {
               formHandler.setFieldValue(input, item?.[input] || "");
             }
           });
+        }
       }
     }
   }, [parentType, formValues, dynamicalInputs, item]);
