@@ -14,7 +14,7 @@ const getCorrectExtraFormSubmitValues = (val, parentType) => {
       ...val,
       cashbackPercent: val.cashbackPercent ? checkOnFloat(val.cashbackPercent) : null,
       depositLimit: val.depositLimit ? checkOnFloat(val.depositLimit) : null,
-      withdrawLimit: val.withdrawLimit ? checkOnFloat(val.withdrawLimit) : null
+      withdrawalLimit: val.withdrawLimit ? checkOnFloat(val.withdrawLimit) : null
     };
   }
   return val;
