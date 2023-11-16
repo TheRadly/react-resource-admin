@@ -1,5 +1,6 @@
 export declare const getCorrectExtraFormSubmitValues: (val: any, parentType?: string) => any;
 export declare const removeExtraFormItemId: (item: any, parentType?: string) => any;
+export declare const getCurrentInitialValueByInput: (input: string) => 0 | "" | never[];
 export declare const prepareDynamicalFieldsByFormType: ({ parentType, dynamicalInputs, formValues, formHandler, item, }: {
     formValues: any;
     parentType?: string | undefined;

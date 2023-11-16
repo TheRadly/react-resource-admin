@@ -25,6 +25,7 @@ import {
   VALUE,
   POSITION,
   DURATION,
+  BALANCE,
 } from "./config";
 import { TOURNAMENT_ID } from "../../assets/ArrayOfObjectsInput/config";
 
@@ -88,6 +89,25 @@ export const removeExtraFormItemId = (item: any, parentType?: string) => {
   return item;
 };
 
+export const getCurrentInitialValueByInput = (input: string) => {
+  switch (input) {
+    case POSITION:
+      return 0;
+    case VALUE:
+      return 0;
+    case BALANCE:
+      return [];
+    case MIN_BET:
+      return [];
+    case MAX_BET:
+      return [];
+    case DURATION:
+      return 0;
+    default:
+      return "";
+  }
+};
+
 export const prepareDynamicalFieldsByFormType = ({
   parentType,
   dynamicalInputs,
@@ -133,7 +153,10 @@ export const prepareDynamicalFieldsByFormType = ({
 
         selectedDynamicalInput?.inputs.forEach((input: string) => {
           if (!has(formValues, input)) {
-            formHandler.setFieldValue(input, item?.[input] || "");
+            formHandler.setFieldValue(
+              input,
+              item?.[input] || getCurrentInitialValueByInput(input)
+            );
           }
         });
       }
@@ -242,9 +265,14 @@ export const customizeFieldInputs = ({
           : null),
         value: tournamentTypeConstraintsValues,
       };
-    } else if (pv.field === MIN_BET || pv.field === MAX_BET) {
+    } else if (
+      pv.field === MIN_BET ||
+      pv.field === MAX_BET ||
+      pv.field === BALANCE
+    ) {
       return {
         ...pv,
+        value: item ? pv.value : [],
         isArrayWithObject: true,
         initialValue: currencyAmountInput,
         itemTitledBy: "currency",

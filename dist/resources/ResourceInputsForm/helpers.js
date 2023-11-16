@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.removeExtraFormItemId = exports.prepareDynamicalFieldsByFormType = exports.getCorrectExtraFormSubmitValues = exports.customizeFieldInputs = void 0;
+exports.removeExtraFormItemId = exports.prepareDynamicalFieldsByFormType = exports.getCurrentInitialValueByInput = exports.getCorrectExtraFormSubmitValues = exports.customizeFieldInputs = void 0;
 var _lodash = require("lodash");
 var _replaceObject = _interopRequireDefault(require("../../utils/replaceObject"));
 var _config = require("./config");
@@ -54,6 +54,25 @@ const removeExtraFormItemId = (item, parentType) => {
   return item;
 };
 exports.removeExtraFormItemId = removeExtraFormItemId;
+const getCurrentInitialValueByInput = input => {
+  switch (input) {
+    case _config.POSITION:
+      return 0;
+    case _config.VALUE:
+      return 0;
+    case _config.BALANCE:
+      return [];
+    case _config.MIN_BET:
+      return [];
+    case _config.MAX_BET:
+      return [];
+    case _config.DURATION:
+      return 0;
+    default:
+      return "";
+  }
+};
+exports.getCurrentInitialValueByInput = getCurrentInitialValueByInput;
 const prepareDynamicalFieldsByFormType = _ref => {
   let {
     parentType,
@@ -77,7 +96,7 @@ const prepareDynamicalFieldsByFormType = _ref => {
         });
         selectedDynamicalInput === null || selectedDynamicalInput === void 0 ? void 0 : selectedDynamicalInput.inputs.forEach(input => {
           if (!(0, _lodash.has)(formValues, input)) {
-            formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || "");
+            formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || getCurrentInitialValueByInput(input));
           }
         });
       }
@@ -154,9 +173,10 @@ const customizeFieldInputs = _ref2 => {
         } : null),
         value: tournamentTypeConstraintsValues
       };
-    } else if (pv.field === _config.MIN_BET || pv.field === _config.MAX_BET) {
+    } else if (pv.field === _config.MIN_BET || pv.field === _config.MAX_BET || pv.field === _config.BALANCE) {
       return {
         ...pv,
+        value: item ? pv.value : [],
         isArrayWithObject: true,
         initialValue: _config.currencyAmountInput,
         itemTitledBy: "currency",

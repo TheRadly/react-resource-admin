@@ -12,6 +12,7 @@ export declare const END_DATE = "endDate";
 export declare const VALUE = "value";
 export declare const POSITION = "position";
 export declare const DURATION = "duration";
+export declare const BALANCE = "balance";
 export declare const LOYALTY_LEVEL = "LoyaltyLevel";
 export declare const TOURNAMENT_CONSTRAINTS = "TournamentConstraints";
 export declare const TOURNAMENT_REWARDS = "TournamentRewards";

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.currencyAmountInput = exports.WITHDRAW_LIMIT = exports.VALUE = exports.TournamentScheduleType = exports.TournamentRewardType = exports.TournamentConstraintType = exports.TYPE = exports.TOURNAMENT_SCHEDULES = exports.TOURNAMENT_REWARDS = exports.TOURNAMENT_CONSTRAINTS = exports.START_DATE = exports.POSITION = exports.MIN_BET = exports.MAX_BET = exports.LoyaltyRewardTypeEnums = exports.LOYALTY_LEVEL_REWARD_TYPES = exports.LOYALTY_LEVEL_ID = exports.LOYALTY_LEVEL = exports.END_DATE = exports.DayToActivate = exports.DURATION = exports.DEPOSIT_LIMIT = exports.DAY_TO_ACTIVATE = exports.CASHBACK_PERCENT = exports.BONUS_ID = void 0;
+exports.currencyAmountInput = exports.WITHDRAW_LIMIT = exports.VALUE = exports.TournamentScheduleType = exports.TournamentRewardType = exports.TournamentConstraintType = exports.TYPE = exports.TOURNAMENT_SCHEDULES = exports.TOURNAMENT_REWARDS = exports.TOURNAMENT_CONSTRAINTS = exports.START_DATE = exports.POSITION = exports.MIN_BET = exports.MAX_BET = exports.LoyaltyRewardTypeEnums = exports.LOYALTY_LEVEL_REWARD_TYPES = exports.LOYALTY_LEVEL_ID = exports.LOYALTY_LEVEL = exports.END_DATE = exports.DayToActivate = exports.DURATION = exports.DEPOSIT_LIMIT = exports.DAY_TO_ACTIVATE = exports.CASHBACK_PERCENT = exports.BONUS_ID = exports.BALANCE = void 0;
 const BONUS_ID = "bonusId";
 exports.BONUS_ID = BONUS_ID;
 const CASHBACK_PERCENT = "cashbackPercent";
@@ -32,6 +32,8 @@ const POSITION = "position";
 exports.POSITION = POSITION;
 const DURATION = "duration";
 exports.DURATION = DURATION;
+const BALANCE = "balance";
+exports.BALANCE = BALANCE;
 const LOYALTY_LEVEL = "LoyaltyLevel";
 exports.LOYALTY_LEVEL = LOYALTY_LEVEL;
 const TOURNAMENT_CONSTRAINTS = "TournamentConstraints";
