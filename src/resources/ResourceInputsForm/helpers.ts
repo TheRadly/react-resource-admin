@@ -22,6 +22,9 @@ import {
   DayToActivate,
   START_DATE,
   END_DATE,
+  VALUE,
+  POSITION,
+  DURATION,
 } from "./config";
 import { TOURNAMENT_ID } from "../../assets/ArrayOfObjectsInput/config";
 
@@ -113,20 +116,20 @@ export const prepareDynamicalFieldsByFormType = ({
       );
 
       if (selectedDynamicalInput) {
-        console.log(selectedDynamicalInput);
-        console.log(dynamicalInputs);
-
-        // dynamicalInputs.forEach(
-        //   (dynamicalInput: { type: string; inputs: string[] }) => {
-        //     if (dynamicalInput.type !== formValues?.type) {
-        //       dynamicalInput.inputs.forEach((currentInput) => {
-        //         if (has(formValues, currentInput)) {
-        //           formHandler.setFieldValue(currentInput, undefined);
-        //         }
-        //       });
-        //     }
-        //   }
-        // );
+        dynamicalInputs.forEach(
+          (dynamicalInput: { type: string; inputs: string[] }) => {
+            if (dynamicalInput.type !== formValues?.type) {
+              dynamicalInput.inputs.forEach((currentInput) => {
+                if (
+                  has(formValues, currentInput) &&
+                  !selectedDynamicalInput.inputs.includes(currentInput)
+                ) {
+                  formHandler.setFieldValue(currentInput, undefined);
+                }
+              });
+            }
+          }
+        );
 
         selectedDynamicalInput?.inputs.forEach((input: string) => {
           if (!has(formValues, input)) {
@@ -340,6 +343,15 @@ export const customizeFieldInputs = ({
         ...pv,
         value: item ? pv.value : undefined,
         isDate: true,
+      };
+    } else if (
+      pv.field === VALUE ||
+      pv.field === POSITION ||
+      pv.field === DURATION
+    ) {
+      return {
+        ...pv,
+        value: item ? pv.value : 0,
       };
     }
   }

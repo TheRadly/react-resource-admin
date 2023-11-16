@@ -49,10 +49,18 @@ const ResourceCrudQueryForm = _ref => {
         isArray,
         isDisabled,
         isDate,
-        isFloat
+        isFloat,
+        isArrayWithObject,
+        initialValue,
+        itemTitledBy,
+        emptyLabel
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
         isDate: isDate,
+        initialValue: initialValue,
+        itemTitledBy: itemTitledBy,
+        emptyLabel: emptyLabel,
+        isArrayWithObjects: isArrayWithObject,
         isDisabled: isDisabled,
         isArray: isArray,
         label: field,

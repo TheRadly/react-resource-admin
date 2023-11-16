@@ -66,8 +66,15 @@ const prepareDynamicalFieldsByFormType = _ref => {
     if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== "") {
       const selectedDynamicalInput = dynamicalInputs.find(dynamicalInput => dynamicalInput.type === (formValues === null || formValues === void 0 ? void 0 : formValues.type));
       if (selectedDynamicalInput) {
-        console.log(selectedDynamicalInput);
-        console.log(dynamicalInputs);
+        dynamicalInputs.forEach(dynamicalInput => {
+          if (dynamicalInput.type !== (formValues === null || formValues === void 0 ? void 0 : formValues.type)) {
+            dynamicalInput.inputs.forEach(currentInput => {
+              if ((0, _lodash.has)(formValues, currentInput) && !selectedDynamicalInput.inputs.includes(currentInput)) {
+                formHandler.setFieldValue(currentInput, undefined);
+              }
+            });
+          }
+        });
         selectedDynamicalInput === null || selectedDynamicalInput === void 0 ? void 0 : selectedDynamicalInput.inputs.forEach(input => {
           if (!(0, _lodash.has)(formValues, input)) {
             formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || "");
@@ -224,6 +231,11 @@ const customizeFieldInputs = _ref2 => {
         ...pv,
         value: item ? pv.value : undefined,
         isDate: true
+      };
+    } else if (pv.field === _config.VALUE || pv.field === _config.POSITION || pv.field === _config.DURATION) {
+      return {
+        ...pv,
+        value: item ? pv.value : 0
       };
     }
   }

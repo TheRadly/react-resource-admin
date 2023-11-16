@@ -54,9 +54,17 @@ const ResourceCrudQueryForm = ({
             isDisabled,
             isDate,
             isFloat,
+            isArrayWithObject,
+            initialValue,
+            itemTitledBy,
+            emptyLabel,
           }) => (
             <UniversalInput
               isDate={isDate}
+              initialValue={initialValue}
+              itemTitledBy={itemTitledBy}
+              emptyLabel={emptyLabel}
+              isArrayWithObjects={isArrayWithObject}
               isDisabled={isDisabled}
               isArray={isArray}
               label={field}

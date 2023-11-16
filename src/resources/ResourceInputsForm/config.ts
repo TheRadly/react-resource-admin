@@ -9,6 +9,9 @@ export const MAX_BET = "maxBet";
 export const DAY_TO_ACTIVATE = "dayToActivate";
 export const START_DATE = "startDate";
 export const END_DATE = "endDate";
+export const VALUE = "value";
+export const POSITION = "position";
+export const DURATION = "duration";
 
 export const LOYALTY_LEVEL = "LoyaltyLevel";
 export const TOURNAMENT_CONSTRAINTS = "TournamentConstraints";
