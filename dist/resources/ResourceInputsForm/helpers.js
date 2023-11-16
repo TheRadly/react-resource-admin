@@ -203,7 +203,7 @@ const customizeFieldInputs = _ref2 => {
     } else if (pv.field === _config.BALANCE) {
       return {
         ...pv,
-        value: pv.field,
+        value: pv.value,
         isArrayWithObject: true,
         initialValue: _config.currencyAmountInput,
         itemTitledBy: "currency",

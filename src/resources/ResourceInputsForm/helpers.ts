@@ -302,7 +302,7 @@ export const customizeFieldInputs = ({
     } else if (pv.field === BALANCE) {
       return {
         ...pv,
-        value: pv.field,
+        value: pv.value,
         isArrayWithObject: true,
         initialValue: currencyAmountInput,
         itemTitledBy: "currency",
