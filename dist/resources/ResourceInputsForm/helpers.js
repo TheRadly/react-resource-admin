@@ -173,10 +173,10 @@ const customizeFieldInputs = _ref2 => {
         } : null),
         value: tournamentTypeConstraintsValues
       };
-    } else if (pv.field === _config.MIN_BET || pv.field === _config.MAX_BET || pv.field === _config.BALANCE) {
+    } else if (pv.field === _config.MIN_BET || pv.field === _config.MAX_BET) {
       return {
         ...pv,
-        value: item ? pv.value : [],
+        value: pv.value,
         isArrayWithObject: true,
         initialValue: _config.currencyAmountInput,
         itemTitledBy: "currency",
@@ -199,6 +199,15 @@ const customizeFieldInputs = _ref2 => {
           }
         } : null),
         value: tournamentTypeRewardsValues
+      };
+    } else if (pv.field === _config.BALANCE) {
+      return {
+        ...pv,
+        value: pv.field,
+        isArrayWithObject: true,
+        initialValue: _config.currencyAmountInput,
+        itemTitledBy: "currency",
+        emptyLabel: "Empty"
       };
     } else if (pv.field === _config.BONUS_ID) {
       const bonusesValues = externalValues === null || externalValues === void 0 ? void 0 : externalValues.bonuses.map(bonus => ({
@@ -249,13 +258,8 @@ const customizeFieldInputs = _ref2 => {
     } else if (pv.field === _config.START_DATE || pv.field === _config.END_DATE) {
       return {
         ...pv,
-        value: item ? pv.value : undefined,
+        value: item ? pv.value : pv.value === "" ? undefined : pv.value,
         isDate: true
-      };
-    } else if (pv.field === _config.VALUE || pv.field === _config.POSITION || pv.field === _config.DURATION) {
-      return {
-        ...pv,
-        value: item ? pv.value : 0
       };
     }
   }
