@@ -66,15 +66,8 @@ const prepareDynamicalFieldsByFormType = _ref => {
     if ((formValues === null || formValues === void 0 ? void 0 : formValues.type) !== "") {
       const selectedDynamicalInput = dynamicalInputs.find(dynamicalInput => dynamicalInput.type === (formValues === null || formValues === void 0 ? void 0 : formValues.type));
       if (selectedDynamicalInput) {
-        dynamicalInputs.forEach(dynamicalInput => {
-          if (dynamicalInput.type !== (formValues === null || formValues === void 0 ? void 0 : formValues.type)) {
-            dynamicalInput.inputs.forEach(currentInput => {
-              if ((0, _lodash.has)(formValues, currentInput)) {
-                formHandler.setFieldValue(currentInput, undefined);
-              }
-            });
-          }
-        });
+        console.log(selectedDynamicalInput);
+        console.log(dynamicalInputs);
         selectedDynamicalInput === null || selectedDynamicalInput === void 0 ? void 0 : selectedDynamicalInput.inputs.forEach(input => {
           if (!(0, _lodash.has)(formValues, input)) {
             formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || "");
