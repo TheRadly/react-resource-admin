@@ -29,7 +29,7 @@ import {
 } from "./config";
 import { TOURNAMENT_ID } from "../../assets/ArrayOfObjectsInput/config";
 
-const checkOnFloat = (value: string) =>
+const checkOnFloat = (value: string | number) =>
   typeof value === "string" ? parseFloat(value) : value;
 
 export const getCorrectExtraFormSubmitValues = (
@@ -50,15 +50,36 @@ export const getCorrectExtraFormSubmitValues = (
   } else if (parentType === TOURNAMENT_CONSTRAINTS) {
     return {
       ...val,
-      minBet: val.minBet || null,
-      maxBet: val.maxBet || null,
+      minBet: val.minBet
+        ? val.minBet.map(
+            (minBet: { currency: string; amount: string | number }) => ({
+              currency: minBet?.currency,
+              amount: checkOnFloat(minBet?.amount),
+            })
+          )
+        : null,
+      maxBet: val.maxBet
+        ? val.maxBet.map(
+            (maxBet: { currency: string; amount: string | number }) => ({
+              currency: maxBet?.currency,
+              amount: checkOnFloat(maxBet?.amount),
+            })
+          )
+        : null,
     };
   } else if (parentType === TOURNAMENT_REWARDS) {
     return {
       ...val,
       position: val.position || null,
       bonusId: val.bonusId || null,
-      balance: val.balance || null,
+      balance: val.balance
+        ? val.balance.map(
+            (balance: { currency: string; amount: string | number }) => ({
+              currency: balance?.currency,
+              amount: checkOnFloat(balance?.amount),
+            })
+          )
+        : null,
       value: val.value || null,
       physical: val.value || null,
     };

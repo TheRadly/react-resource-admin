@@ -21,15 +21,24 @@ const getCorrectExtraFormSubmitValues = (val, parentType) => {
   } else if (parentType === _config.TOURNAMENT_CONSTRAINTS) {
     return {
       ...val,
-      minBet: val.minBet || null,
-      maxBet: val.maxBet || null
+      minBet: val.minBet ? val.minBet.map(minBet => ({
+        currency: minBet === null || minBet === void 0 ? void 0 : minBet.currency,
+        amount: checkOnFloat(minBet === null || minBet === void 0 ? void 0 : minBet.amount)
+      })) : null,
+      maxBet: val.maxBet ? val.maxBet.map(maxBet => ({
+        currency: maxBet === null || maxBet === void 0 ? void 0 : maxBet.currency,
+        amount: checkOnFloat(maxBet === null || maxBet === void 0 ? void 0 : maxBet.amount)
+      })) : null
     };
   } else if (parentType === _config.TOURNAMENT_REWARDS) {
     return {
       ...val,
       position: val.position || null,
       bonusId: val.bonusId || null,
-      balance: val.balance || null,
+      balance: val.balance ? val.balance.map(balance => ({
+        currency: balance === null || balance === void 0 ? void 0 : balance.currency,
+        amount: checkOnFloat(balance === null || balance === void 0 ? void 0 : balance.amount)
+      })) : null,
       value: val.value || null,
       physical: val.value || null
     };
