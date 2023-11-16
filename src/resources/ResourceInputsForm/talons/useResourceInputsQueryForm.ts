@@ -1,22 +1,13 @@
 import { useCallback, useEffect, useMemo } from "react";
 import type { CrudType } from "../models/CrudType";
-import { FieldsType } from "../models/FieldsType";
 import useForm from "../../ResourceForm/talons/useForm";
 import {
-  CASHBACK_PERCENT,
-  DEPOSIT_LIMIT,
-  LOYALTY_LEVEL_ID,
-  LOYALTY_LEVEL,
-  LoyaltyRewardTypeEnums,
-  TYPE,
-  WITHDRAW_LIMIT,
-  BONUS_ID,
-} from "../config";
-import {
+  customizeFieldInputs,
   getCorrectExtraFormSubmitValues,
+  prepareDynamicalFieldsByFormType,
   removeExtraFormItemId,
 } from "../helpers";
-import { has } from "lodash";
+import { FieldsType } from "../models/FieldsType";
 
 interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
@@ -91,7 +82,7 @@ const useResourceInputsQueryForm = ({
         handleCloseQueryContainer();
       }
     },
-    [updateValue, createValue, item, id, handleCloseQueryContainer, parentType]
+    [updateValue, createValue, item, handleCloseQueryContainer, parentType]
   );
 
   const formOptions = useMemo(
@@ -112,35 +103,15 @@ const useResourceInputsQueryForm = ({
   const { handleSubmit, setFieldValue, formValues, formHandler } =
     useForm(formOptions);
 
+  // Handle dynamical fields for some forms
   useEffect(() => {
-    if (parentType && parentType === LOYALTY_LEVEL && dynamicalInputs) {
-      if (formValues?.type !== "") {
-        const selectedDynamicalInput = dynamicalInputs.find(
-          (dynamicalInput: { type: string; inputs: string[] }) =>
-            dynamicalInput.type === formValues?.type
-        );
-
-        if (selectedDynamicalInput) {
-          dynamicalInputs.forEach(
-            (dynamicalInput: { type: string; inputs: string[] }) => {
-              if (dynamicalInput.type !== formValues?.type) {
-                dynamicalInput.inputs.forEach((currentInput) => {
-                  if (has(formValues, currentInput)) {
-                    formHandler.setFieldValue(currentInput, undefined);
-                  }
-                });
-              }
-            }
-          );
-
-          selectedDynamicalInput?.inputs.forEach((input: string) => {
-            if (!has(formValues, input)) {
-              formHandler.setFieldValue(input, item?.[input] || "");
-            }
-          });
-        }
-      }
-    }
+    prepareDynamicalFieldsByFormType({
+      parentType,
+      dynamicalInputs,
+      formHandler,
+      formValues,
+      item,
+    });
   }, [parentType, formValues, dynamicalInputs, item]);
 
   const parsedValues = useMemo(
@@ -154,78 +125,10 @@ const useResourceInputsQueryForm = ({
 
   const arrayOfValues = useMemo(
     () =>
-      parsedValues.map((pv) => {
-        if (parentType === LOYALTY_LEVEL) {
-          if (pv.field === TYPE) {
-            const dropdownTypeValues = Object.keys(LoyaltyRewardTypeEnums).map(
-              (key) => ({
-                name: key,
-                // @ts-ignore
-                code: LoyaltyRewardTypeEnums[key],
-              })
-            );
-
-            return {
-              ...pv,
-              ...(item
-                ? {
-                    activeValue: {
-                      // @ts-ignore
-                      name: dropdownTypeValues.find(
-                        (value) => value.code === pv.value
-                      )?.name,
-                      code: pv.value,
-                    },
-                  }
-                : null),
-              value: dropdownTypeValues,
-            };
-          } else if (
-            pv.field === CASHBACK_PERCENT ||
-            pv.field === DEPOSIT_LIMIT ||
-            pv.field === WITHDRAW_LIMIT
-          ) {
-            return item
-              ? {
-                  ...pv,
-                  isFloat: true,
-                  value:
-                    typeof pv.value === "string"
-                      ? pv.value
-                      : pv.value?.toString() || "",
-                }
-              : {
-                  ...pv,
-                  isFloat: true,
-                };
-          } else if (pv.field === LOYALTY_LEVEL_ID) {
-            return {
-              ...item,
-              isDisabled: true,
-            };
-          } else if (pv.field === BONUS_ID) {
-            const bonusesValues = externalValues?.bonuses.map((bonus: any) => ({
-              name: bonus.name,
-              code: bonus.id,
-            }));
-
-            return {
-              ...pv,
-              ...(item
-                ? {
-                    activeValue: bonusesValues?.find(
-                      (bonus: any) => bonus.code === pv.value
-                    ),
-                  }
-                : null),
-              value: bonusesValues,
-            };
-          }
-        }
-
-        return pv;
-      }),
-    [parsedValues, parentType, item, externalValues?.bonuses]
+      parsedValues.map((pv) =>
+        customizeFieldInputs({ pv, parentType, item, externalValues })
+      ),
+    [parsedValues, parentType, item, externalValues]
   ) as FieldsType[];
 
   const handleChangeField = useCallback(
