@@ -108,6 +108,16 @@ const prepareDynamicalFieldsByFormType = _ref => {
             formHandler.setFieldValue(input, (item === null || item === void 0 ? void 0 : item[input]) || getCurrentInitialValueByInput(input));
           }
         });
+      } else if (!selectedDynamicalInput) {
+        dynamicalInputs.forEach(dynamicalInput => {
+          if (dynamicalInput.type !== (formValues === null || formValues === void 0 ? void 0 : formValues.type)) {
+            dynamicalInput.inputs.forEach(currentInput => {
+              if ((0, _lodash.has)(formValues, currentInput)) {
+                formHandler.setFieldValue(currentInput, undefined);
+              }
+            });
+          }
+        });
       }
     }
   }

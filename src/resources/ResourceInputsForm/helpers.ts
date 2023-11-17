@@ -180,6 +180,18 @@ export const prepareDynamicalFieldsByFormType = ({
             );
           }
         });
+      } else if (!selectedDynamicalInput) {
+        dynamicalInputs.forEach(
+          (dynamicalInput: { type: string; inputs: string[] }) => {
+            if (dynamicalInput.type !== formValues?.type) {
+              dynamicalInput.inputs.forEach((currentInput) => {
+                if (has(formValues, currentInput)) {
+                  formHandler.setFieldValue(currentInput, undefined);
+                }
+              });
+            }
+          }
+        );
       }
     }
   }
