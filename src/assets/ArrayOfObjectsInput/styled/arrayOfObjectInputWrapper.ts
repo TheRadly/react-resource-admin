@@ -76,9 +76,13 @@ export const ArrayOfObjectsItem = styled.div`
 export const ArrayOfObjectsItemData = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background: var(--surface-100);
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  flex-direction: column;
   padding: 10px;
   border-radius: 6px;
+  flex-direction: column;
+  gap: 5px;
 `;
 
 export const ArrayOfObjectsItemDataFields = styled.div`
@@ -87,18 +91,12 @@ export const ArrayOfObjectsItemDataFields = styled.div`
   margin-right: 5px;
   gap: 5px;
 
-  &::after {
-    content: "|";
-  }
-
-  &:last-child {
-    margin-right: 0;
-    &::after {
-      content: "";
-    }
-  }
-
   label {
+    text-transform: capitalize;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--surface-600);
+
     &::after {
       content: ":";
     }
@@ -107,6 +105,7 @@ export const ArrayOfObjectsItemDataFields = styled.div`
 
 export const ArrayOfObjectsItemIndex = styled.span`
   display: flex;
+  color: var(--surface-600);
 
   &::after {
     content: ".";

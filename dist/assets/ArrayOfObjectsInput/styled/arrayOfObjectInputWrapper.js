@@ -18,11 +18,11 @@ const ArrayOfObjectsInputsBox = _styledComponents.default.div(_templateObject4 |
 exports.ArrayOfObjectsInputsBox = ArrayOfObjectsInputsBox;
 const ArrayOfObjectsItem = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  align-items: center;\n\n  button {\n    align-self: flex-start;\n    width: 20px !important;\n    height: 20px !important;\n    padding: 10px !important;\n\n    span {\n      font-family: \"primeicons\" !important;\n      font-size: 10px !important;\n      color: unset;\n    }\n  }\n"])));
 exports.ArrayOfObjectsItem = ArrayOfObjectsItem;
-const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  background: var(--surface-100);\n  padding: 10px;\n  border-radius: 6px;\n"])));
+const ArrayOfObjectsItemData = _styledComponents.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  background: #f8f9fa;\n  border: 1px solid #ced4da;\n  flex-direction: column;\n  padding: 10px;\n  border-radius: 6px;\n  flex-direction: column;\n  gap: 5px;\n"])));
 exports.ArrayOfObjectsItemData = ArrayOfObjectsItemData;
-const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-right: 5px;\n  gap: 5px;\n\n  &::after {\n    content: \"|\";\n  }\n\n  &:last-child {\n    margin-right: 0;\n    &::after {\n      content: \"\";\n    }\n  }\n\n  label {\n    &::after {\n      content: \":\";\n    }\n  }\n"])));
+const ArrayOfObjectsItemDataFields = _styledComponents.default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-right: 5px;\n  gap: 5px;\n\n  label {\n    text-transform: capitalize;\n    font-size: 12px;\n    line-height: 12px;\n    color: var(--surface-600);\n\n    &::after {\n      content: \":\";\n    }\n  }\n"])));
 exports.ArrayOfObjectsItemDataFields = ArrayOfObjectsItemDataFields;
-const ArrayOfObjectsItemIndex = _styledComponents.default.span(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n\n  &::after {\n    content: \".\";\n  }\n"])));
+const ArrayOfObjectsItemIndex = _styledComponents.default.span(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n  color: var(--surface-600);\n\n  &::after {\n    content: \".\";\n  }\n"])));
 exports.ArrayOfObjectsItemIndex = ArrayOfObjectsItemIndex;
 const ArrayOfObjectsItemActions = _styledComponents.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 5px;\n"])));
 exports.ArrayOfObjectsItemActions = ArrayOfObjectsItemActions;
