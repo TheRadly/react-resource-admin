@@ -12,6 +12,7 @@ interface DropdownInputProps {
   fullWidth?: boolean;
   disabled?: boolean;
   returnFullObjectEvent?: boolean;
+  withSearch?: boolean;
 }
 
 const DropdownInput = ({
@@ -22,6 +23,7 @@ const DropdownInput = ({
   fullWidth,
   disabled,
   placeholder,
+  withSearch,
   returnFullObjectEvent,
 }: DropdownInputProps) => {
   const { selectedDropdown, handleChangeValue } = useDropdownInput({
@@ -34,6 +36,7 @@ const DropdownInput = ({
       {label && <label htmlFor={label}>{label}</label>}
       <Dropdown
         id={label}
+        filter={withSearch}
         disabled={disabled}
         value={selectedDropdown || currentOption}
         onChange={handleChangeValue}

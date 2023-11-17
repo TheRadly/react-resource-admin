@@ -68,7 +68,7 @@ const ArrayOfObjectsInput = ({
                   )
                   .map((key) => (
                     <ArrayOfObjectsItemDataFields>
-                      <span>{key}</span>
+                      <label>{key}</label>
                       <span>{item[key]}</span>
                     </ArrayOfObjectsItemDataFields>
                   ))}

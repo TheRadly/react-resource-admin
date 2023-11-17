@@ -50,7 +50,7 @@ const ArrayOfObjectsInput = _ref => {
           children: index
         }), (0, _jsxRuntime.jsx)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemData, {
           children: Object.keys(item).filter(filterKey => !_config.EXCLUDED_FIELD_ITEMS.includes(filterKey)).map(key => (0, _jsxRuntime.jsxs)(_arrayOfObjectInputWrapper.ArrayOfObjectsItemDataFields, {
-            children: [(0, _jsxRuntime.jsx)("span", {
+            children: [(0, _jsxRuntime.jsx)("label", {
               children: key
             }), (0, _jsxRuntime.jsx)("span", {
               children: item[key]

@@ -18,6 +18,7 @@ const DropdownInput = _ref => {
     fullWidth,
     disabled,
     placeholder,
+    withSearch,
     returnFullObjectEvent
   } = _ref;
   const {
@@ -34,6 +35,7 @@ const DropdownInput = _ref => {
       children: label
     }), (0, _jsxRuntime.jsx)(_dropdown.Dropdown, {
       id: label,
+      filter: withSearch,
       disabled: disabled,
       value: selectedDropdown || currentOption,
       onChange: handleChangeValue,

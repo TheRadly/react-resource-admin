@@ -24,11 +24,12 @@ export const ArrayOfObjectsItems = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: var(--surface-100);
+  border: 1px solid var(--surface-300);
   padding: 10px;
   border-radius: 6px;
   gap: 10px;
 
+  label,
   span {
     font-family: var(--font-family);
     font-size: 14px;
@@ -50,7 +51,7 @@ export const ArrayOfObjectsInputsBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1.5px solid var(--surface-300);
+  border: 1px solid var(--surface-300);
 `;
 
 export const ArrayOfObjectsItem = styled.div`
@@ -75,8 +76,8 @@ export const ArrayOfObjectsItem = styled.div`
 export const ArrayOfObjectsItemData = styled.div`
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid var(--surface-400);
-  padding: 5px;
+  background: var(--surface-100);
+  padding: 10px;
   border-radius: 6px;
 `;
 
@@ -97,11 +98,9 @@ export const ArrayOfObjectsItemDataFields = styled.div`
     }
   }
 
-  span {
-    &:first-child {
-      &::after {
-        content: ":";
-      }
+  label {
+    &::after {
+      content: ":";
     }
   }
 `;

@@ -47,6 +47,7 @@ interface UniversalInputProps {
   itemTitledBy?: string;
   withoutUpperCasing?: boolean;
   returnFullObjectEvent?: boolean;
+  withSearch?: boolean;
 }
 
 const UniversalInput = ({
@@ -80,6 +81,7 @@ const UniversalInput = ({
   itemTitledBy,
   withoutUpperCasing,
   returnFullObjectEvent,
+  withSearch,
 }: UniversalInputProps) => {
   const label = useMemo(() => {
     if (withoutUpperCasing && propLabel) {
@@ -183,6 +185,7 @@ const UniversalInput = ({
             fullWidth={fullWidth}
             currentOption={currentOption}
             onChange={onChange}
+            withSearch={withSearch}
             options={value}
             placeholder={placeholder}
           />

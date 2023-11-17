@@ -8,6 +8,7 @@ interface DropdownInputProps {
     fullWidth?: boolean;
     disabled?: boolean;
     returnFullObjectEvent?: boolean;
+    withSearch?: boolean;
 }
-declare const DropdownInput: ({ label, onChange, options, currentOption, fullWidth, disabled, placeholder, returnFullObjectEvent, }: DropdownInputProps) => import("react/jsx-runtime").JSX.Element;
+declare const DropdownInput: ({ label, onChange, options, currentOption, fullWidth, disabled, placeholder, withSearch, returnFullObjectEvent, }: DropdownInputProps) => import("react/jsx-runtime").JSX.Element;
 export default DropdownInput;

@@ -51,7 +51,8 @@ const UniversalInput = _ref => {
     initialValue,
     itemTitledBy,
     withoutUpperCasing,
-    returnFullObjectEvent
+    returnFullObjectEvent,
+    withSearch
   } = _ref;
   const label = (0, _react.useMemo)(() => {
     if (withoutUpperCasing && propLabel) {
@@ -124,6 +125,7 @@ const UniversalInput = _ref => {
       fullWidth: fullWidth,
       currentOption: currentOption,
       onChange: onChange,
+      withSearch: withSearch,
       options: value,
       placeholder: placeholder
     }), typeof value === _config.default.OBJECT && isMultiInput && (0, _jsxRuntime.jsx)(_InputMultiField.default, {

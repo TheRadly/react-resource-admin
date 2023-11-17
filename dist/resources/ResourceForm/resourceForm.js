@@ -64,7 +64,8 @@ const ResourceForm = _ref => {
         isArrayWithObject,
         emptyLabel,
         fullWidth,
-        returnFullObjectEvent
+        returnFullObjectEvent,
+        withSearch
       } = _ref2;
       return (0, _jsxRuntime.jsx)(_UniversalInput.default, {
         fullWidth: fullWidth,
@@ -72,6 +73,7 @@ const ResourceForm = _ref => {
         isArrayWithObjects: isArrayWithObject,
         initialValue: initialValue,
         itemTitledBy: itemTitledBy,
+        withSearch: withSearch,
         isArray: isArray,
         isMultiSelect: isMultiSelect,
         isTextArea: isTextArea,

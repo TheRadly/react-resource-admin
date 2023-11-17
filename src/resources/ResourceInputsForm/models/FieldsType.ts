@@ -22,4 +22,5 @@ export type FieldsType = {
   emptyLabel?: string;
   fullWidth?: boolean;
   returnFullObjectEvent?: boolean;
+  withSearch?: boolean;
 };

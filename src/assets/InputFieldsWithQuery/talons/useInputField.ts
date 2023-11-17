@@ -36,7 +36,7 @@ const useInputField = ({
             refetchQueries: [
               {
                 query: refetchDocument,
-                variables: { input: { pagination: { page: 0, limit: 10 } } },
+                variables: { input: { pagination: { page: 0, limit: 100 } } },
               },
             ],
           }

@@ -75,6 +75,7 @@ const ResourceForm = ({
             emptyLabel,
             fullWidth,
             returnFullObjectEvent,
+            withSearch,
           }) => (
             <UniversalInput
               fullWidth={fullWidth}
@@ -82,6 +83,7 @@ const ResourceForm = ({
               isArrayWithObjects={isArrayWithObject}
               initialValue={initialValue}
               itemTitledBy={itemTitledBy}
+              withSearch={withSearch}
               isArray={isArray}
               isMultiSelect={isMultiSelect}
               isTextArea={isTextArea}
