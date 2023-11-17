@@ -58,7 +58,7 @@ const useResourceInputsQueryForm = _ref => {
             update: (0, _helpers.removeExtraFormItemId)((0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType), parentType)
           }
         },
-        onComplete: args => {
+        onCompleted: args => {
           if (successAction) successAction(args);
         }
       });
@@ -67,7 +67,7 @@ const useResourceInputsQueryForm = _ref => {
         variables: {
           input: (0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType)
         },
-        onComplete: args => {
+        onCompleted: args => {
           if (successAction) successAction(args);
         }
       });
@@ -75,7 +75,7 @@ const useResourceInputsQueryForm = _ref => {
     if (handleCloseQueryContainer) {
       handleCloseQueryContainer();
     }
-  }, [updateValue, createValue, item, handleCloseQueryContainer, parentType]);
+  }, [item, handleCloseQueryContainer, updateValue, parentType, successAction, createValue]);
   const formOptions = (0, _react.useMemo)(() => item ? {
     valuesForEdit: item,
     onSubmitMethod: onSubmitInputs,

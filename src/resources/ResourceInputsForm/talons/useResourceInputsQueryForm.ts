@@ -74,7 +74,7 @@ const useResourceInputsQueryForm = ({
               ),
             },
           },
-          onComplete: (args: any) => {
+          onCompleted: (args: any) => {
             if (successAction) successAction(args);
           },
         });
@@ -83,7 +83,7 @@ const useResourceInputsQueryForm = ({
           variables: {
             input: getCorrectExtraFormSubmitValues(val, parentType),
           },
-          onComplete: (args: any) => {
+          onCompleted: (args: any) => {
             if (successAction) successAction(args);
           },
         });
@@ -93,7 +93,14 @@ const useResourceInputsQueryForm = ({
         handleCloseQueryContainer();
       }
     },
-    [updateValue, createValue, item, handleCloseQueryContainer, parentType]
+    [
+      item,
+      handleCloseQueryContainer,
+      updateValue,
+      parentType,
+      successAction,
+      createValue,
+    ]
   );
 
   const formOptions = useMemo(
