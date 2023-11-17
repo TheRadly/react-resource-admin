@@ -14,7 +14,7 @@ const defaultRefetchVariables = {
   input: {
     pagination: {
       page: 0,
-      limit: 10
+      limit: 100
     }
   }
 };
@@ -31,18 +31,18 @@ const useResourceInputsQueryForm = _ref => {
     dynamicalInputs,
     createQuery,
     updateQuery,
-    id,
     loading,
     parentType,
     refetchDocument,
+    successAction,
     externalValues
   } = (0, _react.useMemo)(() => extraFormCruds || {}, [extraFormCruds]);
-  const queryOptions = refetchDocument ? {
+  const queryOptions = (0, _react.useMemo)(() => refetchDocument ? {
     refetchQueries: [{
       query: refetchDocument,
       variables: defaultRefetchVariables
     }]
-  } : null;
+  } : null, [refetchDocument]);
   const [createValue, {
     loading: createLoading
   }] = createQuery(queryOptions);
@@ -57,12 +57,18 @@ const useResourceInputsQueryForm = _ref => {
             id: item === null || item === void 0 ? void 0 : item.id,
             update: (0, _helpers.removeExtraFormItemId)((0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType), parentType)
           }
+        },
+        onComplete: args => {
+          if (successAction) successAction(args);
         }
       });
     } else {
       createValue({
         variables: {
           input: (0, _helpers.getCorrectExtraFormSubmitValues)(val, parentType)
+        },
+        onComplete: args => {
+          if (successAction) successAction(args);
         }
       });
     }

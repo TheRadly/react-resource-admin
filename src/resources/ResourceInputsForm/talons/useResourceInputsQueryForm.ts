@@ -22,7 +22,7 @@ const defaultRefetchVariables = {
   input: {
     pagination: {
       page: 0,
-      limit: 10,
+      limit: 100,
     },
   },
 };
@@ -39,20 +39,24 @@ const useResourceInputsQueryForm = ({
     dynamicalInputs,
     createQuery,
     updateQuery,
-    id,
     loading,
     parentType,
     refetchDocument,
+    successAction,
     externalValues,
   } = useMemo(() => extraFormCruds || {}, [extraFormCruds]);
 
-  const queryOptions = refetchDocument
-    ? {
-        refetchQueries: [
-          { query: refetchDocument, variables: defaultRefetchVariables },
-        ],
-      }
-    : null;
+  const queryOptions = useMemo(
+    () =>
+      refetchDocument
+        ? {
+            refetchQueries: [
+              { query: refetchDocument, variables: defaultRefetchVariables },
+            ],
+          }
+        : null,
+    [refetchDocument]
+  );
 
   const [createValue, { loading: createLoading }] = createQuery(queryOptions);
   const [updateValue, { loading: updateLoading }] = updateQuery(queryOptions);
@@ -70,11 +74,17 @@ const useResourceInputsQueryForm = ({
               ),
             },
           },
+          onComplete: (args: any) => {
+            if (successAction) successAction(args);
+          },
         });
       } else {
         createValue({
           variables: {
             input: getCorrectExtraFormSubmitValues(val, parentType),
+          },
+          onComplete: (args: any) => {
+            if (successAction) successAction(args);
           },
         });
       }

@@ -12,4 +12,5 @@ export type CrudType = {
   parentType?: string;
   dynamicalInputs?: any;
   externalValues?: any;
+  successAction?: (args: any) => void;
 };
