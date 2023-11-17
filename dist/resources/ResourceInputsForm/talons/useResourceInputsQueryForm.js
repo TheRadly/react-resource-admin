@@ -8,6 +8,7 @@ require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
 var _useForm = _interopRequireDefault(require("../../ResourceForm/talons/useForm"));
 var _helpers = require("../helpers");
+var _config = require("../config");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const defaultRefetchVariables = {
   input: {
@@ -96,7 +97,7 @@ const useResourceInputsQueryForm = _ref => {
     field,
     value: formValues[field]
   })), [formValues]);
-  const arrayOfValues = (0, _react.useMemo)(() => parsedValues.map(pv => (0, _helpers.customizeFieldInputs)({
+  const arrayOfValues = (0, _react.useMemo)(() => parsedValues.filter(pvFilter => !_config.DISABLED_IDS.includes(pvFilter.field)).map(pv => (0, _helpers.customizeFieldInputs)({
     pv,
     parentType,
     item,

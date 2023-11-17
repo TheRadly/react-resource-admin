@@ -17,6 +17,7 @@ export declare const LOYALTY_LEVEL = "LoyaltyLevel";
 export declare const TOURNAMENT_CONSTRAINTS = "TournamentConstraints";
 export declare const TOURNAMENT_REWARDS = "TournamentRewards";
 export declare const TOURNAMENT_SCHEDULES = "TournamentSchedules";
+export declare const DISABLED_IDS: string[];
 export declare const LOYALTY_LEVEL_REWARD_TYPES: {
     BONUS: string;
     CASHBACK: string;

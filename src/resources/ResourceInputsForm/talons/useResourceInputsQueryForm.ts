@@ -8,6 +8,7 @@ import {
   removeExtraFormItemId,
 } from "../helpers";
 import { FieldsType } from "../models/FieldsType";
+import { DISABLED_IDS } from "../config";
 
 interface UseResourceInputsQueryForm {
   extraFormCruds: CrudType;
@@ -125,9 +126,11 @@ const useResourceInputsQueryForm = ({
 
   const arrayOfValues = useMemo(
     () =>
-      parsedValues.map((pv) =>
-        customizeFieldInputs({ pv, parentType, item, externalValues })
-      ),
+      parsedValues
+        .filter((pvFilter) => !DISABLED_IDS.includes(pvFilter.field))
+        .map((pv) =>
+          customizeFieldInputs({ pv, parentType, item, externalValues })
+        ),
     [parsedValues, parentType, item, externalValues]
   ) as FieldsType[];
 

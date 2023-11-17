@@ -1,3 +1,5 @@
+import { TOURNAMENT_ID } from "../../assets/ArrayOfObjectsInput/config";
+
 export const BONUS_ID = "bonusId";
 export const CASHBACK_PERCENT = "cashbackPercent";
 export const DEPOSIT_LIMIT = "depositLimit";
@@ -18,6 +20,8 @@ export const LOYALTY_LEVEL = "LoyaltyLevel";
 export const TOURNAMENT_CONSTRAINTS = "TournamentConstraints";
 export const TOURNAMENT_REWARDS = "TournamentRewards";
 export const TOURNAMENT_SCHEDULES = "TournamentSchedules";
+
+export const DISABLED_IDS = [TOURNAMENT_ID, LOYALTY_LEVEL_ID];
 
 export const LOYALTY_LEVEL_REWARD_TYPES = {
   BONUS: "BONUS",

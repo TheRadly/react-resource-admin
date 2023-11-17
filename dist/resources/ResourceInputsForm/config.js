@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.currencyAmountInput = exports.WITHDRAW_LIMIT = exports.VALUE = exports.TournamentScheduleType = exports.TournamentRewardType = exports.TournamentConstraintType = exports.TYPE = exports.TOURNAMENT_SCHEDULES = exports.TOURNAMENT_REWARDS = exports.TOURNAMENT_CONSTRAINTS = exports.START_DATE = exports.POSITION = exports.MIN_BET = exports.MAX_BET = exports.LoyaltyRewardTypeEnums = exports.LOYALTY_LEVEL_REWARD_TYPES = exports.LOYALTY_LEVEL_ID = exports.LOYALTY_LEVEL = exports.END_DATE = exports.DayToActivate = exports.DURATION = exports.DEPOSIT_LIMIT = exports.DAY_TO_ACTIVATE = exports.CASHBACK_PERCENT = exports.BONUS_ID = exports.BALANCE = void 0;
+exports.currencyAmountInput = exports.WITHDRAW_LIMIT = exports.VALUE = exports.TournamentScheduleType = exports.TournamentRewardType = exports.TournamentConstraintType = exports.TYPE = exports.TOURNAMENT_SCHEDULES = exports.TOURNAMENT_REWARDS = exports.TOURNAMENT_CONSTRAINTS = exports.START_DATE = exports.POSITION = exports.MIN_BET = exports.MAX_BET = exports.LoyaltyRewardTypeEnums = exports.LOYALTY_LEVEL_REWARD_TYPES = exports.LOYALTY_LEVEL_ID = exports.LOYALTY_LEVEL = exports.END_DATE = exports.DayToActivate = exports.DURATION = exports.DISABLED_IDS = exports.DEPOSIT_LIMIT = exports.DAY_TO_ACTIVATE = exports.CASHBACK_PERCENT = exports.BONUS_ID = exports.BALANCE = void 0;
+var _config = require("../../assets/ArrayOfObjectsInput/config");
 const BONUS_ID = "bonusId";
 exports.BONUS_ID = BONUS_ID;
 const CASHBACK_PERCENT = "cashbackPercent";
@@ -42,6 +43,8 @@ const TOURNAMENT_REWARDS = "TournamentRewards";
 exports.TOURNAMENT_REWARDS = TOURNAMENT_REWARDS;
 const TOURNAMENT_SCHEDULES = "TournamentSchedules";
 exports.TOURNAMENT_SCHEDULES = TOURNAMENT_SCHEDULES;
+const DISABLED_IDS = [_config.TOURNAMENT_ID, LOYALTY_LEVEL_ID];
+exports.DISABLED_IDS = DISABLED_IDS;
 const LOYALTY_LEVEL_REWARD_TYPES = {
   BONUS: "BONUS",
   CASHBACK: "CASHBACK",
