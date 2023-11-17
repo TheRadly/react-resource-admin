@@ -33,14 +33,14 @@ const getCorrectExtraFormSubmitValues = (val, parentType) => {
   } else if (parentType === _config.TOURNAMENT_REWARDS) {
     return {
       ...val,
-      position: val.position || null,
+      position: val.position,
       bonusId: val.bonusId || null,
       balance: val.balance ? val.balance.map(balance => ({
         currency: balance === null || balance === void 0 ? void 0 : balance.currency,
         amount: checkOnFloat(balance === null || balance === void 0 ? void 0 : balance.amount)
       })) : null,
       value: val.value || null,
-      physical: val.value || null
+      physical: val.physical || null
     };
   } else if (parentType === _config.TOURNAMENT_SCHEDULES) {
     return {

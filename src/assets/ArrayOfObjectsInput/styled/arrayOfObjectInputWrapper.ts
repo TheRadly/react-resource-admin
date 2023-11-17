@@ -82,13 +82,12 @@ export const ArrayOfObjectsItemData = styled.div`
   padding: 10px;
   border-radius: 6px;
   flex-direction: column;
-  gap: 5px;
+  width: 100%;
 `;
 
 export const ArrayOfObjectsItemDataFields = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 5px;
   gap: 5px;
 
   label {

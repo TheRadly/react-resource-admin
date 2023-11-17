@@ -131,7 +131,6 @@ const useResourceInputsQueryForm = ({
     [parsedValues, parentType, item, externalValues]
   ) as FieldsType[];
 
-  console.log(arrayOfValues);
   const handleChangeField = useCallback(
     (value: string | number | boolean, field: string) => {
       setFieldValue(field, value);

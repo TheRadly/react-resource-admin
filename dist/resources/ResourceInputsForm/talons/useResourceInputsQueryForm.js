@@ -102,7 +102,6 @@ const useResourceInputsQueryForm = _ref => {
     item,
     externalValues
   })), [parsedValues, parentType, item, externalValues]);
-  console.log(arrayOfValues);
   const handleChangeField = (0, _react.useCallback)((value, field) => {
     setFieldValue(field, value);
   }, [setFieldValue]);

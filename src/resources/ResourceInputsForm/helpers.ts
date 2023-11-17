@@ -70,7 +70,7 @@ export const getCorrectExtraFormSubmitValues = (
   } else if (parentType === TOURNAMENT_REWARDS) {
     return {
       ...val,
-      position: val.position || null,
+      position: val.position,
       bonusId: val.bonusId || null,
       balance: val.balance
         ? val.balance.map(
@@ -81,7 +81,7 @@ export const getCorrectExtraFormSubmitValues = (
           )
         : null,
       value: val.value || null,
-      physical: val.value || null,
+      physical: val.physical || null,
     };
   } else if (parentType === TOURNAMENT_SCHEDULES) {
     return {
