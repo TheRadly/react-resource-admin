@@ -2,6 +2,7 @@ import { InputText } from "primereact/inputtext";
 import { InputNumber, InputNumberChangeEvent } from "primereact/inputnumber";
 import InputFloatLabelWrapper from "./styled/inputFloatLabelWrapper";
 import useInputFloatLabel from "./talons/useInputFloatLabel";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface InputFloatLabelProps {
   value: any;
@@ -13,6 +14,7 @@ interface InputFloatLabelProps {
   fullWidth?: boolean;
   label?: string;
   placeholder?: string;
+  error?: string;
 }
 
 const InputFloatLabel = ({
@@ -25,6 +27,7 @@ const InputFloatLabel = ({
   disabled,
   withoutPlaceholder,
   fullWidth,
+  error,
 }: InputFloatLabelProps) => {
   const { handleChangeInputText } = useInputFloatLabel({ isFloat, onChange });
 
@@ -52,6 +55,7 @@ const InputFloatLabel = ({
           onChange={handleChangeInputText}
         />
       )}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputFloatLabelWrapper>
   );
 };

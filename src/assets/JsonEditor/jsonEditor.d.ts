@@ -4,6 +4,7 @@ interface JsonEditorProps {
     label?: string;
     fullWidth?: boolean;
     disabled?: boolean;
+    error?: string;
 }
-declare const JsonEditor: ({ label, value, onChange, fullWidth, disabled, }: JsonEditorProps) => import("react/jsx-runtime").JSX.Element;
+declare const JsonEditor: ({ label, value, onChange, fullWidth, disabled, error, }: JsonEditorProps) => import("react/jsx-runtime").JSX.Element;
 export default JsonEditor;

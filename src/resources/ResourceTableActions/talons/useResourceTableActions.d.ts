@@ -32,6 +32,9 @@ declare const useResourceTableActions: ({ selectedValues, handleDeleteClick, isS
         style?: import("react").CSSProperties | undefined;
         title?: string | undefined;
         id?: string | undefined;
+        color?: string | undefined;
+        content?: string | undefined;
+        translate?: "yes" | "no" | undefined;
         key?: import("react").Key | null | undefined;
         defaultChecked?: boolean | undefined;
         defaultValue?: string | number | readonly string[] | undefined;
@@ -50,11 +53,9 @@ declare const useResourceTableActions: ({ selectedValues, handleDeleteClick, isS
         placeholder?: string | undefined;
         spellCheck?: (boolean | "true" | "false") | undefined;
         tabIndex?: number | undefined;
-        translate?: "yes" | "no" | undefined;
         radioGroup?: string | undefined;
         role?: import("react").AriaRole | undefined;
         about?: string | undefined;
-        content?: string | undefined;
         datatype?: string | undefined;
         inlist?: any;
         prefix?: string | undefined;
@@ -67,7 +68,6 @@ declare const useResourceTableActions: ({ selectedValues, handleDeleteClick, isS
         autoCapitalize?: string | undefined;
         autoCorrect?: string | undefined;
         autoSave?: string | undefined;
-        color?: string | undefined;
         itemProp?: string | undefined;
         itemScope?: boolean | undefined;
         itemType?: string | undefined;
@@ -90,7 +90,7 @@ declare const useResourceTableActions: ({ selectedValues, handleDeleteClick, isS
         'aria-colindextext'?: string | undefined;
         'aria-colspan'?: number | undefined;
         'aria-controls'?: string | undefined;
-        'aria-current'?: boolean | "time" | "true" | "false" | "page" | "step" | "location" | "date" | undefined;
+        'aria-current'?: boolean | "time" | "page" | "true" | "false" | "step" | "location" | "date" | undefined;
         'aria-describedby'?: string | undefined;
         'aria-description'?: string | undefined;
         'aria-details'?: string | undefined;
@@ -100,7 +100,7 @@ declare const useResourceTableActions: ({ selectedValues, handleDeleteClick, isS
         'aria-expanded'?: (boolean | "true" | "false") | undefined;
         'aria-flowto'?: string | undefined;
         'aria-grabbed'?: (boolean | "true" | "false") | undefined;
-        'aria-haspopup'?: boolean | "dialog" | "menu" | "true" | "false" | "grid" | "listbox" | "tree" | undefined;
+        'aria-haspopup'?: boolean | "dialog" | "menu" | "grid" | "true" | "false" | "listbox" | "tree" | undefined;
         'aria-hidden'?: (boolean | "true" | "false") | undefined;
         'aria-invalid'?: boolean | "true" | "false" | "grammar" | "spelling" | undefined;
         'aria-keyshortcuts'?: string | undefined;
@@ -117,7 +117,7 @@ declare const useResourceTableActions: ({ selectedValues, handleDeleteClick, isS
         'aria-posinset'?: number | undefined;
         'aria-pressed'?: boolean | "true" | "false" | "mixed" | undefined;
         'aria-readonly'?: (boolean | "true" | "false") | undefined;
-        'aria-relevant'?: "text" | "additions" | "additions removals" | "additions text" | "all" | "removals" | "removals additions" | "removals text" | "text additions" | "text removals" | undefined;
+        'aria-relevant'?: "text" | "all" | "additions" | "additions removals" | "additions text" | "removals" | "removals additions" | "removals text" | "text additions" | "text removals" | undefined;
         'aria-required'?: (boolean | "true" | "false") | undefined;
         'aria-roledescription'?: string | undefined;
         'aria-rowcount'?: number | undefined;

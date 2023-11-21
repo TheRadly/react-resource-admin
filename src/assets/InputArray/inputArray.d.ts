@@ -4,6 +4,7 @@ interface InputArrayProps {
     onChange: (arg: string[]) => void;
     fullWidth?: boolean;
     disabled?: boolean;
+    error?: string;
 }
-declare const InputArray: ({ fullWidth, values, onChange, disabled, label, }: InputArrayProps) => import("react/jsx-runtime").JSX.Element;
+declare const InputArray: ({ fullWidth, values, onChange, disabled, label, error, }: InputArrayProps) => import("react/jsx-runtime").JSX.Element;
 export default InputArray;

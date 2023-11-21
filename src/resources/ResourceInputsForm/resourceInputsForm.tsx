@@ -26,6 +26,7 @@ interface ResourceInputsFormProps {
   cancelLabel: string;
   saveLabel?: string;
   createLabel?: string;
+  propsIsShowQueryContainer?: boolean;
 }
 
 const ResourceInputsForm = ({
@@ -41,6 +42,7 @@ const ResourceInputsForm = ({
   extraFormCruds,
   handleChangeField,
   formHandler,
+  propsIsShowQueryContainer,
 }: ResourceInputsFormProps) => {
   const {
     queryFormItem,
@@ -54,8 +56,11 @@ const ResourceInputsForm = ({
       <PageTitleWrapper>
         <PageTitle>{title}</PageTitle>
       </PageTitleWrapper>
-      <ResourceInputsContainer>
+      <ResourceInputsContainer
+        isDoubleDisplay={isShowQueryContainer || propsIsShowQueryContainer}
+      >
         <ResourceForm
+          mainFullWidth={isShowQueryContainer || propsIsShowQueryContainer}
           cancelLabel={cancelLabel}
           saveLabel={saveLabel}
           createLabel={createLabel}
@@ -71,13 +76,15 @@ const ResourceInputsForm = ({
         >
           {children}
         </ResourceForm>
-        {isShowQueryContainer && extraFormCruds && (
-          <ResourceCrudQueryForm
-            item={queryFormItem}
-            extraFormCruds={extraFormCruds}
-            handleCloseQueryContainer={handleCloseQueryContainer}
-          />
-        )}
+        {(isShowQueryContainer || propsIsShowQueryContainer) &&
+          extraFormCruds && (
+            <ResourceCrudQueryForm
+              mainFullWidth
+              item={queryFormItem}
+              extraFormCruds={extraFormCruds}
+              handleCloseQueryContainer={handleCloseQueryContainer}
+            />
+          )}
       </ResourceInputsContainer>
     </InputsFormWrapper>
   );

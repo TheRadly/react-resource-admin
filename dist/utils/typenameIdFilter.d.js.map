@@ -1,1 +1,0 @@
-{"version":3,"file":"typenameIdFilter.d.js","names":[],"sources":["../../src/utils/typenameIdFilter.d.ts"],"sourcesContent":["import { SetStateAction } from \"react\";\ndeclare const typenameIdFilter: (obj: any, extraValues?: string[]) => SetStateAction<any>;\nexport default typenameIdFilter;\n"],"mappings":""}

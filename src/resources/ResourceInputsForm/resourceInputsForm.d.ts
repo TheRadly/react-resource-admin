@@ -17,6 +17,7 @@ interface ResourceInputsFormProps {
     cancelLabel: string;
     saveLabel?: string;
     createLabel?: string;
+    propsIsShowQueryContainer?: boolean;
 }
-declare const _default: React.MemoExoticComponent<({ cancelLabel, saveLabel, createLabel, title, children, onCancel, loading, isEdit, values, extraFormCruds, handleChangeField, formHandler, }: ResourceInputsFormProps) => import("react/jsx-runtime").JSX.Element>;
+declare const _default: React.MemoExoticComponent<({ cancelLabel, saveLabel, createLabel, title, children, onCancel, loading, isEdit, values, extraFormCruds, handleChangeField, formHandler, propsIsShowQueryContainer, }: ResourceInputsFormProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

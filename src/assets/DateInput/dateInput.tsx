@@ -1,6 +1,7 @@
 import { Calendar } from "primereact/calendar";
 import DateInputWrapper from "./styled/DateInputWrapper";
 import useDateInput from "./talons/useDateInput";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface DateInputProps {
   label?: string;
@@ -8,6 +9,7 @@ interface DateInputProps {
   fullWidth?: boolean;
   disabled?: boolean;
   value: string | Date;
+  error?: string;
 }
 const DateInput = ({
   label,
@@ -15,6 +17,7 @@ const DateInput = ({
   fullWidth,
   disabled,
   value,
+  error,
 }: DateInputProps) => {
   const { handleChangeDateInput } = useDateInput({ onChange });
 
@@ -29,6 +32,7 @@ const DateInput = ({
         disabled={disabled}
         hourFormat="24"
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </DateInputWrapper>
   );
 };

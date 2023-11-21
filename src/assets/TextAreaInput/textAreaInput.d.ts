@@ -4,6 +4,7 @@ interface InputFloatLabelProps {
     disabled?: boolean;
     fullWidth?: boolean;
     label?: string;
+    error?: string;
 }
-declare const TextAreaInput: ({ label, value, disabled, onChange, fullWidth, }: InputFloatLabelProps) => import("react/jsx-runtime").JSX.Element;
+declare const TextAreaInput: ({ label, value, disabled, onChange, fullWidth, error, }: InputFloatLabelProps) => import("react/jsx-runtime").JSX.Element;
 export default TextAreaInput;

@@ -2,12 +2,14 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputText } from "primereact/inputtext";
 import useInputMultiField from "./talons/useInputMultiField";
 import InputMultiFieldWrapper from "./styled/inputMultiFieldWrapper";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface InputMultiFieldProps {
   disabled?: boolean;
   values: any[];
   onChange: (arg: object) => void;
   fullWidth?: boolean;
+  error?: string;
 }
 
 const InputMultiField = ({
@@ -15,6 +17,7 @@ const InputMultiField = ({
   values,
   onChange,
   fullWidth,
+  error,
 }: InputMultiFieldProps) => {
   const { handleChangeInput } = useInputMultiField({
     onChange,
@@ -43,6 +46,7 @@ const InputMultiField = ({
             )}
           </>
         ))}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputMultiFieldWrapper>
   );
 };

@@ -1,1 +1,0 @@
-{"version":3,"file":"config.d.js","names":[],"sources":["../../../src/assets/UniversalInput/config.d.ts"],"sourcesContent":["declare const TYPES: {\n    NUMBER: string;\n    STRING: string;\n    ARRAY: string;\n    OBJECT: string;\n    BOOLEAN: string;\n};\nexport default TYPES;\n"],"mappings":""}

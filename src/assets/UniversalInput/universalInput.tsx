@@ -14,6 +14,7 @@ import toFirstUpperCase from "../../utils/toFirstUpperCase";
 import TextAreaInput from "../TextAreaInput/textAreaInput";
 import MultiSelectInput from "../MultiSelectInput/multiSelectInput";
 import ArrayOfObjectsInput from "../ArrayOfObjectsInput/arrayOfObjectsInput";
+import CurrenciesInput from "../CurrenciesInput";
 
 interface UniversalInputProps {
   value: any;
@@ -48,6 +49,8 @@ interface UniversalInputProps {
   withoutUpperCasing?: boolean;
   returnFullObjectEvent?: boolean;
   withSearch?: boolean;
+  isCurrencies?: boolean;
+  error?: string;
 }
 
 const UniversalInput = ({
@@ -82,6 +85,8 @@ const UniversalInput = ({
   withoutUpperCasing,
   returnFullObjectEvent,
   withSearch,
+  isCurrencies,
+  error,
 }: UniversalInputProps) => {
   const label = useMemo(() => {
     if (withoutUpperCasing && propLabel) {
@@ -95,8 +100,21 @@ const UniversalInput = ({
 
   return (
     <>
+      {Array.isArray(value) && isCurrencies && (
+        <CurrenciesInput
+          error={error}
+          label={label}
+          values={value}
+          initialValues={initialValue}
+          emptyMessage={emptyLabel}
+          fullWidth={fullWidth}
+          disabled={disabled}
+          onChange={onChange}
+        />
+      )}
       {Array.isArray(value) && isArrayWithObjects && (
         <ArrayOfObjectsInput
+          error={error}
           label={label}
           fullWidth={fullWidth}
           disabled={disabled}
@@ -109,6 +127,7 @@ const UniversalInput = ({
       )}
       {Array.isArray(value) && isMultiSelect && (
         <MultiSelectInput
+          error={error}
           currentOption={currentOption}
           fullWidth={fullWidth}
           disabled={disabled}
@@ -119,6 +138,7 @@ const UniversalInput = ({
       )}
       {isTextArea && (
         <TextAreaInput
+          error={error}
           fullWidth={fullWidth}
           disabled={disabled}
           label={label}
@@ -128,6 +148,7 @@ const UniversalInput = ({
       )}
       {typeof value === TYPES.NUMBER && (
         <InputFloatLabel
+          error={error}
           fullWidth={fullWidth}
           label={label}
           placeholder={placeholder}
@@ -139,6 +160,7 @@ const UniversalInput = ({
       )}
       {typeof value === TYPES.BOOLEAN && (
         <SwitchInput
+          error={error}
           label={label}
           checked={value}
           onChange={onChange}
@@ -147,6 +169,7 @@ const UniversalInput = ({
       )}
       {isArray && (
         <InputArray
+          error={error}
           disabled={disabled}
           fullWidth={fullWidth}
           values={value}
@@ -156,6 +179,7 @@ const UniversalInput = ({
       )}
       {Array.isArray(value) && withChildQuery && (
         <InputFieldsWithQuery
+          error={error}
           closeTooltipLabel={closeTooltipLabel}
           addTooltipLabel={addTooltipLabel}
           deleteTooltipLabel={deleteTooltipLabel}
@@ -177,8 +201,10 @@ const UniversalInput = ({
         !isMultiSelect &&
         !withChildQuery &&
         !isArrayWithObjects &&
-        !isArray && (
+        !isArray &&
+        !isCurrencies && (
           <DropdownInput
+            error={error}
             label={label}
             returnFullObjectEvent={returnFullObjectEvent}
             disabled={disabled}
@@ -192,6 +218,7 @@ const UniversalInput = ({
         )}
       {typeof value === TYPES.OBJECT && isMultiInput && (
         <InputMultiField
+          error={error}
           fullWidth={fullWidth}
           disabled={disabled}
           onChange={onChange}
@@ -200,6 +227,7 @@ const UniversalInput = ({
       )}
       {isDate && (
         <DateInput
+          error={error}
           disabled={disabled}
           fullWidth={fullWidth}
           label={label}
@@ -209,6 +237,7 @@ const UniversalInput = ({
       )}
       {typeof value === TYPES.STRING && isJson && (
         <JsonEditor
+          error={error}
           disabled={disabled}
           fullWidth={fullWidth}
           label={label}
@@ -218,6 +247,7 @@ const UniversalInput = ({
       )}
       {typeof value === TYPES.STRING && !isJson && !isDate && !isTextArea && (
         <InputFloatLabel
+          error={error}
           fullWidth={fullWidth}
           isFloat={isFloat}
           label={label}

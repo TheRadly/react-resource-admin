@@ -1,1 +1,0 @@
-{"version":3,"file":"config.d.js","names":[],"sources":["../../../src/assets/ArrayOfObjectsInput/config.d.ts"],"sourcesContent":["export declare const TYPENAME = \"__typename\";\nexport declare const ID = \"id\";\nexport declare const TOURNAMENT_ID = \"tournamentId\";\nexport declare const EXCLUDED_FIELD_ITEMS: string[];\n"],"mappings":""}

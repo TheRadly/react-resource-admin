@@ -7,6 +7,7 @@ interface ArrayOfObjectsInputProps {
     onChange: (arg: any) => void;
     emptyMessage?: string;
     disabled?: boolean;
+    error?: string;
 }
-declare const ArrayOfObjectsInput: ({ label, values, fullWidth, initialValue, itemTitledBy, onChange, emptyMessage, disabled, }: ArrayOfObjectsInputProps) => import("react/jsx-runtime").JSX.Element;
+declare const ArrayOfObjectsInput: ({ label, values, fullWidth, initialValue, itemTitledBy, onChange, emptyMessage, disabled, error, }: ArrayOfObjectsInputProps) => import("react/jsx-runtime").JSX.Element;
 export default ArrayOfObjectsInput;

@@ -1,6 +1,7 @@
 import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
 import SwitchInputWrapper from "./styled/switchInputWrapper";
 import SwitchInnerWrapper from "./styled/switchInnerWrapper";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface SwitchInputProps {
   checked: boolean;
@@ -10,6 +11,7 @@ interface SwitchInputProps {
   label?: string;
   activeText?: string;
   fullWidth?: boolean;
+  error?: string;
 }
 
 const SwitchInput = ({
@@ -20,6 +22,7 @@ const SwitchInput = ({
   label,
   activeText,
   fullWidth = false,
+  error,
 }: SwitchInputProps) => (
   <SwitchInputWrapper fullWidth={fullWidth}>
     {withLabel && <label htmlFor={label}>{label}</label>}
@@ -32,6 +35,7 @@ const SwitchInput = ({
       />
       {activeText && <span>{activeText}</span>}
     </SwitchInnerWrapper>
+    {error && <ErrorMessage>{error}</ErrorMessage>}
   </SwitchInputWrapper>
 );
 

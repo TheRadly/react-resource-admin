@@ -13,7 +13,6 @@ import {
   WITHDRAW_LIMIT,
   BONUS_ID,
   TournamentConstraintType,
-  currencyAmountInput,
   MIN_BET,
   MAX_BET,
   TournamentRewardType,
@@ -257,7 +256,7 @@ export const customizeFieldInputs = ({
         isDisabled: true,
       };
     } else if (pv.field === BONUS_ID) {
-      const bonusesValues = externalValues?.bonuses.map((bonus: any) => ({
+      const bonusesValues = externalValues?.bonuses?.map((bonus: any) => ({
         name: bonus.name,
         code: bonus.id,
       }));
@@ -302,10 +301,8 @@ export const customizeFieldInputs = ({
       return {
         ...pv,
         value: pv.value,
-        isArrayWithObject: true,
-        initialValue: currencyAmountInput,
-        itemTitledBy: "currency",
-        emptyLabel: "Empty",
+        isCurrencies: true,
+        initialValue: externalValues?.currencies,
       };
     }
   } else if (parentType === TOURNAMENT_REWARDS) {
@@ -336,13 +333,11 @@ export const customizeFieldInputs = ({
       return {
         ...pv,
         value: pv.value,
-        isArrayWithObject: true,
-        initialValue: currencyAmountInput,
-        itemTitledBy: "currency",
-        emptyLabel: "Empty",
+        isCurrencies: true,
+        initialValue: externalValues?.currencies,
       };
     } else if (pv.field === BONUS_ID) {
-      const bonusesValues = externalValues?.bonuses.map((bonus: any) => ({
+      const bonusesValues = externalValues?.bonuses?.map((bonus: any) => ({
         name: bonus.name,
         code: bonus.id,
       }));

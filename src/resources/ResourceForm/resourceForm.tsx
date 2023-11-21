@@ -23,6 +23,7 @@ interface ResourceFormProps {
   createLabel?: string;
   cancelLabel: string;
   hideCancel?: boolean;
+  mainFullWidth?: boolean;
 }
 
 const ResourceForm = ({
@@ -40,6 +41,7 @@ const ResourceForm = ({
   createLabel,
   cancelLabel,
   hideCancel,
+  mainFullWidth,
 }: ResourceFormProps) => {
   const { handleSubmit, submitButtonLabel, handleSetFieldValue } =
     useResourceForm({
@@ -76,9 +78,13 @@ const ResourceForm = ({
             fullWidth,
             returnFullObjectEvent,
             withSearch,
+            isCurrencies,
+            error,
           }) => (
             <UniversalInput
-              fullWidth={fullWidth}
+              error={formHandler.errors[field]}
+              isCurrencies={isCurrencies}
+              fullWidth={mainFullWidth || fullWidth}
               emptyLabel={emptyLabel}
               isArrayWithObjects={isArrayWithObject}
               initialValue={initialValue}

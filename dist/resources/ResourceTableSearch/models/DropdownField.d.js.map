@@ -1,1 +1,0 @@
-{"version":3,"file":"DropdownField.d.js","names":[],"sources":["../../../../src/resources/ResourceTableSearch/models/DropdownField.d.ts"],"sourcesContent":["export type DropdownField = {\n    name: string;\n    code: string;\n};\n"],"mappings":""}

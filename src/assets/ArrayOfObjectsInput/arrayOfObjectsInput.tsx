@@ -15,6 +15,7 @@ import useArrayOfObjectsInput from "./talons/useArrayOfObjectsInput";
 import { CHECK_ICON, EDIT_ICON, PLUS_ICON } from "../../staticTexts";
 import { TRASH_ICON } from "../../staticTexts";
 import { EXCLUDED_FIELD_ITEMS, TOURNAMENT_ID, ID } from "./config";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface ArrayOfObjectsInputProps {
   label?: string;
@@ -25,6 +26,7 @@ interface ArrayOfObjectsInputProps {
   onChange: (arg: any) => void;
   emptyMessage?: string;
   disabled?: boolean;
+  error?: string;
 }
 
 const ArrayOfObjectsInput = ({
@@ -36,6 +38,7 @@ const ArrayOfObjectsInput = ({
   onChange,
   emptyMessage,
   disabled,
+  error,
 }: ArrayOfObjectsInputProps) => {
   const {
     isEditMode,
@@ -141,6 +144,7 @@ const ArrayOfObjectsInput = ({
           />
         )}
       </ArrayOfObjectsContainer>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </ArrayOfObjectsInputWrapper>
   );
 };

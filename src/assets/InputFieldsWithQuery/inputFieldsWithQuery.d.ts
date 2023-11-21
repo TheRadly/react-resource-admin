@@ -13,6 +13,7 @@ interface InputFieldsWithQueryProps {
     addTooltipLabel?: string;
     deleteTooltipLabel?: string;
     editTooltipLabel?: string;
+    error?: string;
 }
-declare const InputFieldsWithQuery: ({ label, emptyLabel, values, isShowQueryContainer, handleShowQueryContainer, fieldsToExclude, extraFormCruds, fullWidth, disabled, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, }: InputFieldsWithQueryProps) => import("react/jsx-runtime").JSX.Element;
+declare const InputFieldsWithQuery: ({ label, emptyLabel, values, isShowQueryContainer, handleShowQueryContainer, fieldsToExclude, extraFormCruds, fullWidth, disabled, closeTooltipLabel, addTooltipLabel, deleteTooltipLabel, editTooltipLabel, error, }: InputFieldsWithQueryProps) => import("react/jsx-runtime").JSX.Element;
 export default InputFieldsWithQuery;

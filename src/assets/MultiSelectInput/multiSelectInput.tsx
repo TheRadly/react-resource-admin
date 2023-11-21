@@ -2,6 +2,7 @@ import { MultiSelect } from "primereact/multiselect";
 import MultiSelectInputWrapper from "./styled/multiSelectInputWrapper";
 import useMultiSelectInput from "./talons/useMultiSelectInput";
 import { SelectType } from "../../types/InputEventTypes";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface MultiSelectInputProps {
   label?: string;
@@ -10,6 +11,7 @@ interface MultiSelectInputProps {
   onChange: any;
   disabled?: boolean;
   fullWidth?: boolean;
+  error?: string;
 }
 
 const MultiSelectInput = ({
@@ -19,6 +21,7 @@ const MultiSelectInput = ({
   onChange,
   disabled,
   fullWidth,
+  error,
 }: MultiSelectInputProps) => {
   const { handleChangeMultiSelect, selectedOption } = useMultiSelectInput({
     onChange,
@@ -35,6 +38,7 @@ const MultiSelectInput = ({
         onChange={handleChangeMultiSelect}
         optionLabel="name"
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </MultiSelectInputWrapper>
   );
 };

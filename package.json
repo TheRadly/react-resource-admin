@@ -1,30 +1,12 @@
 {
-  "name": "react-resource-admin",
+  "name": "@l2p/resource-ui",
   "version": "2.0.0",
-  "author": "Alexey Vodyanitsky <alex5011999@gmail.com>",
-  "description": "React resource admin",
-  "license": "Apache-2.0",
-  "private": false,
-  "keywords": [
-    "react",
-    "components",
-    "resource",
-    "ui",
-    "form"
-  ],
+  "description": "Resource UI",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/TheRadly/react-resource-admin#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TheRadly/react-resource-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/TheRadly/react-resource-admin/issues"
-  },
   "dependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",

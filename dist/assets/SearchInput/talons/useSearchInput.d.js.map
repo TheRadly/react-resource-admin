@@ -1,1 +1,0 @@
-{"version":3,"file":"useSearchInput.d.js","names":[],"sources":["../../../../src/assets/SearchInput/talons/useSearchInput.d.ts"],"sourcesContent":["interface UseSearchInputProps {\n    onChange?: (arg: any) => void;\n}\ndeclare const useSearchInput: ({ onChange }: UseSearchInputProps) => {\n    handleKeyUp: (e: any) => void;\n};\nexport default useSearchInput;\n"],"mappings":""}

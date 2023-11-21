@@ -16,6 +16,7 @@ interface ResourceCrudQueryFormProps {
   handleCloseQueryContainer?: () => void;
   saveLabel?: string;
   createLabel?: string;
+  mainFullWidth?: boolean;
 }
 
 const ResourceCrudQueryForm = ({
@@ -25,6 +26,7 @@ const ResourceCrudQueryForm = ({
   handleCloseQueryContainer,
   saveLabel,
   createLabel,
+  mainFullWidth,
 }: ResourceCrudQueryFormProps) => {
   const {
     loading,
@@ -32,6 +34,7 @@ const ResourceCrudQueryForm = ({
     arrayOfValues,
     handleChangeField,
     submitLocale,
+    formHandler,
   } = useResourceCrudQueryForm({
     extraFormCruds,
     saveLabel,
@@ -58,8 +61,11 @@ const ResourceCrudQueryForm = ({
             initialValue,
             itemTitledBy,
             emptyLabel,
+            isCurrencies,
           }) => (
             <UniversalInput
+              error={formHandler.errors[field] as any}
+              fullWidth={mainFullWidth}
               isDate={isDate}
               initialValue={initialValue}
               itemTitledBy={itemTitledBy}
@@ -71,6 +77,7 @@ const ResourceCrudQueryForm = ({
               currentOption={activeValue}
               isFloat={isFloat}
               disabled={loading}
+              isCurrencies={isCurrencies}
               value={value}
               onChange={(data) => handleChangeField(data, field)}
             />

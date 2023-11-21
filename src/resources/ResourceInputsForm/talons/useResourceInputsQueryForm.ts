@@ -43,6 +43,7 @@ const useResourceInputsQueryForm = ({
     parentType,
     refetchDocument,
     successAction,
+    validationOptions,
     externalValues,
   } = useMemo(() => extraFormCruds || {}, [extraFormCruds]);
 
@@ -107,15 +108,17 @@ const useResourceInputsQueryForm = ({
     () =>
       item
         ? {
+            ...validationOptions,
             valuesForEdit: item,
             onSubmitMethod: onSubmitInputs,
             loading,
           }
         : {
+            ...validationOptions,
             initialValues,
             onSubmitMethod: onSubmitInputs,
           },
-    [initialValues, item, loading, onSubmitInputs]
+    [initialValues, item, loading, onSubmitInputs, validationOptions]
   );
 
   const { handleSubmit, setFieldValue, formValues, formHandler } =
@@ -165,6 +168,7 @@ const useResourceInputsQueryForm = ({
 
   return {
     loading: createLoading || updateLoading,
+    formHandler,
     handleSubmit,
     arrayOfValues,
     handleChangeField,

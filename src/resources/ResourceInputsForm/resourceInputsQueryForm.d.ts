@@ -7,6 +7,7 @@ interface ResourceCrudQueryFormProps {
     handleCloseQueryContainer?: () => void;
     saveLabel?: string;
     createLabel?: string;
+    mainFullWidth?: boolean;
 }
-declare const _default: React.MemoExoticComponent<({ extraFormCruds, children, item, handleCloseQueryContainer, saveLabel, createLabel, }: ResourceCrudQueryFormProps) => import("react/jsx-runtime").JSX.Element>;
+declare const _default: React.MemoExoticComponent<({ extraFormCruds, children, item, handleCloseQueryContainer, saveLabel, createLabel, mainFullWidth, }: ResourceCrudQueryFormProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

@@ -16,6 +16,7 @@ interface ResourceFormProps {
     createLabel?: string;
     cancelLabel: string;
     hideCancel?: boolean;
+    mainFullWidth?: boolean;
 }
-declare const ResourceForm: ({ loading, children, values, extraFormCruds, isShowQueryContainer, isEdit, handleShowQueryContainer, handleChangeField, formHandler, onCancel, saveLabel, createLabel, cancelLabel, hideCancel, }: ResourceFormProps) => import("react/jsx-runtime").JSX.Element;
+declare const ResourceForm: ({ loading, children, values, extraFormCruds, isShowQueryContainer, isEdit, handleShowQueryContainer, handleChangeField, formHandler, onCancel, saveLabel, createLabel, cancelLabel, hideCancel, mainFullWidth, }: ResourceFormProps) => import("react/jsx-runtime").JSX.Element;
 export default ResourceForm;

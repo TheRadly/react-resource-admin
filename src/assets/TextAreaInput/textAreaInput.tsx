@@ -1,6 +1,7 @@
 import TextAreaInputWrapper from "./styled/textAreaInputWrapper";
 import { InputTextarea } from "primereact/inputtextarea";
 import useTextAreaInput from "./talons/useTextAreaInput";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface InputFloatLabelProps {
   value: any;
@@ -8,6 +9,7 @@ interface InputFloatLabelProps {
   disabled?: boolean;
   fullWidth?: boolean;
   label?: string;
+  error?: string;
 }
 
 const TextAreaInput = ({
@@ -16,6 +18,7 @@ const TextAreaInput = ({
   disabled,
   onChange,
   fullWidth,
+  error,
 }: InputFloatLabelProps) => {
   const { handleChangeTextAreaInput } = useTextAreaInput({ onChange });
 
@@ -29,6 +32,7 @@ const TextAreaInput = ({
         onChange={handleChangeTextAreaInput}
         cols={10}
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </TextAreaInputWrapper>
   );
 };

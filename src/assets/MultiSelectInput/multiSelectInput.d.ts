@@ -6,6 +6,7 @@ interface MultiSelectInputProps {
     onChange: any;
     disabled?: boolean;
     fullWidth?: boolean;
+    error?: string;
 }
-declare const MultiSelectInput: ({ label, options, currentOption, onChange, disabled, fullWidth, }: MultiSelectInputProps) => import("react/jsx-runtime").JSX.Element;
+declare const MultiSelectInput: ({ label, options, currentOption, onChange, disabled, fullWidth, error, }: MultiSelectInputProps) => import("react/jsx-runtime").JSX.Element;
 export default MultiSelectInput;

@@ -2,6 +2,7 @@ import { Dropdown } from "primereact/dropdown";
 import DropdownInputWrapper from "./styled/dropdownInputWrapper";
 import useDropdownInput from "./talons/useDropdownInput";
 import type { SelectType } from "../../types/InputEventTypes";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface DropdownInputProps {
   label?: string;
@@ -13,6 +14,7 @@ interface DropdownInputProps {
   disabled?: boolean;
   returnFullObjectEvent?: boolean;
   withSearch?: boolean;
+  error?: string;
 }
 
 const DropdownInput = ({
@@ -25,6 +27,7 @@ const DropdownInput = ({
   placeholder,
   withSearch,
   returnFullObjectEvent,
+  error,
 }: DropdownInputProps) => {
   const { selectedDropdown, handleChangeValue } = useDropdownInput({
     onChange,
@@ -44,6 +47,7 @@ const DropdownInput = ({
         options={options}
         placeholder={placeholder}
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </DropdownInputWrapper>
   );
 };

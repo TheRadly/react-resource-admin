@@ -1,6 +1,7 @@
 import { Chips } from "primereact/chips";
 import useInputArray from "./talons/useInputArray";
 import InputArrayWrapper from "./styled/inputArrayWrapper";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface InputArrayProps {
   values: string[];
@@ -8,6 +9,7 @@ interface InputArrayProps {
   onChange: (arg: string[]) => void;
   fullWidth?: boolean;
   disabled?: boolean;
+  error?: string;
 }
 
 const InputArray = ({
@@ -16,6 +18,7 @@ const InputArray = ({
   onChange,
   disabled,
   label,
+  error,
 }: InputArrayProps) => {
   const { chipsValues, handleChangeChipsValues } = useInputArray({
     values,
@@ -32,6 +35,7 @@ const InputArray = ({
         onChange={handleChangeChipsValues}
         separator=","
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputArrayWrapper>
   );
 };

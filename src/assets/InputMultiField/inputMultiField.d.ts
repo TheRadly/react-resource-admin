@@ -3,6 +3,7 @@ interface InputMultiFieldProps {
     values: any[];
     onChange: (arg: object) => void;
     fullWidth?: boolean;
+    error?: string;
 }
-declare const InputMultiField: ({ disabled, values, onChange, fullWidth, }: InputMultiFieldProps) => import("react/jsx-runtime").JSX.Element;
+declare const InputMultiField: ({ disabled, values, onChange, fullWidth, error, }: InputMultiFieldProps) => import("react/jsx-runtime").JSX.Element;
 export default InputMultiField;

@@ -6,6 +6,7 @@ import InputContainer from "./styled/inputContainer";
 import { BUTTON_INPUT } from "../../staticTexts";
 import InputField from "./inputField";
 import { CrudType } from "../../resources/ResourceInputsForm/models/CrudType";
+import ErrorMessage from "../UniversalInput/styled/errorMessage";
 
 interface InputFieldsWithQueryProps {
   label?: string;
@@ -21,6 +22,7 @@ interface InputFieldsWithQueryProps {
   addTooltipLabel?: string;
   deleteTooltipLabel?: string;
   editTooltipLabel?: string;
+  error?: string;
 }
 
 const InputFieldsWithQuery = ({
@@ -37,6 +39,7 @@ const InputFieldsWithQuery = ({
   addTooltipLabel,
   deleteTooltipLabel,
   editTooltipLabel,
+  error,
 }: InputFieldsWithQueryProps) => {
   const { tooltipLocale, buttonIcon } = useInputFieldsWithQuery({
     isShowQueryContainer,
@@ -71,6 +74,7 @@ const InputFieldsWithQuery = ({
           type={BUTTON_INPUT}
         />
       </InputContainer>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputFieldsWithQueryWrapper>
   );
 };

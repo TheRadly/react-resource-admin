@@ -23,4 +23,6 @@ export type FieldsType = {
   fullWidth?: boolean;
   returnFullObjectEvent?: boolean;
   withSearch?: boolean;
+  isCurrencies?: boolean;
+  error?: string;
 };

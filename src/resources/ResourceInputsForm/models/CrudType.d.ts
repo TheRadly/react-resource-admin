@@ -13,4 +13,10 @@ export type CrudType = {
     dynamicalInputs?: any;
     externalValues?: any;
     successAction?: (args: any) => void;
+    validationOptions?: {
+        validation?: any;
+        validationOnBlur?: boolean;
+        validationOnChange?: boolean;
+        validationOnMount?: boolean;
+    };
 };
